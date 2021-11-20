@@ -2,7 +2,6 @@
 <div>
   aaaaaaaaaaaaaaaa
 </div>
-  <!-- <Tutorial/> -->
 </template>
 
 <script>
