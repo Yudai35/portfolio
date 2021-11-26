@@ -1,15 +1,21 @@
 <template>
-<div class="m-8 p-8  shadow-lg md:hover:bg-green-100 ">
-  <h1 class=" font-bold sm:text-2xl md:text-4xl text-red-700 lg:text-blue-700">佑大のIT大学</h1>
-  <ul class="mt-4 space-y-2 list-decimal list-inside text-blue-900" >
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-</ul>
-  <button class="border-2 border-blue-700 py-2 px-3 hover:text-white hover:bg-blue-700 transition">　
-  ボタン
-</button>
-</div>
+  <section>
+    <div class="">
+      <img src="~/assets/AdobeStock_229144311.jpeg">
+      <h1 class="mt-24 mb-24 text-center font-serif">
+        <p class="text-4xl">NewSelfとは</p>
+      </h1>
+      <div>
+        <p>「自分を変えたいけど何すればいいかわからない」、「やりたいことはあるがなかなか１歩踏み出せない」</p>
+        <br>
+        <p>そんなあなたの背中を押してくれる「診断・書籍紹介アプリ」です。</p>
+        <br>
+        <p>複数の質問を通してあなたにぴったりな本を紹介してくれます。</p>
+        <br>
+        <p>きっとあなたの「何か」を変えてくれる事でしょう。</p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
