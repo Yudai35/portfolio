@@ -1,5 +1,5 @@
 <template>
-  <div class="header  w-full bg-green-200 px-8 py-4 flex justify-between font-serif ">
+  <div class="header  w-full bg-green-200  px-8 py-4 flex justify-between font-serif ">
     <h1 class="">
           <a href="" class="text-4xl hover:opacity-50 duration-1000">NewSelf</a>
     </h1>
