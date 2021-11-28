@@ -1,23 +1,24 @@
 <template>
 <div>
-     <Top-header/>
-     <fotter/>
+     <TopHeader/>
      <nuxt/>
+     <Footer/>
+
 </div>
    
 </template>
 
 
 <script>
-import TopHeader from '~/components/Topheader.vue'
-import fotter from '~/components/fotter.vue'
+// import TopHeader from '~/components/Topheader.vue'
+// import Footer from '~/components/Footer.vue'
 
 export default {
      nema: 'default',
-  components: {
-    TopHeader,
-    fotter
-  }
+  // components: {
+  //   TopHeader,
+  //   Footer
+  // }
 }
 
 </script>

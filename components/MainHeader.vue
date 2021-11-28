@@ -5,10 +5,16 @@
     </h1>
     <ul class="flex justify-between items-center opacity-100 text-xl">
       <li>
-        <a href="" class="pr-6 hover:opacity-50 duration-1000">ログイン</a>
+        <a href="" class="pr-8 hover:opacity-50 duration-1000">記録</a>
       </li>
       <li>
-        <a href="" class="pr-6 hover:opacity-50 duration-1000">新規登録</a>
+        <a href="" class="pr-8 hover:opacity-50 duration-1000">診断</a>
+      </li>
+      <li>
+        <a href="" class="pr-8 hover:opacity-50 duration-1000">お問い合わせ</a>
+      </li>
+      <li>
+        <a href="" class="pr-5 hover:opacity-50 duration-1000">ログアウト</a>
       </li>
     </ul>
   </div>

@@ -1,4 +1,5 @@
 <template>
+<!-- TOPページ -->
   <section>
     <div class="font-serif">
       <img src="~/assets/AdobeStock_229144311.jpeg">
@@ -14,6 +15,7 @@
         <br>
         <p>きっとあなたの「何か」を変えてくれる事でしょう。</p>
       </div>
+
       <div class=" bg-green-200 bg-opacity-75">
         <h1 class="text-center  pt-12">
           <p class="text-4xl">対象ユーザー</p>
@@ -39,6 +41,33 @@
           </div>
         </div>
       </div>
+
+            <div class="">
+        <h1 class="text-center  pt-12">
+          <p class="text-4xl">NewSelfの機能</p>
+        </h1>
+        <div class="pt-12 pb-12 flex ">
+          <div class="flex-1  text-center w-1/3 mx-8">
+            <div class="border-4 border-green-200 rounded-full">
+              <p class=" py-2 text-lg">診断/書籍紹介</p>
+            </div>
+            <p class="my-4">あなたに投げかける質問を通して、今あなたに必要な書籍を紹介します。</p>
+          </div>
+          <div class="flex-1  text-center w-1/3 mx-8">
+            <div class="border-4 border-green-200 rounded-full">
+              <p class="py-2 text-lg">Twitter共有</p>
+            </div>
+            <p class="my-4">「診断して終わり」、「本を買ったけれど読まない」とよくありがちです。Twiiterに「〇月〇日までに読み終え、感想をツイートします！」と投げかましょう！NewSelfなやらざるをえない「環境づくり」をサポートします。</p>
+          </div>
+          <div class="flex-1  text-center w-1/3 mx-8">
+            <div class="border-4 border-green-200 rounded-full">
+             <p class=" py-2 text-lg ">メモ機能</p>
+            </div>
+            <p class="my-4">読書をしてもアウトプットしなければ効果は薄いです。読んで印象に残った部分、勉強になった部分を忘れずに記録しましょう。後から見返すことも可能です。</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 </template>
