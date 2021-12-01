@@ -51,7 +51,7 @@
             <div class="border-4 border-green-200 rounded-full">
               <p class=" py-2 text-lg">診断/書籍紹介</p>
             </div>
-            <p class="my-4">あなたに投げかける質問を通して、今あなたに必要な書籍を紹介します。</p>
+            <p class="my-4">あなたに投げかける質問を通して、今あなたに必要な書籍を紹介します。その書籍を通して自分と向き合う時間を作りましょう。</p>
           </div>
           <div class="flex-1  text-center w-1/3 mx-8">
             <div class="border-4 border-green-200 rounded-full">
