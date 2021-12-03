@@ -1,5 +1,5 @@
 <template>
-<!-- TOPページ -->
+<!-- ログイン前TOPページ -->
   <section>
     <div class="font-serif">
       <img src="~/assets/AdobeStock_229144311.jpeg">
