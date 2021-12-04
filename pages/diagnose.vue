@@ -56,6 +56,7 @@
               items-center
               justify-center
             "
+            :class="answers.q1 ? 'bg-red-200' : ''"
             @click="answer('q1', true)"
           >
             YES
@@ -75,6 +76,7 @@
               items-center
               justify-center
             "
+            :class="answers.q1 === false ? 'bg-blue-200' : ''"
             @click="answer('q1', false)"
           >
             NO
