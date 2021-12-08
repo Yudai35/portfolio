@@ -14,26 +14,31 @@
             </div>
         </div>
         <!-- <p>〜似たような本、同著者等の出版本を外部APIで所得し表示させる〜</p> -->
-        <div class="mt-24 text-4xl m-auto">
-            <h2 class="text-center">＜こちらもおすすめ＞</h2>
-            <ul class="flex justify-center mr-0 ">
+        <div class="mt-24  text-4xl m-auto text-center">
+            <h2 class="text-center mb-12">＜こちらもおすすめ＞</h2>
+            <ul class="flex justify-center mr-0 bg-gray-100 py-6">
                 <li class="mx-10">
                    <img class="h-52"  src="~/assets/やばい話し方.jpg">
-                    <p></p>
+                    <p class="text-lg pt-4">やばい話し方</p>
                 </li>
                 <li class="mx-10">
                     <img class="h-52" src="~/assets/やばい話し方.jpg">
-                    <p></p>
+                    <p class="text-lg pt-4">やばい話し方</p>
                 </li>
                 <li class="mx-10">
                   <img class="h-52" src="~/assets/やばい話し方.jpg">
-                    <p></p>
+                    <p class="text-lg pt-4">やばい話し方</p>
                 </li>
                 <li class="mx-10">
                     <img class="h-52" src="~/assets/やばい話し方.jpg">
-                    <p></p>
+                    <p class="text-lg pt-4">やばい話し方</p>
                 </li>
             </ul>
+        </div>
+        <div class="text-center pt-16">
+            <button class="py-3 w-48 text-2xl border-2 border-green-200 rounded-full hover:bg-green-100 duration-1000">
+                TOPへ
+            </button>
         </div>
     </div>
 </template>

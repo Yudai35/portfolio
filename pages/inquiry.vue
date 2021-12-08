@@ -1,6 +1,6 @@
 <template>
 <!-- お問い合わせページ -->
-    <div class="text-center px-2 pb-4 my-36 max-w-xl m-auto bg-gray-200">
+    <div class="text-center px-2 pb-4 my-36 max-w-xl m-auto bg-gray-200 font-serif">
         <h2 class="text-2xl my-10 border-b-2 border-green-300 w-10/12  pt-6 pb-3 pl-3 m-auto text-left">お問い合わせ</h2>
         <input type=”text” name=”名前” placeholder="名前" class="border-2 h-12 w-10/12 mb-5">
         <input type=”text” name=”メールアドレス” placeholder="メールアドレス" class="border-2 h-12 w-10/12 mb-5">
