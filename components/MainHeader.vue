@@ -5,7 +5,10 @@
     </h1>
     <ul class="flex justify-between items-center opacity-100 text-xl">
       <li>
-        <a href="" class="pr-8 hover:opacity-50 duration-1000">記録</a>
+        <a href="" class="pr-8 hover:opacity-50 duration-1000">メモ</a>
+      </li>
+      <li>
+        <a href="" class="pr-8 hover:opacity-50 duration-1000">メモ一覧</a>
       </li>
       <li>
         <a href="" class="pr-8 hover:opacity-50 duration-1000">診断</a>
