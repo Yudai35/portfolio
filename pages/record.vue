@@ -16,7 +16,7 @@
             <input type="submit" value="メモ一覧ページ" class="mx-14 h-14 w-40 text-lg bg-green-300 ">
         </div>
         <div class="mt-12  mb-32 text-center">
-            <p class="text-xl text-blue-500">保存されました</p>
+            <p class="text-xl text-blue-500">保存されました。</p>
         </div>
     </div>
 </template>
