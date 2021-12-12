@@ -4,12 +4,12 @@
         <h2 class="text-center text-5xl pb-20">あなたへのおすすめの書籍は・・・</h2>
         <div class="flex justify-center">
             <div class="w-1/3">
-                <img src="~/assets/やばい話し方.jpg">
+                <img :src="book.image.url" class="w-80">
             </div>
             <div class="w-1/3">
-                <h2 class="text-4xl my-5">タイトル： やばい話し方</h2>
-                <p class="my-7 text-3xl ">著者：Dr.ヒロ</p>
-                <p class="text-xl tracking-wider leading-9">この本は、元マルチ商法のトップセールスマン・現在YouTuberであるDr.ヒロさんが書かれた本です。誰でもできるのに誰も教えてくれない「悪魔的に話し上手」になれる方法をDr.ヒロさんが伝授してくれます。この本をマスターすれば仕事・恋愛・人間関係、全てがうまくいきます。</p>
+                <h2 class="text-4xl my-5">タイトル：{{ book.title }}</h2>
+                <p class="my-7 text-3xl ">著者：{{book.author}}</p>
+                <p class="text-xl tracking-wider leading-9">{{book.description}}</p>
                 <button class="border-2 border-blue-600 rounded-full h-14 w-64  items-center flex justify-center m-auto my-8 hover:bg-blue-200 duration-1000">Twitterで宣言する！</button>
             </div>
         </div>
@@ -46,5 +46,23 @@
 <script>
 export default {
   layout: "oftenuse",
+  async asyncData({ query, $microcms }) {
+    const id = query.id;
+    console.log(id)
+    const book = await $microcms.get({
+      endpoint: "books",
+      contentId: id
+    });
+        console.log(book)
+    return {
+     book
+    };
+  },
+  data(){
+      return{
+          book:''
+      }
+  }
 }
+
 </script>

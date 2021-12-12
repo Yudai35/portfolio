@@ -37,7 +37,19 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    "nuxt-microcms-module"
   ],
+  microcms: {
+    options: {
+      /* serviceDomain: process.env.SERVICE_DOMAIN,
+      apiKey: process.env.API_KEY, */
+      serviceDomain: "newself",
+      apiKey: "82f1f33d7df146fcaf5b4d88dab1209b527c",
+    },
+    //↓SSR処理をするならこっちにする必要がある
+    //mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
+    mode: 'all',
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
