@@ -6,7 +6,7 @@
             <div class="w-1/3">
                 <img :src="book.image.url" class="w-80">
             </div>
-            <div class="w-1/3">
+            <div class="w-2/5">
                 <h2 class="text-4xl my-5">タイトル：{{ book.title }}</h2>
                 <p class="my-7 text-3xl ">著者：{{book.author}}</p>
                 <p class="text-xl tracking-wider leading-9">{{book.description}}</p>
@@ -46,10 +46,13 @@
 <script>
 export default {
   layout: "oftenuse",
+// async,awaitはPromiseの処理をより簡潔に書いたもの。意味は同じ。
+// asyncは非同期関数を定義する関数宣言であり、関数の頭につけることで、Promiseオブジェクトを返す関数にすることができます。そのような関数をasync functionといいます
   async asyncData({ query, $microcms }) {
     const id = query.id;
     console.log(id)
-    const book = await $microcms.get({
+    const book = await $microcms.get({   //awaitは非同期処理の結果がでるまでコードを停止します。
+                                         //awaitはasyncキーワードが付加された関数内でのみ使用可能です。
       endpoint: "books",
       contentId: id
     });
