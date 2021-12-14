@@ -49,18 +49,21 @@ export default {
 // async,awaitはPromiseの処理をより簡潔に書いたもの。意味は同じ。
 // asyncは非同期関数を定義する関数宣言であり、関数の頭につけることで、Promiseオブジェクトを返す関数にすることができます。そのような関数をasync functionといいます
   async asyncData({ query, $microcms }) {
-    const id = query.id;
-    console.log(id)
-    const book = await $microcms.get({   //awaitは非同期処理の結果がでるまでコードを停止します。
+    const id = query.id;  //定数idにquery.idを代入。
+    console.log(id)       //コンソールにidを出力
+    const book = await $microcms.get({   //定数bookを指定し、bookが返されるまで{}内の処理は実行されずに停止している。（61~63行目でデータを返している）
+                                         //データが返されたらmicrocmsからAPIデータが取得され、[51行目]第二引数microcmsに渡している
+                                         //awaitは非同期処理の結果がでるまでコードを停止します。
                                          //awaitはasyncキーワードが付加された関数内でのみ使用可能です。
-      endpoint: "books",
-      contentId: id
+      endpoint: "books",   //microCMSのエンドポイントを記述。
+      contentId: id        //microCMSの書籍情報contentID。（58行目の処理で52行目に返しており、代入されたqueryを[51行目]第一引数queryに渡している）
     });
-        console.log(book)
+        console.log(book)   //定数bookをコンソールで出力している。
     return {
-     book
+     book   //定数bookをreturnで54行目に返している
     };
   },
+  //⏬ dataに取得したbookのAPIデータを返している
   data(){
       return{
           book:''
