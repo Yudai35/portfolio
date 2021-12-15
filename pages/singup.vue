@@ -15,3 +15,23 @@
         </div>
     </div>
 </template>
+
+<script>
+import firebase from '~/plugins/firebase.js'
+    export default {
+        layout: 'default',
+        data(){
+            return{
+                users:{
+                    name:"",
+                    password:""
+                },
+            }
+        },
+        methods:{
+            submit(){
+                
+            }
+        }
+}
+</script>
