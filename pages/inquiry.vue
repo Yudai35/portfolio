@@ -11,7 +11,7 @@
         <div class="py-3">
             <a href="" class="h-12 my-4  text-blue-500">お問い合わせありがとうございました。</a>
         </div>
-
+    
     </div>
 </template>
 
