@@ -18,6 +18,7 @@
 <script>
 import firebase from '@/plugins/firebase.js'
 
+//https://note.com/aliz/n/nacc97fe7d019参照
 export default {
  data () {
    return {
