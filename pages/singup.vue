@@ -4,9 +4,9 @@
         <h2 class="text-2xl my-10 border-b-2 border-green-300 w-10/12  pt-6 pb-3 pl-3 m-auto text-left">Sing up</h2>
         <form @submit.prevent class="" novalidate>                                                        <!--👇入力中はエラーメッセージを非表示にしている--->
             <input type=”email” name=”email”  required="required" placeholder="E-mail" v-model="user.email" @input="isInput" class="border-2 h-12 w-10/12 mb-5 autofocus"> 
-            <p class="text-red-400">{{ user.emailErrorMassage }}</p>
+            <p class="text-red-400">{{ emailErrorMassage }}</p>
             <input type=”password” name=”passWord” required="required" placeholder="PassWord" v-model="user.password" @input="isInput" class="border-2 h-12 w-10/12 mb-5">
-            <p class="text-red-400">{{ user.passwordErrorMassage }}</p>
+            <p class="text-red-400">{{ passwordErrorMassage }}</p>
             <div>
                 <button @click="register" class="h-12 w-10/12 my-4 bg-green-300 ">登録</button>
             </div>
@@ -33,11 +33,11 @@ computed: {
        user:{
           email: "",
           password: "",
-          emailErrorMassage: "",
-          passwordErrorMassage: "",
+        },
+          emailErrorMassage: '',
+          passwordErrorMassage: '',
           emailRegexp: /^[a-z\d][\w.-]*@[\w.-]+\.[a-z\d]+$/i,
           passwordRegexp: /^(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,20}$/i
-        }
    };
  },
  methods: {
@@ -51,11 +51,11 @@ computed: {
            this.passwordErrorMassage = "このパスワードは無効です。半角英数字を含んで8-20文字の範囲内で入力してください。"
        }
        //emailの入力欄に何も入力されていなかったら53行目が発火する
-       if(this.email === ""){
+       if(this.user.email === ""){
            this.emailErrorMassage = "メールアドレスを入力してください";
        }
        //passwordの入力欄に何も入力されていなかったら57行目が発火する
-       if(this.password === ""){
+       if(this.user.password === ""){
            this.passwordErrorMassage = "パスワードを入力してください";
        }
        //emailErrorMassage または passwordErrorMassage に何か当てはまっている時処理を返す
@@ -63,8 +63,8 @@ computed: {
            return;
        }
        //正常に登録できた時の処理
-       this.$auth.createUserWithEmailAndPassword(this.usersemail,this.user.password)
-       .then(users => {
+       this.$auth.createUserWithEmailAndPassword(this.user.email,this.user.password)
+       .then(user => {
            alert("登録しました");
            this.$store.dispatch("confirmLogin");
            this.$router.push("/home");
@@ -87,8 +87,8 @@ computed: {
     },
     //👇入力中はエラーメッセージを非表示にしている
     isInput(){
-        this.emailErrorMassage = "";
-        this.passwordErrorMassage = "";
+        this.emailErrorMassage = '';
+        this.passwordErrorMassage = '';
     }
  }
 };

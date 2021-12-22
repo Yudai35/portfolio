@@ -25,5 +25,20 @@
 
 <script>
 export default {
-}
+  methods:{
+    singOut(){
+      this.$auth
+      .singOut()
+      .then(() => {
+        alert("ログアウトに成功しました");
+        this.$store.commit("singOut");
+        this.$router.push("/");
+      })
+      .catch(error => {
+        console.log(error);
+        alert("ログアウトに失敗しました");
+      });
+    }
+  }
+};
 </script>
