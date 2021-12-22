@@ -24,11 +24,11 @@
 
 <script>
 export default {
-    computed: {
-        users(){
-            return this.$store.getterts["users"];
-        }
-    },
+    // computed: {
+    //     user(){
+    //         return this.$store.getterts["user"];
+    //     }
+    // },
      data () {
    return {
        user:{
@@ -41,10 +41,10 @@ export default {
     },
     methods:{
         login(){
-            if(this.email === ""){
-                this.emailErrprMassage = "メールアドレスを入力してください";
+            if(this.user.email === ""){
+                this.emailErrorMassage = "メールアドレスを入力してください";
             }
-            if(this.password === ""){
+            if(this.user.password === ""){
                 this.passwordErrorMassage = "パスワードを入力してください";
             }
             if(this.emailErrormassage !== "" || this.passwordErrorMassage !== ""){

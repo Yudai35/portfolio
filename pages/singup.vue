@@ -23,31 +23,32 @@
 
 //https://note.com/aliz/n/nacc97fe7d019参照
 export default {
-computed: {
-    users(){
-        return this.$store.getters["users"];
-    }
-},
- data () {
-   return {
-       user:{
-          email: "",
-          password: "",
+// computed: {
+//     user(){
+//         return this.$store.getters["user"];
+//     }
+// },
+data () {
+    return {
+        user:{
+            email: "",
+            password: "",
         },
-          emailErrorMassage: '',
-          passwordErrorMassage: '',
-          emailRegexp: /^[a-z\d][\w.-]*@[\w.-]+\.[a-z\d]+$/i,
-          passwordRegexp: /^(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,20}$/i
+        emailErrorMassage: '',
+        passwordErrorMassage: '',
+        emailRegexp: /^[a-z\d][\w.-]*@[\w.-]+\.[a-z\d]+$/i,
+        passwordRegexp: /^(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,20}$/i
    };
  },
- methods: {
-   register () {
+
+methods: {
+    register () {
        //emailにemailRegexpの正規表現の形ではないメールアドレスが入力されたら45行目が発火する
-       if(!this.emailRegexp.test(this.email)){
+       if(!this.emailRegexp.test(this.user.email)){
            this.emailErrorMassage = "このメールアドレスは無効です。正しく入力してください";
        }
        //passwordにpasswordRegexpの正規表現の形だはないパスワードが入力されたら49行目が発火する
-       if(!this.passwordRegexp.test(this.passowrd)){
+       if(!this.passwordRegexp.test(this.user.password)){
            this.passwordErrorMassage = "このパスワードは無効です。半角英数字を含んで8-20文字の範囲内で入力してください。"
        }
        //emailの入力欄に何も入力されていなかったら53行目が発火する
@@ -67,7 +68,7 @@ computed: {
        .then(user => {
            alert("登録しました");
            this.$store.dispatch("confirmLogin");
-           this.$router.push("/home");
+           this.$router.push("/top");
        })
        //エラーが起きたときの処理
        .catch(error =>{
