@@ -9,28 +9,33 @@
           <p class="text-4xl">NewSelfの機能</p>
           </h1>
         <div class="pt-12 flex ">
-          <div class="flex-1  text-center w-1/3 mx-8">
-            <div class="border-4 border-green-200 rounded-full">
-              <p class=" py-2 text-lg">診断</p>
-            </div>
+          <div class="flex-1  text-center w-1/3 mx-8 ">
+            <a href="/diagnose">
+              <div class="border-4 border-green-200 rounded-full hover:cursor-pointer">
+                <p class=" py-2 text-lg">診断</p>
+              </div>
+            </a>
             <p class="my-6">さぁ、あなたの人生を変える本と出会いましょう。</p>
           </div>
           <div class="flex-1  text-center w-1/3 mx-8">
-            <div class="border-4 border-green-200 rounded-full">
-              <p class="py-2 text-lg">メモ</p>
-            </div>
+            <a href="/record">
+              <div class="border-4 border-green-200 rounded-full hover:cursor-pointer">
+                <p class="py-2 text-lg">メモ</p>
+              </div>
+            </a>
             <p class="my-6">読んだ本をの勉強になった部分等をここにアウトプットしましょう。</p>
           </div>
           <div class="flex-1  text-center w-1/3 mx-8">
-            <div class="border-4 border-green-200 rounded-full">
-             <p class=" py-2 text-lg ">メモ一覧</p>
-            </div>
-            <p class="my-6">アウトプットした内容を後から見返し、行動に落とし込んでいきましょう。</p>
-          </div>
+            <a href="/recordlist">
+              <div class="border-4 border-green-200 rounded-full hover:cursor-pointer">
+              <p class=" py-2 text-lg ">メモ一覧</p>
+              </div>
+            </a>
+          <p class="my-6">アウトプットした内容を後から見返し、行動に落とし込んでいきましょう。</p>
         </div>
       </div>
-
     </div>
+  </div>
   </section>
 </template>
 

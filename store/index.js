@@ -10,11 +10,11 @@ export const state = () => ({
     }
 });
 
-export const getters = {
-    user: state => {
-        return state.user;
-    }
-};
+// export const getters = {
+//     user: state => {
+//         return state.user;
+//     }
+// };
 
 export const actions = {
     confirmLogin({ commit }) {

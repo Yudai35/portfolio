@@ -1,20 +1,17 @@
 <template>
 <!-- 新規登録 -->
-    <div class="text-center px-2 pb-4 my-40 max-w-xl m-auto bg-gray-200 font-serif">
+    <div class="text-center px-2 pb-4 my-24 max-w-xl m-auto bg-gray-200 font-serif">
         <h2 class="text-2xl my-10 border-b-2 border-green-300 w-10/12  pt-6 pb-3 pl-3 m-auto text-left">Sing up</h2>
         <form @submit.prevent class="" novalidate>                                                        <!--👇入力中はエラーメッセージを非表示にしている--->
             <input type=”email” name=”email”  required="required" placeholder="E-mail" v-model="user.email" @input="isInput" class="border-2 h-12 w-10/12 mb-5 autofocus"> 
             <p class="text-red-400">{{ emailErrorMassage }}</p>
             <input type=”password” name=”passWord” required="required" placeholder="PassWord" v-model="user.password" @input="isInput" class="border-2 h-12 w-10/12 mb-5">
             <p class="text-red-400">{{ passwordErrorMassage }}</p>
-            <div>
-                <button @click="register" class="h-12 w-10/12 my-4 bg-green-300 ">登録</button>
-            </div>
+            <button @click="register" class="h-12 w-10/12 my-4 bg-green-300 ">登録</button>
+            <button @click="googleLogin" class="h-12 w-10/12 my-4 bg-green-300 ">Googleで登録</button>
         </form>
-        <div class=" tracking-widest items-center">
-            <div class="py-3">
-                <a href="" class="h-12 my-4  text-blue-500">登録済みの方</a>
-            </div>
+        <div class=" tracking-widest items-center my-4">
+            <a href="/login" class="h-12 text-blue-500">登録済みの方</a>
         </div>
     </div>
 </template>
@@ -42,6 +39,18 @@ data () {
  },
 
 methods: {
+    googleLogin(){
+        this.$auth.signInWithPopup(new this.$firebase.auth.GoogleAuthProvider())
+        .then(() => {
+            alert("登録に成功しました");
+            this.$store.dispatch("confirmLogin");
+            this.$router.push("/top");
+        })
+        .catch((error) => {
+            console.log(error);
+            alert("エラーが発生いたしました。再度入力をお願いします");
+        });
+    },
     register () {
        //emailにemailRegexpの正規表現の形ではないメールアドレスが入力されたら45行目が発火する
        if(!this.emailRegexp.test(this.user.email)){

@@ -1,23 +1,17 @@
 <template>
 <!-- ログインページ -->
-    <div class="text-center px-2 pb-4 my-40 max-w-xl m-auto bg-gray-200 font-serif">
+    <div class="text-center px-2 pb-4 my-24 max-w-xl m-auto bg-gray-200 font-serif">
         <h2 class="text-2xl my-10 border-b-2 border-green-300 w-10/12  pt-6 pb-3 pl-3 m-auto text-left">Login</h2>
         <form @submit.prevent class="" novalidate>
             <input type=”email” name=”email”  required="required" placeholder="E-mail" v-model="user.email" @input="isInput" class="border-2 h-12 w-10/12 mb-5">
             <p class="text-red-400">{{ emailErrorMassage }}</p>
             <input type=”password” name=”password” placeholder="password" v-model="user.password" @input="isInput" class="border-2 h-12 w-10/12 mb-5">
             <p class="text-red-400">{{ passwordErrorMassage }}</p>
-            <div>
-                <button @click="login" value="ログイン" class="h-12 w-10/12 my-4 bg-green-300 text-center ">ログイン</button>     
-            </div>
+            <button @click="login" value="ログイン" class="h-12 w-10/12 my-4 bg-green-300 text-center ">ログイン</button>     
+            <button @click="googleLogin" class="h-12 w-10/12 my-4 bg-green-300 ">Googleでログイン</button>
         </form>
-        <div class="flex justify-center tracking-widest items-center">
-            <div class="">
-                <a href="" class="h-12 my-4  mr-5 text-blue-500">ユーザー登録お済みでない方</a>
-            </div>
-            <div>
-                <button class="bg-green-300 h-12 my-4 w-40 ml-5 ">ゲストログイン</button>
-            </div>
+        <div class="tracking-widest items-center my-4">
+            <a href="/singup" class="h-12 text-blue-500">ユーザー登録お済みでない方</a>
         </div>
     </div>
 </template>
@@ -40,6 +34,18 @@ export default {
       }
     },
     methods:{
+        googleLogin(){
+            this.$auth.signInWithPopup(new this.$firebase.auth.GoogleAuthProvider())
+            .then(() => {
+                alert("登録に成功しました");
+                this.$store.dispatch("confirmLogin");
+                this.$router.push("/top");
+            })
+            .catch((error) => {
+                console.log(error);
+                alert("エラーが発生いたしました。再度入力をお願いします");
+            });
+        },
         login(){
             if(this.user.email === ""){
                 this.emailErrorMassage = "メールアドレスを入力してください";
@@ -47,7 +53,7 @@ export default {
             if(this.user.password === ""){
                 this.passwordErrorMassage = "パスワードを入力してください";
             }
-            if(this.emailErrormassage !== "" || this.passwordErrorMassage !== ""){
+            if(this.emailErrorMassage !== "" || this.passwordErrorMassage !== ""){
                 return;
             }
             this.$auth
@@ -55,7 +61,7 @@ export default {
             .then((user) =>{
                 alert("ログイン成功しました！");
                 this.$store.dispatch("confirmLogin");
-                this.$router.push("/home");
+                this.$router.push("/top");
             })
             .catch(error =>{
                 console.log(error);
