@@ -1,11 +1,9 @@
 <template>
-<div>
-     <TopHeader/>
-     <nuxt/>
-     <Footer/>
-
-</div>
-   
+  <div>
+    <TopHeader />
+    <nuxt />
+    <Footer />
+  </div>
 </template>
 
 
@@ -14,11 +12,10 @@
 // import Footer from '~/components/Footer.vue'
 
 export default {
-     nema: 'default',
+  nema: "default",
   // components: {
   //   TopHeader,
   //   Footer
   // }
-}
-
+};
 </script>

@@ -17,7 +17,7 @@ firebase.initializeApp(firebaseConfig);
 //initializeAppはfirebaseへの初期設定
 
 export default function (app, inject) {
-    
-  inject('firebase', firebase) 
+
+  inject('firebase', firebase)
   inject('auth', firebase.auth())
 }

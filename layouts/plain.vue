@@ -1,14 +1,11 @@
 <template>
-<div>
-     
-     <nuxt/>
-
-</div>
-   
+  <div>
+    <nuxt />
+  </div>
 </template>
 
 <script>
 export default {
-    layout: 'plain',
-}
+  layout: "plain",
+};
 </script>

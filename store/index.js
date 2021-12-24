@@ -4,8 +4,8 @@
 
 export const state = () => ({
     user: {
-        email:"",
-        password:"",
+        email: "",
+        password: "",
         login: false
     }
 });
@@ -18,11 +18,11 @@ export const state = () => ({
 
 export const actions = {
     confirmLogin({ commit }) {
-        this.$auth.onAuthStateChanged(function(user){
-            if(user) {
-                commit("getData",{email: user.email,password: user.password});
+        this.$auth.onAuthStateChanged(function (user) {
+            if (user) {
+                commit("getData", { email: user.email, password: user.password });
                 commit("yesLogin");
-            }else{
+            } else {
                 commit("noLogin");
             }
         });
@@ -31,7 +31,7 @@ export const actions = {
 
 
 export const mutations = {
-    getData(state,payload){
+    getData(state, payload) {
         state.user.email = payload.email;
         state.user.password = payload.password;
     },
