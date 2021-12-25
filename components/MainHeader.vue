@@ -34,7 +34,7 @@ export default {
         .then(() => {
           alert("ログアウトに成功しました");
           this.$store.commit("singOut");
-          this.$router.push("/");
+          this.$router.push("/index");
         })
         .catch((error) => {
           console.log(error);

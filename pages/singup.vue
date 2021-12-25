@@ -84,7 +84,9 @@ export default {
         })
         .catch((error) => {
           console.log(error);
-          alert("エラーが発生いたしました。再度入力をお願いします");
+          alert(
+            "エラーが発生いたしました。間違い等がないか確認をし再度実施をお願いします"
+          );
         });
     },
     register() {

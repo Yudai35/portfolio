@@ -79,13 +79,15 @@ export default {
       this.$auth
         .signInWithPopup(new this.$firebase.auth.GoogleAuthProvider())
         .then(() => {
-          alert("登録に成功しました");
+          alert("ログインに成功しました");
           this.$store.dispatch("confirmLogin");
           this.$router.push("/top");
         })
         .catch((error) => {
           console.log(error);
-          alert("エラーが発生いたしました。再度入力をお願いします");
+          alert(
+            "エラーが発生いたしました。間違い等がないか確認をし再度実施をお願いします"
+          );
         });
     },
     login() {
