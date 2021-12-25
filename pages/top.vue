@@ -10,7 +10,7 @@
         </h1>
         <div class="pt-12 flex">
           <div class="flex-1 text-center w-1/3 mx-8">
-            <a href="/diagnose">
+            <nuxt-link to="/diagnose">
               <div
                 class="
                   border-4 border-green-200
@@ -20,11 +20,11 @@
               >
                 <p class="py-2 text-lg">診断</p>
               </div>
-            </a>
+            </nuxt-link>
             <p class="my-6">さぁ、あなたの人生を変える本と出会いましょう。</p>
           </div>
           <div class="flex-1 text-center w-1/3 mx-8">
-            <a href="/record">
+            <nuxt-link to="/record">
               <div
                 class="
                   border-4 border-green-200
@@ -34,13 +34,13 @@
               >
                 <p class="py-2 text-lg">メモ</p>
               </div>
-            </a>
+            </nuxt-link>
             <p class="my-6">
               読んだ本をの勉強になった部分等をここにアウトプットしましょう。
             </p>
           </div>
           <div class="flex-1 text-center w-1/3 mx-8">
-            <a href="/recordlist">
+            <nuxt-link to="/recordlist">
               <div
                 class="
                   border-4 border-green-200
@@ -50,7 +50,7 @@
               >
                 <p class="py-2 text-lg">メモ一覧</p>
               </div>
-            </a>
+            </nuxt-link>
             <p class="my-6">
               アウトプットした内容を後から見返し、行動に落とし込んでいきましょう。
             </p>
