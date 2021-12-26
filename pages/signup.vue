@@ -16,7 +16,7 @@
         text-left
       "
     >
-      Sing up
+      Sign up
     </h2>
     <form @submit.prevent class="" novalidate>
       <!--👇入力中はエラーメッセージを非表示にしている--->
@@ -34,7 +34,7 @@
         type="”password”"
         name="”passWord”"
         required="required"
-        placeholder="PassWord"
+        placeholder="Password"
         v-model="user.password"
         @input="isInput"
         class="border-2 h-12 w-10/12 mb-5"
@@ -48,7 +48,9 @@
       </button>
     </form>
     <div class="tracking-widest items-center my-4">
-      <a href="/login" class="h-12 text-blue-500">登録済みの方</a>
+      <nuxt-link to="login">
+        <a class="h-12 text-blue-500">登録済みの方</a>
+      </nuxt-link>
     </div>
   </div>
 </template>

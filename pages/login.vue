@@ -32,7 +32,7 @@
       <input
         type="”password”"
         name="”password”"
-        placeholder="password"
+        placeholder="Password"
         v-model="user.password"
         @input="isInput"
         class="border-2 h-12 w-10/12 mb-5"
@@ -50,9 +50,9 @@
       </button>
     </form>
     <div class="tracking-widest items-center my-4">
-      <a href="/singup" class="h-12 text-blue-500"
-        >ユーザー登録お済みでない方</a
-      >
+      <nuxt-link to="signup">
+        <a class="h-12 text-blue-500">ユーザー登録お済みでない方</a>
+      </nuxt-link>
     </div>
   </div>
 </template>
