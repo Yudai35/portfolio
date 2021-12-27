@@ -10,23 +10,26 @@
         <h2 class="text-4xl my-5">タイトル：{{ book.title }}</h2>
         <p class="my-7 text-3xl">著者：{{ book.author }}</p>
         <p class="text-xl tracking-wider leading-9">{{ book.description }}</p>
-        <button
-          class="
-            border-2 border-blue-600
-            rounded-full
-            h-14
-            w-64
-            items-center
-            flex
-            justify-center
-            m-auto
-            my-8
-            hover:bg-blue-200
-            duration-1000
-          "
-        >
-          Twitterで宣言する！
-        </button>
+        <div class="twitter_share">
+          <button
+            @click="twitterShare"
+            class="
+              border-2 border-blue-600
+              rounded-full
+              h-14
+              w-64
+              items-center
+              flex
+              justify-center
+              m-auto
+              my-8
+              hover:bg-blue-200
+              duration-1000
+            "
+          >
+            Twitterで宣言する！
+          </button>
+        </div>
       </div>
     </div>
     <!-- <p>〜似たような本、同著者等の出版本を外部APIで所得し表示させる〜</p> -->
@@ -95,6 +98,18 @@ export default {
     return {
       book: "",
     };
+  },
+  methods: {
+    twitterShare() {
+      //シェアする画面を設定
+      var shareURL =
+        "https://twitter.com/intent/tweet?text=" +
+        "◯月◯日までに（診断結果で出た本）を読み、感想をツイートします！" +
+        "%20%23NewSelf" +
+        "%20%23書籍診断"; // +'&url= + "アプリのURL or 診断結果のURL"
+      //シェアようの画面へ移行
+      location.href = shareURL;
+    },
   },
 };
 </script>

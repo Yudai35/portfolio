@@ -22,8 +22,8 @@
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/inquiry">
-          <a class="pr-8 hover:opacity-50 duration-1000">お問い合わせ</a>
+        <nuxt-link to="/result">
+          <a class="pr-8 hover:opacity-50 duration-1000">診断結果</a>
         </nuxt-link>
       </li>
       <li>

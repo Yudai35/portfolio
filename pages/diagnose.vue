@@ -318,19 +318,21 @@
     </div>
 
     <div class="bg-white py-20" v-if="showQuestion">
-      <button
-        class="
-          text-2xl
-          border-4 border-green-200
-          rounded-full
-          py-4
-          px-20
-          hover:bg-green-100
-          duration-1000
-        "
-      >
-        診断結果を見る
-      </button>
+      <nuxt-link to="result?id=j2cdp52lmp">
+        <button
+          class="
+            text-2xl
+            border-4 border-green-200
+            rounded-full
+            py-4
+            px-20
+            hover:bg-green-100
+            duration-1000
+          "
+        >
+          診断結果を見る
+        </button>
+      </nuxt-link>
     </div>
   </div>
 </template>
