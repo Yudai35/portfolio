@@ -318,6 +318,24 @@
     </div>
 
     <div class="bg-white py-20" v-if="showQuestion">
+      <nuxt-link to="/result?id=${randomId}">
+        <button
+          class="
+            text-2xl
+            border-4 border-green-200
+            rounded-full
+            py-4
+            px-20
+            hover:bg-green-100
+            duration-1000
+          "
+        >
+          診断結果へ
+        </button>
+      </nuxt-link>
+    </div>
+
+    <div class="bg-white py-20" v-if="showQuestion">
       <nuxt-link to="result?id=j2cdp52lmp">
         <button
           class="
@@ -330,7 +348,7 @@
             duration-1000
           "
         >
-          診断結果を見る
+          診断結果へ2
         </button>
       </nuxt-link>
     </div>
@@ -340,9 +358,11 @@
 <script>
 export default {
   layout: "oftenuse",
-  data() {
+  data: function () {
     return {
       showQuestion: false,
+      ids: [],
+      randomId: "",
       answers: {
         q1: null,
         q2: null,
@@ -350,7 +370,21 @@ export default {
         q4: null,
         q5: null,
       },
+      ResultDisplay: "",
     };
+  },
+  asyncData: async function ({ $microcms }) {
+    const book = await $microcms.get({
+      endpoint: "books",
+    });
+    const contents = book.contents;
+    const ids = contents.map((e) => {
+      return e.id;
+    });
+    return { ids };
+  },
+  mounted: async function () {
+    this.randomId = this.ids[Math.floor(Math.random() * this.ids.length)];
   },
   methods: {
     openQuestion() {
@@ -358,6 +392,10 @@ export default {
     },
     answer(questionNumber, bool) {
       this.answers[questionNumber] = bool;
+    },
+    trues() {
+      if (q1 === true) {
+      }
     },
   },
 };

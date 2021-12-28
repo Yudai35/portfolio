@@ -106,7 +106,9 @@ export default {
         "https://twitter.com/intent/tweet?text=" +
         "◯月◯日までに（診断結果で出た本）を読み、感想をツイートします！" +
         "%20%23NewSelf" +
-        "%20%23書籍診断"; // +'&url= + "アプリのURL or 診断結果のURL"
+        "%20%23書籍診断アプリ" +
+        "&url=" +
+        "https://www.google.com/?hl=ja";
       //シェアようの画面へ移行
       location.href = shareURL;
     },
