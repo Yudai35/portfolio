@@ -1,5 +1,7 @@
 <template>
   <!-- メモ一覧ページ -->
+  <!-- 未レスポンシブ -->
+
   <div class="font-serif m-40">
     <div class="flex justify-center">
       <div class="border-4 rounded-md w-80 h-64 mx-10">

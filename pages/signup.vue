@@ -1,56 +1,100 @@
 <template>
   <!-- 新規登録 -->
-  <div
-    class="text-center px-2 pb-4 my-24 max-w-xl m-auto bg-gray-200 font-serif"
-  >
-    <h2
+  <!-- 未レスポンシブ -->
+  <div class="bg-gray-100 md: py-20">
+    <div
       class="
-        text-2xl
-        my-10
-        border-b-2 border-green-300
-        w-10/12
-        pt-6
-        pb-3
-        pl-3
+        w-xl
+        py-5
+        my-12
+        text-center
+        px-8
+        md:text-center
+        px-2
+        pb-4
+        my-24
+        max-w-3xl
         m-auto
-        text-left
+        bg-white
+        font-serif
       "
     >
-      Sign up
-    </h2>
-    <form @submit.prevent class="" novalidate>
-      <!--👇入力中はエラーメッセージを非表示にしている--->
-      <input
-        type="”email”"
-        name="”email”"
-        required="required"
-        placeholder="E-mail"
-        v-model="user.email"
-        @input="isInput"
-        class="border-2 h-12 w-10/12 mb-5 autofocus"
-      />
-      <p class="text-red-400">{{ emailErrorMassage }}</p>
-      <input
-        type="”password”"
-        name="”passWord”"
-        required="required"
-        placeholder="Password"
-        v-model="user.password"
-        @input="isInput"
-        class="border-2 h-12 w-10/12 mb-5"
-      />
-      <p class="text-red-400">{{ passwordErrorMassage }}</p>
-      <button @click="register" class="h-12 w-10/12 my-4 bg-green-300">
-        登録
-      </button>
-      <button @click="googleLogin" class="h-12 w-10/12 my-4 bg-green-300">
-        Googleで登録
-      </button>
-    </form>
-    <div class="tracking-widest items-center my-4">
-      <nuxt-link to="login">
-        <a class="h-12 text-blue-500">登録済みの方</a>
-      </nuxt-link>
+      <h2
+        class="
+          text-3xl
+          my-4
+          border-b-2 border-green-300
+          w-10/12
+          pb-3
+          pl-2
+          m-auto
+          text-left
+        "
+      >
+        Sign up
+      </h2>
+      <form @submit.prevent class="" novalidate>
+        <!--👇入力中はエラーメッセージを非表示にしている--->
+        <input
+          type="”email”"
+          name="”email”"
+          required="required"
+          placeholder="E-mail"
+          v-model="user.email"
+          @input="isInput"
+          class="
+            text-base
+            h-12
+            my-3
+            md:text-xl
+            border-2
+            h-14
+            w-10/12
+            my-6
+            autofocus
+          "
+        />
+        <p class="text-red-400">{{ emailErrorMassage }}</p>
+        <input
+          type="”password”"
+          name="”passWord”"
+          required="required"
+          placeholder="Password"
+          v-model="user.password"
+          @input="isInput"
+          class="text-base h-12 my-3 md:text-xl border-2 h-14 w-10/12 my-4"
+        />
+        <p class="text-red-400">{{ passwordErrorMassage }}</p>
+        <button
+          @click="register"
+          class="
+            text-base
+            h-12
+            my-3
+            md:text-xl
+            h-14
+            w-10/12
+            my-6
+            bg-green-300
+            text-center
+          "
+        >
+          登録
+        </button>
+        <button
+          @click="googleLogin"
+          class="text-base h-12 my-3 md:text-xl h-14 w-10/12 my-6 bg-green-300"
+        >
+          Googleで登録
+        </button>
+      </form>
+      <div class="mt-6 mb-4 md:tracking-widest items-center mt-8 mb-4">
+        <nuxt-link to="login">
+          <a class="text-base text-center md:text-xl text-blue-500"
+            >登録済みの方</a
+          >
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>

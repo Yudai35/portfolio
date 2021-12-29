@@ -1,5 +1,7 @@
 <template>
   <!-- 診断結果表示ページ -->
+  <!-- 未レスポンシブ -->
+
   <div class="font-serif py-28">
     <h2 class="text-center text-5xl pb-20">あなたへのおすすめの書籍は・・・</h2>
     <div class="flex justify-center">

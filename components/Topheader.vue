@@ -5,15 +5,44 @@
     <h1>
       <a class="text-4xl hover:opacity-50 duration-1000">NewSelf</a>
     </h1>
-    <ul class="flex justify-between items-center opacity-100 text-xl">
+    <div class="visible md:invisible flex justify-end items-center">
+      <button @click="isOpen = !isOpen" class="relative md:hidden h-5 w-6">
+        <span
+          :class="
+            isOpen
+              ? 'transform rotate-45 top-2 w-7 transition duration-300'
+              : 'top-0 w-6'
+          "
+          class="h-1 inline-block transition-all absolute right-0 bg-black"
+        ></span>
+        <span
+          :class="isOpen ? 'hidden' : 'top-2 w-6'"
+          class="h-1 inline-block transition-all absolute right-0 bg-black"
+        ></span>
+        <span
+          :class="
+            isOpen
+              ? 'transform -rotate-45 top-2 w-7 transition duration-300'
+              : 'top-4 w-6'
+          "
+          class="h-1 inline-block transition-all absolute right-0 bg-black"
+        ></span>
+      </button>
+    </div>
+
+    <ul class="hidden md:flex justify-end items-center opacity-100 text-xl">
       <li>
         <nuxt-link to="login">
-          <a class="pr-6 hover:opacity-50 duration-1000">ログイン</a>
+          <a class="invisible md:visible pr-6 hover:opacity-50 duration-1000"
+            >ログイン</a
+          >
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="signup">
-          <a class="pr-6 hover:opacity-50 duration-1000">新規登録</a>
+          <a class="invisible md:visible pr-6 hover:opacity-50 duration-1000"
+            >新規登録</a
+          >
         </nuxt-link>
       </li>
     </ul>
@@ -21,5 +50,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
+};
 </script>

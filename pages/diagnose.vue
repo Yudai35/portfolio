@@ -1,5 +1,7 @@
 <template>
   <!-- 診断ページ -->
+  <!-- 未レスポンシブ -->
+
   <div class="font-serif text-center">
     <img src="~/assets/AdobeStock_229144311.jpeg" />
     <div class="py-28">
@@ -317,7 +319,7 @@
       </div>
     </div>
 
-    <div class="bg-white py-20" v-if="showQuestion">
+    <!-- <div class="bg-white py-20" v-if="showQuestion">
       <nuxt-link to="/result?id=${randomId}">
         <button
           class="
@@ -333,7 +335,7 @@
           診断結果へ
         </button>
       </nuxt-link>
-    </div>
+    </div> -->
 
     <div class="bg-white py-20" v-if="showQuestion">
       <nuxt-link to="result?id=j2cdp52lmp">
@@ -348,7 +350,7 @@
             duration-1000
           "
         >
-          診断結果へ2
+          診断結果へ
         </button>
       </nuxt-link>
     </div>
@@ -361,8 +363,8 @@ export default {
   data: function () {
     return {
       showQuestion: false,
-      ids: [],
-      randomId: "",
+      // ids: [],
+      // randomId: "",
       answers: {
         q1: null,
         q2: null,
@@ -370,32 +372,27 @@ export default {
         q4: null,
         q5: null,
       },
-      ResultDisplay: "",
     };
   },
-  asyncData: async function ({ $microcms }) {
-    const book = await $microcms.get({
-      endpoint: "books",
-    });
-    const contents = book.contents;
-    const ids = contents.map((e) => {
-      return e.id;
-    });
-    return { ids };
-  },
-  mounted: async function () {
-    this.randomId = this.ids[Math.floor(Math.random() * this.ids.length)];
-  },
+  // asyncData: async function ({ $microcms }) {
+  //   const book = await $microcms.get({
+  //     endpoint: "books",
+  //   });
+  //   const contents = book.contents;
+  //   const ids = contents.map((e) => {
+  //     return e.id;
+  //   });
+  //   return { ids };
+  // },
+  // mounted: async function () {
+  //   this.randomId = this.ids[Math.floor(Math.random() * this.ids.length)];
+  // },
   methods: {
     openQuestion() {
       this.showQuestion = true;
     },
     answer(questionNumber, bool) {
       this.answers[questionNumber] = bool;
-    },
-    trues() {
-      if (q1 === true) {
-      }
     },
   },
 };

@@ -1,5 +1,7 @@
 <template>
   <!-- メモ記録ページ -->
+  <!-- 未レスポンシブ -->
+
   <div class="font-serif">
     <div class="mt-32 mb-24 flex justify-center items-center">
       <p class="text-2xl">書籍名：</p>

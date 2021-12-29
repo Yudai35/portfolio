@@ -1,5 +1,7 @@
 <template>
   <!-- お問い合わせページ -->
+  <!-- 未レスポンシブ -->
+
   <div
     class="text-center px-2 pb-4 my-36 max-w-xl m-auto bg-gray-200 font-serif"
   >
