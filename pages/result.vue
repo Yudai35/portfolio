@@ -104,9 +104,11 @@ export default {
   methods: {
     twitterShare() {
       //シェアする画面を設定
+      const title = "タイトル" //ここが診断結果によって変わるようにする
+      const date = new Date()
       var shareURL =
         "https://twitter.com/intent/tweet?text=" +
-        "◯月◯日までに（診断結果で出た本）を読み、感想をツイートします！" +
+        `◯月◯日までに${title}を読み、感想をツイートします！` +
         "%20%23NewSelf" +
         "%20%23書籍診断アプリ" +
         "&url=" +

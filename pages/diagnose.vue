@@ -338,21 +338,22 @@
     </div> -->
 
     <div class="bg-white py-20" v-if="showQuestion">
-      <nuxt-link to="result?id=j2cdp52lmp">
-        <button
-          class="
-            text-2xl
-            border-4 border-green-200
-            rounded-full
-            py-4
-            px-20
-            hover:bg-green-100
-            duration-1000
-          "
-        >
-          診断結果へ
-        </button>
-      </nuxt-link>
+      <!-- <nuxt-link to="result?id=j2cdp52lmp"> -->
+      <button
+        class="
+          text-2xl
+          border-4 border-green-200
+          rounded-full
+          py-4
+          px-20
+          hover:bg-green-100
+          duration-1000
+        "
+        @click="diagnose"
+      >
+        診断結果へ
+      </button>
+      <!-- </nuxt-link> -->
     </div>
   </div>
 </template>
@@ -374,16 +375,13 @@ export default {
       },
     };
   },
-  // asyncData: async function ({ $microcms }) {
-  //   const book = await $microcms.get({
-  //     endpoint: "books",
-  //   });
-  //   const contents = book.contents;
-  //   const ids = contents.map((e) => {
-  //     return e.id;
-  //   });
-  //   return { ids };
-  // },
+  asyncData: async function ({ $microcms }) {
+    // const contents = book.contents;
+    // const ids = contents.map((e) => {
+    //   return e.id;
+    // });
+    // return { ids };
+  },
   // mounted: async function () {
   //   this.randomId = this.ids[Math.floor(Math.random() * this.ids.length)];
   // },
@@ -393,6 +391,56 @@ export default {
     },
     answer(questionNumber, bool) {
       this.answers[questionNumber] = bool;
+    },
+    async diagnose() {
+      //ユーザーの選択に応じて診断結果をmicroCMSから取得する
+      let filters = "";
+
+      if (this.answers.q1 === true) {
+        filters += "question1[equals]true";
+      }
+      if (this.answers.q2 === true) {
+        if (filters != "") {
+          filters += "[or]";
+        }
+        filters += "question2[equals]true";
+      }
+      if (this.answers.q3 === true) {
+        if (filters != "") {
+          filters += "[or]";
+        }
+        filters += "question3[equals]true";
+      }
+      if (this.answers.q4 === true) {
+        if (filters != "") {
+          filters += "[or]";
+        }
+        filters += "question4[equals]true";
+      }
+      if (this.answers.q5 === true) {
+        if (filters != "") {
+          filters += "[or]";
+        }
+        filters += "question5[equals]true";
+      }
+
+      const book = await this.$microcms.get({
+        endpoint: "books",
+        queries: {
+          filters: filters,
+        },
+      });
+
+      console.log({ book });
+      //このあと、受け取った本のデータからランダムで１冊選ぶ
+      const contents = book.contents //本の情報の配列
+
+      //本の配列から、ランダムに１冊を選ぶ
+      //ランダムに選んだ１冊から、その本のIDを取り出す
+      //その本のidを/result.vueのidにパラメータとして付けて、resultページに飛ぶ
+      // const id = xxxxxxxx ←この部分をなんとかして作る
+      // this.$router.push(`/reslut?id=${id}`)
+    
     },
   },
 };
