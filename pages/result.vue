@@ -9,8 +9,8 @@
         <img :src="book.image.url" class="w-80" />
       </div>
       <div class="w-2/5">
-        <h2 class="text-4xl my-5">タイトル：{{ book.title }}</h2>
-        <p class="my-7 text-3xl">著者：{{ book.author }}</p>
+        <h2 class="text-4xl my-5">タイトル:{{ book.title }}</h2>
+        <p class="my-7 text-3xl">著者:{{ book.author }}</p>
         <p class="text-xl tracking-wider leading-9">{{ book.description }}</p>
         <div class="twitter_share">
           <button
