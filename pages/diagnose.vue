@@ -338,22 +338,22 @@
     </div> -->
 
     <div class="bg-white py-20" v-if="showQuestion">
-      <!-- <nuxt-link to="result?id=j2cdp52lmp"> -->
-      <button
-        @click="diagnose"
-        class="
-          text-2xl
-          border-4 border-green-200
-          rounded-full
-          py-4
-          px-20
-          hover:bg-green-100
-          duration-1000
-        "
-      >
-        診断結果へ
-      </button>
-      <!-- </nuxt-link> -->
+      <nuxt-link to="result?id=7o9jnf3vpq">
+        <button
+          @click="diagnose"
+          class="
+            text-2xl
+            border-4 border-green-200
+            rounded-full
+            py-4
+            px-20
+            hover:bg-green-100
+            duration-1000
+          "
+        >
+          診断結果へ
+        </button>
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -395,10 +395,14 @@ export default {
     async diagnose() {
       //ユーザーの選択に応じて診断結果をmicroCMSから取得する
       let filters = "";
+      //もしQ1がtrueだった時変数filtersに"question1[equals]true"を代入する
+      //"question1[equals]true"はjavascriptの書き方で固定されている。
       if (this.answers.q1 === true) {
         filters += "question1[equals]true";
       }
       if (this.answers.q2 === true) {
+        //もしfiltersの中身が空じゃない時（前の質問で一つでもYES[true]だった時）👉前の質問が全てNO[false]だった時は発動しない
+        //[or]が追加される。つまりfiltersの中は、"question1[equals]true[or]question2[equals]true"という状態。
         if (filters != "") {
           filters += "[or]";
         }

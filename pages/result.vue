@@ -32,6 +32,7 @@
             Twitterで宣言する！
           </button>
         </div>
+        <p>{{ updated_at | moment }}</p>
       </div>
     </div>
     <!-- <p>〜似たような本、同著者等の出版本を外部APIで所得し表示させる〜</p> -->
@@ -75,8 +76,10 @@
 </template>
 
 <script>
+import moment from "moment";
 export default {
   layout: "oftenuse",
+
   // async,awaitはPromiseの処理をより簡潔に書いたもの。意味は同じ。
   // asyncは非同期関数を定義する関数宣言であり、関数の頭につけることで、Promiseオブジェクトを返す関数にすることができます。そのような関数をasync functionといいます
   async asyncData({ query, $microcms }) {
@@ -95,18 +98,27 @@ export default {
       book, //定数bookをreturnで54行目に返している
     };
   },
+
   //⏬ dataに取得したbookのAPIデータを返している
   data() {
     return {
       book: "",
     };
   },
+  filters: {
+    moment: function (date) {
+      return moment(date).format("MM月DD日");
+    },
+  },
   methods: {
     twitterShare() {
       //シェアする画面を設定
       var shareURL =
+        //現在の日付画面表座はされるが、Twitterシェア画面のコメントは０になってしまう。
         "https://twitter.com/intent/tweet?text=" +
-        "◯月◯日までに（診断結果で出た本）を読み、感想をツイートします！" +
+        `${this.updated_at | moment}までに${
+          this.book.title
+        }を読み、感想をツイートします！` +
         "%20%23NewSelf" +
         "%20%23書籍診断アプリ" +
         "&url=" +
