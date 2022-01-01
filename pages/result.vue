@@ -115,6 +115,7 @@ export default {
       //シェアする画面を設定
       var shareURL =
         //現在の日付画面表座はされるが、Twitterシェア画面のコメントは０になってしまう。
+        //明日修正
         "https://twitter.com/intent/tweet?text=" +
         `${this.updated_at | moment}までに${
           this.book.title
