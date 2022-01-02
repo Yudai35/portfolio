@@ -319,7 +319,7 @@
       </div>
     </div>
 
-    <!-- <div class="bg-white py-20" v-if="showQuestion">
+    <div class="bg-white py-20" v-if="showQuestion">
       <nuxt-link to="/result?id=${randomId}">
         <button
           class="
@@ -335,7 +335,7 @@
           診断結果へ
         </button>
       </nuxt-link>
-    </div> -->
+    </div>
 
     <div class="bg-white py-20" v-if="showQuestion">
       <nuxt-link to="result?id=7o9jnf3vpq">
@@ -364,8 +364,8 @@ export default {
   data: function () {
     return {
       showQuestion: false,
-      // ids: [],
-      // randomId: "",
+      ids: [],
+      randomId: "",
       answers: {
         q1: null,
         q2: null,
@@ -375,16 +375,6 @@ export default {
       },
     };
   },
-  // asyncData: async function ({ $microcms }) {
-  // const contents = book.contents;
-  // const ids = contents.map((e) => {
-  //   return e.id;
-  // });
-  // return { ids };
-  // },
-  // mounted: async function () {
-  //   this.randomId = this.ids[Math.floor(Math.random() * this.ids.length)];
-  // },
   methods: {
     openQuestion() {
       this.showQuestion = true;
@@ -392,6 +382,7 @@ export default {
     answer(questionNumber, bool) {
       this.answers[questionNumber] = bool;
     },
+
     async diagnose() {
       //ユーザーの選択に応じて診断結果をmicroCMSから取得する
       let filters = "";
@@ -433,6 +424,21 @@ export default {
         },
       });
       console.log({ book });
+      //このあと、受け取った本のデータからランダムで１冊選ぶ
+      const contents = book.contents; //本の情報の配列
+      const ids = contents.map((e) => {
+        return e.id;
+      });
+      return { ids };
+
+      //本の配列から、ランダムに１冊を選ぶ
+      //ランダムに選んだ１冊から、その本のIDを取り出す
+      //その本のidを/result.vueのidにパラメータとして付けて、resultページに飛ぶ
+      // const id = xxxxxxxx ←この部分をなんとかして作る
+      this.$router.push(`/reslut?id=${id}`);
+    },
+    mounted: function () {
+      this.randomId = this.ids[Math.floor(Math.random() * this.ids.length)];
     },
   },
 };
