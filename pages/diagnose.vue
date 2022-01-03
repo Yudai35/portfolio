@@ -436,6 +436,7 @@ export default {
       //その本のidを/result.vueのidにパラメータとして付けて、resultページに飛ぶ
       // const id = xxxxxxxx ←この部分をなんとかして作る
       this.$router.push(`/reslut?id=${id}`);
+      // あああああああああ
     },
     mounted: function () {
       this.randomId = this.ids[Math.floor(Math.random() * this.ids.length)];
