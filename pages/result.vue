@@ -126,6 +126,7 @@ export default {
         "&url=" +
         "https://www.google.com/?hl=ja";
       //シェアようの画面へ移行
+      //a
       location.href = shareURL;
     },
   },
