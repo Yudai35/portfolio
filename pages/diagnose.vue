@@ -320,7 +320,7 @@
     </div>
 
     <div class="bg-white py-20" v-if="showQuestion">
-      <nuxt-link to="/result?id=${randomId}">
+      <nuxt-link to="/result/?id=${randomId}">
         <button
           class="
             text-2xl

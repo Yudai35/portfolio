@@ -30,6 +30,58 @@
       </button>
     </div>
 
+    <!--サイドバー-->
+    <div
+      :class="isOpen ? 'top-12 right-0' : 'top-12 -right-60'"
+      class="
+        fixed
+        items-center
+        h-full
+        bg-green-200
+        transition-all
+        duration-300
+        md:static
+      "
+    >
+      <div v-show="isOpen">
+        <ul class="md:hidden">
+          <li>
+            <nuxt-link
+              to="/login"
+              class="
+                block
+                mt-6
+                px-14
+                py-8
+                text-center
+                hover:bg-green-100
+                transition
+                duration-300
+                md:px-4 md:py-4
+              "
+              >ログイン</nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link
+              to="/signup"
+              class="
+                block
+                px-14
+                py-8
+                text-center
+                hover:bg-green-100
+                transition
+                duration-300
+                md:px-4 md:py-4
+              "
+              >新規登録</nuxt-link
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <ul class="hidden md:flex justify-end items-center opacity-100 text-xl">
       <li>
         <nuxt-link to="login">
@@ -56,5 +108,6 @@ export default {
       isOpen: false,
     };
   },
+  methods: {},
 };
 </script>
