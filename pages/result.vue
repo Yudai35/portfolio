@@ -32,7 +32,7 @@
             Twitterで宣言する！
           </button>
         </div>
-        <p>{{ updated_at | moment }}</p>
+        <!-- <p>{{ updated_at | moment }}</p> -->
       </div>
     </div>
     <!-- <p>〜似たような本、同著者等の出版本を外部APIで所得し表示させる〜</p> -->
@@ -113,14 +113,18 @@ export default {
   },
   methods: {
     twitterShare() {
+      const today = new Date();//今日この瞬間の情報を取得
+      const date_today = today.getDate(); //日
+      const after2Week = today.setDate(date_today + 30);
+      const formatDate = moment(after2Week).format("MM月DD日");
+      console.log(formatDate);
+
       //シェアする画面を設定
       var shareURL =
         //現在の日付画面表座はされるが、Twitterシェア画面のコメントは０になってしまう。
         //明日修正
         "https://twitter.com/intent/tweet?text=" +
-        `${this.updated_at | moment}までに${
-          this.book.title
-        }を読み、感想をツイートします！` +
+        `${formatDate}までに${this.book.title}を読み、感想をツイートします！` +
         "%20%23NewSelf" +
         "%20%23書籍診断アプリ" +
         "&url=" +

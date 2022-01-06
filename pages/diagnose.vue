@@ -320,21 +320,20 @@
     </div>
 
     <div class="bg-white py-20" v-if="showQuestion">
-      <nuxt-link to="/result/?id=${randomId}">
-        <button
-          class="
-            text-2xl
-            border-4 border-green-200
-            rounded-full
-            py-4
-            px-20
-            hover:bg-green-100
-            duration-1000
-          "
-        >
-          診断結果へ
-        </button>
-      </nuxt-link>
+      <button
+        class="
+          text-2xl
+          border-4 border-green-200
+          rounded-full
+          py-4
+          px-20
+          hover:bg-green-100
+          duration-1000
+        "
+        @click="diagnose"
+      >
+        診断結果へ
+      </button>
     </div>
 
     <div class="bg-white py-20" v-if="showQuestion">
@@ -417,6 +416,7 @@ export default {
         }
         filters += "question5[equals]true";
       }
+
       const book = await this.$microcms.get({
         endpoint: "books",
         queries: {
@@ -427,15 +427,16 @@ export default {
       //このあと、受け取った本のデータからランダムで１冊選ぶ
       const contents = book.contents; //本の情報の配列
       const ids = contents.map((e) => {
+        //eは、contentsの中の1個1個の要素{id: "xxxxx", title: "aaaa", ,,,,}
         return e.id;
       });
-      return { ids };
+      // ids: ["xxxxxxx", "yyyyyyy", "zzzzzzz"] ほんのIDが並んでいる状態
 
       //本の配列から、ランダムに１冊を選ぶ
+      const randomId = ids[Math.floor(Math.random() * ids.length)];
       //ランダムに選んだ１冊から、その本のIDを取り出す
       //その本のidを/result.vueのidにパラメータとして付けて、resultページに飛ぶ
-      // const id = xxxxxxxx ←この部分をなんとかして作る
-      this.$router.push(`/reslut?id=${id}`);
+      this.$router.push(`/result?id=${randomId}`);
     },
     mounted: function () {
       this.randomId = this.ids[Math.floor(Math.random() * this.ids.length)];
