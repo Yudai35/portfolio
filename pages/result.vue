@@ -32,7 +32,6 @@
             Twitterで宣言する！
           </button>
         </div>
-        <p>{{ updated_at | moment }}</p>
       </div>
     </div>
     <!-- <p>〜似たような本、同著者等の出版本を外部APIで所得し表示させる〜</p> -->
@@ -103,30 +102,31 @@ export default {
   data() {
     return {
       book: "",
-      moment: ``,
+      // moment: ``,
     };
   },
-  filters: {
-    moment: function (date) {
-      return moment(date).format("MM月DD日");
-    },
-  },
+  // filters: {
+  //   moment: function (date) {
+  //     return moment(date).format("MM月DD日");
+  //   },
+  // },
   methods: {
     twitterShare() {
+      //👇アウトプット
+      const today = new Date(); //今日この瞬間の情報を取得
+      const date_today = today.getDate(); //日
+      const after2Week = today.setDate(date_today + 14); //今日の日＋14日
+      const formatDate = moment(after2Week).format("MM月DD日"); //2週間後の日にちを"MM月DD日"で表示
+      console.log(formatDate);
       //シェアする画面を設定
       var shareURL =
-        //現在の日付画面表座はされるが、Twitterシェア画面のコメントは０になってしまう。
-        //明日修正
         "https://twitter.com/intent/tweet?text=" +
-        `${this.updated_at | moment}までに${
-          this.book.title
-        }を読み、感想をツイートします！` +
+        `${formatDate}までに「${this.book.title}」を読み、感想をツイートします！` +
         "%20%23NewSelf" +
         "%20%23書籍診断アプリ" +
         "&url=" +
-        "https://www.google.com/?hl=ja";
+        "https://www.google.com/?hl=ja"; //アプリURL
       //シェアようの画面へ移行
-      //a
       location.href = shareURL;
     },
   },
