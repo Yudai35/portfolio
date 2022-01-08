@@ -20,5 +20,6 @@ export default function (app, inject) {
 
   inject('firebase', firebase)
   inject('auth', firebase.auth())
+  // inject('auth', firebase.firestore())
   inject('functions', firebase.functions())
 }
