@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth'; //ログイン
 // import 'firebase/compat/firestore';メモ情報の保管
-// import 'firebase/compat/functions';//お問い合わせフォーム
+import 'firebase/compat/functions';//お問い合わせフォーム
 
 const firebaseConfig = {
   apiKey: "AIzaSyBkxzvG-_MwCrkx4OzJ6h3pYKozhvK7Rfo",
@@ -21,5 +21,5 @@ export default function (app, inject) {
   inject('firebase', firebase)
   inject('auth', firebase.auth())
   // inject('auth', firebase.firestore())
-  // inject('functions', firebase.functions())
+  inject('functions', firebase.functions())
 }
