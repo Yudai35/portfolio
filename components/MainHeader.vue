@@ -53,7 +53,7 @@
                 block
                 mt-6
                 px-14
-                py-8
+                py-6
                 text-center
                 hover:bg-green-100
                 transition
@@ -69,7 +69,7 @@
               class="
                 block
                 px-14
-                py-8
+                py-6
                 text-center
                 hover:bg-green-100
                 transition
@@ -85,7 +85,7 @@
               class="
                 block
                 px-14
-                py-8
+                py-6
                 text-center
                 hover:bg-green-100
                 transition
@@ -96,13 +96,30 @@
             >
           </li>
           <li>
+            <nuxt-link
+              to="/inquiry"
+              class="
+                block
+                px-14
+                py-6
+                text-center
+                hover:bg-green-100
+                transition
+                duration-300
+                md:px-4 md:py-4
+              "
+              >お問い合わせ</nuxt-link
+            >
+          </li>
+
+          <li>
             <button @click="signOut">
               <nuxt-link
                 to="/signup"
                 class="
                   block
                   px-14
-                  py-8
+                  py-6
                   text-center
                   hover:bg-green-100
                   transition
@@ -131,6 +148,11 @@
       <li>
         <nuxt-link to="/diagnose">
           <a class="pr-8 hover:opacity-50 duration-1000">診断</a>
+        </nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/inquiry">
+          <a class="pr-8 hover:opacity-50 duration-1000">お問い合わせ</a>
         </nuxt-link>
       </li>
       <li>
