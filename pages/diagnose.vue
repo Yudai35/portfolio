@@ -383,39 +383,20 @@ export default {
     },
 
     async diagnose() {
-      //ユーザーの選択に応じて診断結果をmicroCMSから取得する
+      //filterの文字列を効率よく書くとこうなる
       let filters = "";
-      //もしQ1がtrueだった時変数filtersに"question1[equals]true"を代入する
-      //"question1[equals]true"はjavascriptの書き方で固定されている。
-      if (this.answers.q1 === true) {
-        filters += "question1[equals]true";
-      }
-      if (this.answers.q2 === true) {
-        //もしfiltersの中身が空じゃない時（前の質問で一つでもYES[true]だった時）👉前の質問が全てNO[false]だった時は発動しない
-        //[or]が追加される。つまりfiltersの中は、"question1[equals]true[or]question2[equals]true"という状態。
-        if (filters != "") {
-          filters += "[or]";
+
+      Object.keys(this.answers).forEach((key, index) => {
+        console.log(key, index);
+        if (this.answers[key]) {
+          if (filters != "") {
+            filters += "[or]";
+          }
+          filters += `question${index + 1}[equals]true`;
         }
-        filters += "question2[equals]true";
-      }
-      if (this.answers.q3 === true) {
-        if (filters != "") {
-          filters += "[or]";
-        }
-        filters += "question3[equals]true";
-      }
-      if (this.answers.q4 === true) {
-        if (filters != "") {
-          filters += "[or]";
-        }
-        filters += "question4[equals]true";
-      }
-      if (this.answers.q5 === true) {
-        if (filters != "") {
-          filters += "[or]";
-        }
-        filters += "question5[equals]true";
-      }
+      });
+
+      console.log({ filters }); //ここのログで確認できます！
 
       const book = await this.$microcms.get({
         endpoint: "books",
