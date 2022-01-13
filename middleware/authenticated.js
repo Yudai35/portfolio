@@ -10,7 +10,7 @@ export default function ({ store, route, redirect }) {
     }
     else {
         //ログインしていないとき → diagnose, recordlist, result, top, recordは入れない
-        if (route.name === "diagnose" || route.name === "recordlist" || route.name === "result" || route.name === "top" || route.name === "record") {
+        if (route.name === "diagnose" || route.name === "recordlist" || route.name === "result" || route.name === "top" || route.name === "record" || route.name === "inquiry") {
             return redirect("/login")
         }
 
