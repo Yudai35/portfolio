@@ -35,7 +35,7 @@
       </div>
     </div>
     <!-- <p>〜似たような本、同著者等の出版本を外部APIで所得し表示させる〜</p> -->
-    <div class="mt-24 text-4xl m-auto text-center">
+    <!-- <div class="mt-24 text-4xl m-auto text-center">
       <h2 class="text-center mb-12">＜こちらもおすすめ＞</h2>
       <ul class="flex justify-center mr-0 bg-gray-100 py-6">
         <li class="mx-10">
@@ -55,7 +55,7 @@
           <p class="text-lg pt-4">やばい話し方</p>
         </li>
       </ul>
-    </div>
+    </div> -->
     <div class="text-center pt-16">
       <button
         class="
