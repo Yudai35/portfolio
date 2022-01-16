@@ -192,7 +192,6 @@ export default {
       } else {
         return;
       }
-      //あ
     },
   },
 };
