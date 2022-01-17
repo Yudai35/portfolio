@@ -1,21 +1,21 @@
 const sgMail = require("@sendgrid/mail");
 const functions = require("firebase-functions");
-// const apiKey = functions.config().sendgrid_service.key;
-// sgMail.setApiKey(apiKey);
+const apiKey = functions.config().sendgrid_service.key;
+sgMail.setApiKey(apiKey);
 
 exports.sendMail = functions
     .region("asia-northeast1")
     .https.onCall(async (data, context) => {
         const adminMassage = {
-            to: functions.config().sendgrid_service.email,
-            from: "noreply@hello-protein.com",
-            subject: "【HelloProtein】ホームページお問い合わせ",
+            to: "yuusongben14@gmail.com",
+            from: "yuusongben14@gmail.com",
+            subject: "【Newself】ホームページお問い合わせ",
             text: `以下内容でお問い合わせフォームより受け付けました。\n\nお名前：\n${data.name}\n\nメールアドレス：\n${data.email}\n\nお問い合わせ内容：\n${data.content}`,
         };
         const thanksMassage = {
             to: data.email,
-            from: "noreply@hello-protein.com",
-            subject: "【HelloProtein】お問い合わせありがとうございます",
+            from: "yuusongben14@gmail.com",
+            subject: "【Newself】お問い合わせありがとうございます",
             text: `${data.name}様\n\nお問い合わせありがとうございます。\n以下内容でお問い合わせを受け付けました。\n\nお名前：\n${data.name}\n\nメールアドレス：\n${data.email}\n\nお問い合わせ内容：\n${data.content}\n\n後ほどご連絡を差し上げます。\nよろしくお願いいたします。`,
         };
         try {

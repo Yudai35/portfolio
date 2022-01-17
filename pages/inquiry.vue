@@ -124,8 +124,8 @@ export default {
         .app()
         //GCP東京リージョンを使用
         .functions("asia-northeast1")
-        //???
-        .httpsCallable("test");
+        //
+        .httpsCallable("sendMail");
       sendContents({
         name: this.form.name,
         email: this.form.email,
