@@ -1,7 +1,6 @@
 <template>
   <!-- お問い合わせページ -->
   <!-- 未レスポンシブ -->
-
   <div class="py-6 bg-gray-100 md: py-20">
     <div
       class="
