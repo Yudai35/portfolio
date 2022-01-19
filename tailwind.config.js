@@ -1,3 +1,5 @@
+// ゆーすたーさんのtailwind.config参考、意味ググる
+
 module.exports = {
   purge: [
     './components/**/*.{vue,js}',

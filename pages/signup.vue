@@ -1,22 +1,19 @@
 <template>
   <!-- 新規登録 -->
-  <!-- 未レスポンシブ -->
-  <div class="bg-gray-100 md: py-20">
+  <div class="py-6 bg-gray-100">
     <div
       class="
         w-xl
-        py-5
-        my-12
+        py-6
+        my-16
+        mx-4
         text-center
-        px-8
-        md:text-center
-        px-2
         pb-4
-        my-24
         max-w-3xl
-        m-auto
+        md:m-auto
         bg-white
         font-serif
+        md:my-20 md:px-8
       "
     >
       <h2
@@ -88,7 +85,7 @@
           Googleで登録
         </button>
       </form>
-      <div class="mt-6 mb-4 md:tracking-widest items-center mt-8 mb-4">
+      <div class="my-4 items-center md:tracking-widest md:my-6">
         <nuxt-link to="login">
           <a class="text-base text-center md:text-xl text-blue-500"
             >登録済みの方</a

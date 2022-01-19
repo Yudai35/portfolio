@@ -1,9 +1,19 @@
 <template>
   <div
-    class="header w-full bg-green-200 px-8 py-4 flex justify-between font-serif"
+    class="
+      py-3
+      px-6
+      header
+      w-full
+      bg-green-200
+      flex
+      justify-between
+      font-serif
+      md:px-8 md:py-4
+    "
   >
     <h1>
-      <a class="text-4xl hover:opacity-50 duration-1000">NewSelf</a>
+      <a class="text-3xl hover:opacity-50 duration-1000 md:text-4xl">NewSelf</a>
     </h1>
     <div class="visible md:invisible flex justify-end items-center">
       <button @click="isOpen = !isOpen" class="relative md:hidden h-5 w-6">

@@ -1,21 +1,20 @@
 <template>
   <!-- ログインページ -->
-  <div class="py-6 bg-gray-100 md: py-20">
+  <!-- エラーメッセージ未実装 -->
+  <div class="py-6 bg-gray-100 md:py-8">
     <div
       class="
         w-xl
-        py-5
-        my-auto
+        py-6
+        my-16
+        mx-4
         text-center
-        px-8
-        md:text-center
-        px-2
         pb-4
-        my-24
         max-w-3xl
-        m-auto
+        md:m-auto
         bg-white
         font-serif
+        md:my-20 md:px-8
       "
     >
       <h2
@@ -51,7 +50,9 @@
           @input="isInput"
           class="text-base h-12 my-3 md:text-xl border-2 h-14 w-10/12 my-4"
         />
-        <p class="text-red-400">{{ passwordErrorMassage }}</p>
+        <p class="text-red-400 text-sm md:text-base">
+          {{ passwordErrorMassage }}
+        </p>
         <button
           @click="login"
           value="ログイン"
@@ -76,7 +77,7 @@
           Googleでログイン
         </button>
       </form>
-      <div class="mt-6 mb-4 md:tracking-widest items-center mt-8 mb-4">
+      <div class="my-4 items-center md:tracking-widest md:my-6">
         <nuxt-link to="signup">
           <a class="text-base text-center md:text-xl text-blue-500"
             >ユーザー登録お済みでない方</a
