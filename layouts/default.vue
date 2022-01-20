@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopHeader />
+    <Topheader />
     <nuxt />
     <Footer />
   </div>
