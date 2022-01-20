@@ -39,17 +39,7 @@
           placeholder="E-mail"
           v-model="user.email"
           @input="isInput"
-          class="
-            text-base
-            h-12
-            my-3
-            md:text-xl
-            border-2
-            h-14
-            w-10/12
-            my-6
-            autofocus
-          "
+          class="text-base md:text-xl border-2 h-14 w-10/12 my-6 autofocus"
         />
         <p class="text-red-400">{{ emailErrorMassage }}</p>
         <input
@@ -59,19 +49,17 @@
           placeholder="Password"
           v-model="user.password"
           @input="isInput"
-          class="text-base h-12 my-3 md:text-xl border-2 h-14 w-10/12 my-4"
+          class="text-base md:text-xl border-2 h-14 w-10/12 my-4"
         />
         <p class="text-red-400">{{ passwordErrorMassage }}</p>
         <button
           @click="register"
           class="
             text-base
-            h-12
             my-3
             md:text-xl
             h-14
             w-10/12
-            my-6
             bg-green-300
             text-center
           "
@@ -80,7 +68,7 @@
         </button>
         <button
           @click="googleLogin"
-          class="text-base h-12 my-3 md:text-xl h-14 w-10/12 my-6 bg-green-300"
+          class="text-base my-3 md:text-xl h-14 w-10/12 bg-green-300"
         >
           Googleで登録
         </button>

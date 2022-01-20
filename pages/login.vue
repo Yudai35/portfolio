@@ -1,6 +1,6 @@
 <template>
   <!-- ログインページ -->
-  <!-- エラーメッセージ未実装 -->
+  <!-- 正規表現エラーメッセージ未実装 -->
   <div class="py-6 bg-gray-100 md:py-8">
     <div
       class="
@@ -39,7 +39,7 @@
           placeholder="E-mail"
           v-model="user.email"
           @input="isInput"
-          class="text-base h-12 my-3 md:text-xl border-2 h-14 w-10/12 my-6"
+          class="text-base my-3 md:text-xl border-2 h-14 w-10/12"
         />
         <p class="text-red-400">{{ emailErrorMassage }}</p>
         <input
@@ -48,7 +48,7 @@
           placeholder="Password"
           v-model="user.password"
           @input="isInput"
-          class="text-base h-12 my-3 md:text-xl border-2 h-14 w-10/12 my-4"
+          class="text-base my-3 md:text-xl border-2 h-14 w-10/12"
         />
         <p class="text-red-400 text-sm md:text-base">
           {{ passwordErrorMassage }}
@@ -58,12 +58,10 @@
           value="ログイン"
           class="
             text-base
-            h-12
             my-3
             md:text-xl
             h-14
             w-10/12
-            my-6
             bg-green-300
             text-center
           "
@@ -72,7 +70,7 @@
         </button>
         <button
           @click="googleLogin"
-          class="text-base h-12 my-3 md:text-xl h-14 w-10/12 my-6 bg-green-300"
+          class="text-base my-3 md:text-xl h-14 w-10/12 bg-green-300"
         >
           Googleでログイン
         </button>

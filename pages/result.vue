@@ -3,14 +3,16 @@
   <!-- 未レスポンシブ -->
 
   <div class="font-serif py-28">
-    <h2 class="text-center text-5xl pb-20">あなたへのおすすめの書籍は・・・</h2>
-    <div class="flex justify-center">
-      <div class="w-1/3">
+    <h2 class="text-center pb-20 text-2xl md:text-5xl">
+      あなたへオススメの書籍は…
+    </h2>
+    <div class="text-center md:flex justify-center md:text-left">
+      <div class="mx-auto w-2/5 md:w-1/3">
         <img :src="book.image.url" class="w-80" />
       </div>
-      <div class="w-2/5">
-        <h2 class="text-4xl my-5">タイトル:{{ book.title }}</h2>
-        <p class="my-7 text-3xl">著者:{{ book.author }}</p>
+      <div class="md:w-2/5">
+        <h2 class="my-5 text-2xl md:text-4xl">タイトル:{{ book.title }}</h2>
+        <p class="my-7 text-2xl md:text-3xl">著者:{{ book.author }}</p>
         <p class="text-xl tracking-wider leading-9">{{ book.description }}</p>
         <div class="twitter_share">
           <button
@@ -34,28 +36,7 @@
         </div>
       </div>
     </div>
-    <!-- <p>〜似たような本、同著者等の出版本を外部APIで所得し表示させる〜</p> -->
-    <!-- <div class="mt-24 text-4xl m-auto text-center">
-      <h2 class="text-center mb-12">＜こちらもおすすめ＞</h2>
-      <ul class="flex justify-center mr-0 bg-gray-100 py-6">
-        <li class="mx-10">
-          <img class="h-52" src="~/assets/やばい話し方.jpg" />
-          <p class="text-lg pt-4">やばい話し方</p>
-        </li>
-        <li class="mx-10">
-          <img class="h-52" src="~/assets/やばい話し方.jpg" />
-          <p class="text-lg pt-4">やばい話し方</p>
-        </li>
-        <li class="mx-10">
-          <img class="h-52" src="~/assets/やばい話し方.jpg" />
-          <p class="text-lg pt-4">やばい話し方</p>
-        </li>
-        <li class="mx-10">
-          <img class="h-52" src="~/assets/やばい話し方.jpg" />
-          <p class="text-lg pt-4">やばい話し方</p>
-        </li>
-      </ul>
-    </div> -->
+
     <div class="text-center pt-16">
       <button
         class="

@@ -1,22 +1,20 @@
 <template>
   <!-- お問い合わせページ -->
   <!-- 未レスポンシブ -->
-  <div class="py-6 bg-gray-100 md: py-20">
+  <div class="py-6 bg-gray-100 md:py-8">
     <div
       class="
         w-xl
-        py-5
-        my-auto
+        py-6
+        my-16
+        mx-4
         text-center
-        px-8
-        md:text-center
-        px-2
         pb-4
-        my-24
         max-w-3xl
-        m-auto
+        md:m-auto
         bg-white
         font-serif
+        md:my-20 md:px-8
       "
     >
       <h2
@@ -41,7 +39,7 @@
           v-model="form.name"
           @focus="isInput"
           @blur="isValidName"
-          class="text-base h-12 my-3 md:text-xl border-2 h-14 w-10/12 my-6"
+          class="text-base my-3 md:text-xl border-2 h-14 w-10/12"
           autofocus
         />
         <p class="text-red-400">{{ error.nameMassage }}</p>
@@ -52,7 +50,7 @@
           v-model="form.email"
           @focus="isInput"
           @blur="isValidEmail"
-          class="text-base h-12 my-3 md:text-xl border-2 h-14 w-10/12 my-4"
+          class="text-base my-3 md:text-xl border-2 h-14 w-10/12"
         />
         <p class="text-red-400">{{ error.emailMassage }}</p>
         <textarea
@@ -64,7 +62,7 @@
           v-model="form.content"
           @focus="isInput"
           @blur="isValidContent"
-          class="text-base my-3 md:text-xl border-2 h-48 w-10/12 pt-2 my-4"
+          class="text-base my-3 md:text-xl border-2 md:h-48 w-10/12"
         ></textarea>
         <p class="text-red-400">{{ error.contentMassage }}</p>
         <div>
@@ -73,12 +71,10 @@
             @click="sendMail"
             class="
               text-base
-              h-12
               my-3
               md:text-xl
               h-14
               w-10/12
-              my-6
               bg-green-300
               text-center
             "
@@ -87,9 +83,7 @@
           </button>
         </div>
         <div class="py-3">
-          <a href="" class="h-12 my-4 text-blue-500"
-            >お問い合わせありがとうございました。</a
-          >
+          <a href="" class="h-12 my-4 text-blue-500">{{ send.completion }}</a>
         </div>
       </form>
     </div>
@@ -110,6 +104,9 @@ export default {
         nameMassage: "",
         emailMassage: "",
         contentMassage: "",
+      },
+      send: {
+        completion: "",
       },
       nameRegexp: /^[a-z\dぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠]{3,20}$/i,
       emailRegexp: /^[a-z\d][\w.-]*@[\w.-]+\.[a-z\d]+$/i,
@@ -136,7 +133,8 @@ export default {
           if (res.data.status === 200) {
             alert("メールの送信が完了しました。");
             console.log(res.data);
-            this.$router.push("/");
+            this.send.completion = "お問い合わせありがとうございました。";
+            // this.$router.push("/");
             //上記通りいかなかった場合
           } else {
             alert(

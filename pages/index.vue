@@ -22,7 +22,7 @@
         <h1 class="text-center pt-12">
           <p class="text-4xl">対象ユーザー</p>
         </h1>
-        <div class="px-8 mx-4 pt-12 pb-12 text-center md:flex md:px-0 md:mx-6">
+        <div class="px-8 mx-4 py-12 text-center md:flex md:px-0 md:mx-6">
           <div class="text-center mx-2 md:flex-1 md:w-1/3">
             <div class="text-center border-4 border-white rounded-full">
               <p class="text-lg py-2 md:text-xl">何がやりたいか分からない</p>
@@ -36,7 +36,7 @@
               <p class="text-lg py-2 md:text-xl">自分を変えたい</p>
             </div>
             <p class="my-4">
-              自分を変えようと行動するが、継続できずに諦めてしまう方が多い印象があります。それは「マインド」が変わっていないからです。私自身本から多くのことを学びました。NewSelfではあなたの「マインド」を変える第１歩をサポートします。
+              自分を変えようと行動するが、継続できずに諦めてしまう方が多い印象があります。それは「マインド」が変わっていないからです。私自身読書から多くのことを学びました。NewSelfではあなたの「マインド」を変える第１歩をサポートします。
             </p>
           </div>
           <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6">
