@@ -31,7 +31,7 @@
               何がやりたいか分からないのは「視野が広がっていない」が原因と考えます。本を通して様々な価値観に触れ新しい自分を見つけましょう。NewSelfはそのきっかけを作ってくれます。
             </p>
           </div>
-          <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6">
+          <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6 md:mt-0">
             <div class="border-4 border-white rounded-full">
               <p class="text-lg py-2 md:text-xl">自分を変えたい</p>
             </div>
@@ -39,7 +39,7 @@
               自分を変えようと行動するが、継続できずに諦めてしまう方が多い印象があります。それは「マインド」が変わっていないからです。私自身読書から多くのことを学びました。NewSelfではあなたの「マインド」を変える第１歩をサポートします。
             </p>
           </div>
-          <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6">
+          <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6 md:mt-0">
             <div class="border-4 border-white rounded-full">
               <p class="text-lg py-2 md:text-xl">何の本を読むか悩む</p>
             </div>
@@ -63,7 +63,7 @@
               あなたに投げかける質問を通して、今あなたに必要な書籍を紹介します。その書籍を通して自分と向き合う時間を作りましょう。
             </p>
           </div>
-          <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6">
+          <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6 md:mt-0">
             <div class="border-4 border-green-200 rounded-full">
               <p class="text-lg py-2 md:text-xl">Twitter共有</p>
             </div>
@@ -71,7 +71,7 @@
               「診断して終わり」、「本を買ったけれど読まない」とよくありがちです。Twiiterに「感想をツイートします！」と宣言しましょう！NewSelfなやらざるをえない「環境づくり」をサポートします。
             </p>
           </div>
-          <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6">
+          <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6 md:mt-0">
             <div class="border-4 border-green-200 rounded-full">
               <p class="text-lg py-2 md:text-xl">メモ機能</p>
             </div>

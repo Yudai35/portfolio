@@ -19,7 +19,7 @@
             </nuxt-link>
             <p class="my-4">さぁ、あなたの人生を変える本と出会いましょう。</p>
           </div>
-          <div class="mt-10 md:flex-1 text-center md:w-1/3 md:mx-6">
+          <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6 md:mt-0">
             <nuxt-link to="/record">
               <div
                 class="
@@ -35,7 +35,7 @@
               読んだ本をの勉強になった部分等をここにアウトプットしましょう。
             </p>
           </div>
-          <div class="mt-10 md:flex-1 text-center md:w-1/3 md:mx-6">
+          <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6 md:mt-0">
             <nuxt-link to="/recordlist">
               <div
                 class="

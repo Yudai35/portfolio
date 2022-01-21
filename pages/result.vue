@@ -1,33 +1,43 @@
 <template>
   <!-- 診断結果表示ページ -->
-  <!-- 未レスポンシブ -->
+  <!-- レスポンシブ実装中 -->
 
-  <div class="font-serif py-28">
-    <h2 class="text-center pb-20 text-2xl md:text-5xl">
+  <div class="font-serif py-28 px-4">
+    <h2 class="text-center text-2xl md:text-5xl md:pb-20">
       あなたへオススメの書籍は…
     </h2>
     <div class="text-center md:flex justify-center md:text-left">
-      <div class="mx-auto w-2/5 md:w-1/3">
+      <div class="mx-auto w-2/5 my-10 md:w-1/3 md:mx-0">
         <img :src="book.image.url" class="w-80" />
       </div>
-      <div class="md:w-2/5">
+      <div class="align-middle md:w-2/5 mt-10">
         <h2 class="my-5 text-2xl md:text-4xl">タイトル:{{ book.title }}</h2>
         <p class="my-7 text-2xl md:text-3xl">著者:{{ book.author }}</p>
-        <p class="text-xl tracking-wider leading-9">{{ book.description }}</p>
+        <p
+          class="
+            tracking-tighter
+            text-sm
+            mb-8
+            md:leading-9 md:tracking-wider md:text-xl
+          "
+        >
+          {{ book.description }}
+        </p>
         <div class="twitter_share">
           <button
             @click="twitterShare"
             class="
               border-2 border-blue-600
               rounded-full
+              text-lg
               h-14
               w-64
               items-center
               flex
               justify-center
               m-auto
-              my-8
-              hover:bg-blue-200
+              my-10
+              hover:bg-blue-100
               duration-1000
             "
           >
@@ -37,16 +47,17 @@
       </div>
     </div>
 
-    <div class="text-center pt-16">
+    <div class="text-center pt-4 md:pt-16">
       <button
         class="
           py-3
           w-48
-          text-2xl
+          text-xl
           border-2 border-green-200
           rounded-full
           hover:bg-green-100
           duration-1000
+          md:text-2xl
         "
       >
         TOPへ
@@ -102,7 +113,7 @@ export default {
       //シェアする画面を設定
       var shareURL =
         "https://twitter.com/intent/tweet?text=" +
-        `${formatDate}までに「${this.book.title}」を読み、感想をツイートします！` +
+        `${formatDate}までに「${this.book.title}」を読み、感想＆行動することをツイートします！` +
         "%20%23NewSelf" +
         "%20%23書籍診断アプリ" +
         "&url=" +

@@ -3,8 +3,8 @@
   <!-- 未レスポンシブ -->
 
   <div class="font-serif text-center">
-    <img src="~/assets/AdobeStock_229144311.jpeg" />
-    <div class="py-28">
+    <!-- <img src="~/assets/AdobeStock_229144311.jpeg" /> -->
+    <div class="py-32">
       <h1 class="py-12">
         <p class="text-4xl">
           簡単な質問に答えて、<br />あなたにピッタリな書籍と出会おう！
@@ -46,8 +46,7 @@
               text-2xl
               my-6
               mx-10
-              py-6
-              px-6
+              p-6
               border-2 border-red-600
               rounded-full
               h-28
