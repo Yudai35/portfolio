@@ -1,3 +1,4 @@
+// import { resolve } from 'core-js/fn/promise';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth'; //ログイン
 // import 'firebase/compat/firestore';メモ情報の保管
@@ -20,6 +21,13 @@ export default function (app, inject) {
 
   inject('firebase', firebase)
   inject('auth', firebase.auth())
+  inject('authState', () => {
+    return new Promise((resolve) => {
+      firebase.auth().onAuthStateChanged((user) => {
+        resolve(user || null)
+      })
+    })
+  })
   // inject('auth', firebase.firestore())
   inject('functions', firebase.functions())
 }

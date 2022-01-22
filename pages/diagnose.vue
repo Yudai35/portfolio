@@ -4,7 +4,7 @@
 
   <div class="font-serif text-center">
     <!-- <img src="~/assets/AdobeStock_229144311.jpeg" /> -->
-    <div class="py-32">
+    <div class="md:py-44">
       <h1 class="py-12">
         <p class="text-4xl">
           簡単な質問に答えて、<br />あなたにピッタリな書籍と出会おう！

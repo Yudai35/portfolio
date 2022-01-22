@@ -5,7 +5,7 @@
 export const state = () => ({
     user: {
         email: "",
-        password: "",
+        // password: "",
         login: false
     }
 });
@@ -17,10 +17,13 @@ export const state = () => ({
 // };
 
 export const actions = {
-    confirmLogin({ commit }) {
-        this.$auth.onAuthStateChanged(function (user) {
+    async confirmLogin({ commit }) {
+        await this.$auth.onAuthStateChanged(function (user) {
             if (user) {
-                commit("getData", { email: user.email, password: user.password });
+                commit("getData", {
+                    email: user.email,
+                    // password: user.password 
+                });
                 commit("yesLogin");
             } else {
                 commit("noLogin");
@@ -33,7 +36,7 @@ export const actions = {
 export const mutations = {
     getData(state, payload) {
         state.user.email = payload.email;
-        state.user.password = payload.password;
+        // state.user.password = payload.password;
     },
     yesLogin(state) {
         state.user.login = true;
@@ -43,7 +46,7 @@ export const mutations = {
     },
     signOut(state) {
         state.user.email = "";
-        state.user.password = "";
+        // state.user.password = "";
         state.user.login = false;
     }
 };

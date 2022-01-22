@@ -60,7 +60,7 @@
           md:text-2xl
         "
       >
-        TOPへ
+        <nuxt-link to="/top"> TOPへ </nuxt-link>
       </button>
     </div>
   </div>
