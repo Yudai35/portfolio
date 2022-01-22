@@ -1,13 +1,15 @@
 export default async function ({ store, route, redirect, app }) {
 
     const user = await app.$authState()
+    //authStateでplugins/firebase.jsファイルの処理へ非同期処理実行
+    //処理が返されたら以下の処理が実行
     console.log({ user })
 
     // const userLogin = store.state.user.login
     // console.log({ userLogin })
 
     if (user) {
-        //storeに情報を入れ直す
+        //store/index.jsの"getDate"に情報を入れ直す
         store.commit("getDate",
             {
                 email: user.email,
@@ -15,6 +17,7 @@ export default async function ({ store, route, redirect, app }) {
             }
         )
 
+        //上記の処理が成功したら"yesLogin"発動
         store.commit("yesLogin")
 
         //ログインしているとき

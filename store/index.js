@@ -48,5 +48,6 @@ export const mutations = {
         state.user.email = "";
         // state.user.password = "";
         state.user.login = false;
+
     }
 };
