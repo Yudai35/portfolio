@@ -8,6 +8,8 @@
       bg-green-200
       flex
       justify-between
+      sticky
+      top-0
       font-serif
       md:px-8 md:py-4
     "

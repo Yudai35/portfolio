@@ -1,6 +1,8 @@
 <template>
   <div
     class="
+      sticky
+      top-0
       py-3
       px-6
       header
