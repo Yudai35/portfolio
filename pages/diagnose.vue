@@ -4,15 +4,15 @@
 
   <div class="font-serif text-center">
     <!-- <img src="~/assets/AdobeStock_229144311.jpeg" /> -->
-    <div class="md:py-44">
-      <h1 class="py-12">
-        <p class="text-4xl">
+    <div class="py-28 md:py-48 px-4">
+      <h1 class="py-8 md:py-12">
+        <p class="text-xl md:text-4xl">
           簡単な質問に答えて、<br />あなたにピッタリな書籍と出会おう！
         </p>
       </h1>
       <button
         class="
-          mb-16
+          md:mb-16
           px-20
           border-4 border-green-200
           text-center
@@ -22,38 +22,44 @@
         "
         @click="openQuestion"
       >
-        <p class="py-4 w-64 text-2xl">診断を始める！</p>
+        <p class="py-4 w-32 text-lg md:w-64 md:text-2xl">診断を始める！</p>
       </button>
     </div>
 
-    <div v-if="showQuestion" class="bg-green-100 bg-opacity-85 py-28">
+    <div
+      v-if="showQuestion"
+      class="bg-green-100 bg-opacity-85 px-4 py-12 md:py-28"
+    >
       <div
         class="
           max-w-screen-md
           m-auto
-          mb-28
-          py-16
-          border-4 border-red-600
+          md:mb-28
+          py-8
+          px-4
+          mb-8
+          md:py-16
+          border-4 border-green-300
           rounded-lg
           bg-white
         "
       >
-        <p class="text-4xl">Q.1</p>
-        <p class="py-8 text-2xl">コミュニケーションで悩んだことがある</p>
+        <p class="text-3xl md:text-4xl">Q.1</p>
+        <p class="py-8 md:text-2xl">コミュニケーションで悩んだことがある</p>
         <ul class="flex justify-center tracking-widest">
           <button
             class="
-              text-2xl
-              my-6
-              mx-10
-              p-6
               border-2 border-red-600
               rounded-full
-              h-28
-              w-28
               flex
               items-center
               justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
             "
             :class="answers.q1 ? 'bg-red-200' : ''"
             @click="answer('q1', true)"
@@ -62,18 +68,17 @@
           </button>
           <button
             class="
-              text-2xl
-              my-6
-              mx-10
-              py-6
-              px-6
               border-2 border-blue-600
               rounded-full
-              h-28
-              w-28
               flex
               items-center
               justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
             "
             :class="answers.q1 === false ? 'bg-blue-200' : ''"
             @click="answer('q1', false)"
@@ -87,31 +92,33 @@
         class="
           max-w-screen-md
           m-auto
-          my-28
-          py-16
-          border-4 border-red-600
+          md:mb-28
+          py-8
+          px-4
+          md:py-16
+          my-8
+          border-4 border-green-300
           rounded-lg
           bg-white
         "
         v-if="answers.q1 != null"
       >
-        <p class="text-4xl">Q.2</p>
-        <p class="py-8 text-2xl">対人関係で悩みがある</p>
+        <p class="text-3xl md:text-4xl">Q.2</p>
+        <p class="py-8 md:text-2xl">対人関係で悩みがある</p>
         <ul class="flex justify-center tracking-widest">
           <button
             class="
-              text-2xl
-              my-6
-              mx-10
-              py-6
-              px-6
               border-2 border-red-600
               rounded-full
-              h-28
-              w-28
               flex
               items-center
               justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
             "
             :class="answers.q2 ? 'bg-red-200' : ''"
             @click="answer('q2', true)"
@@ -120,18 +127,17 @@
           </button>
           <button
             class="
-              text-2xl
-              my-6
-              mx-10
-              py-6
-              px-6
               border-2 border-blue-600
               rounded-full
-              h-28
-              w-28
               flex
               items-center
               justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
             "
             :class="answers.q2 === false ? 'bg-blue-200' : ''"
             @click="answer('q2', false)"
@@ -145,31 +151,33 @@
         class="
           max-w-screen-md
           m-auto
-          my-28
-          py-16
-          border-4 border-red-600
+          md:mb-28
+          py-8
+          px-4
+          md:py-16
+          my-8
+          border-4 border-green-300
           rounded-lg
           bg-white
         "
         v-if="answers.q2 != null"
       >
-        <p class="text-4xl">Q.3</p>
-        <p class="py-8 text-2xl">夢中になれることがない</p>
+        <p class="text-3xl md:text-4xl">Q.3</p>
+        <p class="py-8 md:text-2xl">現在夢中になれること、目標がない</p>
         <ul class="flex justify-center tracking-widest">
           <button
             class="
-              text-2xl
-              my-6
-              mx-10
-              py-6
-              px-6
               border-2 border-red-600
               rounded-full
-              h-28
-              w-28
               flex
               items-center
               justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
             "
             :class="answers.q3 ? 'bg-red-200' : ''"
             @click="answer('q3', true)"
@@ -178,18 +186,17 @@
           </button>
           <button
             class="
-              text-2xl
-              my-6
-              mx-10
-              py-6
-              px-6
               border-2 border-blue-600
               rounded-full
-              h-28
-              w-28
               flex
               items-center
               justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
             "
             :class="answers.q3 === false ? 'bg-blue-200' : ''"
             @click="answer('q3', false)"
@@ -203,33 +210,35 @@
         class="
           max-w-screen-md
           m-auto
-          my-28
-          py-16
-          border-4 border-red-600
+          md:mb-28
+          py-8
+          px-4
+          md:py-16
+          my-8
+          border-4 border-green-300
           rounded-lg
           bg-white
         "
         v-if="answers.q3 != null"
       >
-        <p class="text-4xl">Q.4</p>
-        <p class="py-8 text-2xl">
+        <p class="text-3xl md:text-4xl">Q.4</p>
+        <p class="py-8 md:text-2xl">
           自分の長所がわからない。自分に自信が持てない。
         </p>
         <ul class="flex justify-center tracking-widest">
           <button
             class="
-              text-2xl
-              my-6
-              mx-10
-              py-6
-              px-6
               border-2 border-red-600
               rounded-full
-              h-28
-              w-28
               flex
               items-center
               justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
             "
             :class="answers.q4 ? 'bg-red-200' : ''"
             @click="answer('q4', true)"
@@ -238,18 +247,17 @@
           </button>
           <button
             class="
-              text-2xl
-              my-6
-              mx-10
-              py-6
-              px-6
               border-2 border-blue-600
               rounded-full
-              h-28
-              w-28
               flex
               items-center
               justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
             "
             :class="answers.q4 === false ? 'bg-blue-200' : ''"
             @click="answer('q4', false)"
@@ -263,31 +271,33 @@
         class="
           max-w-screen-md
           m-auto
-          my-28
-          py-16
-          border-4 border-red-600
+          md:mb-28
+          py-8
+          px-4
+          md:py-16
+          mt-8
+          border-4 border-green-300
           rounded-lg
           bg-white
         "
         v-if="answers.q4 != null"
       >
-        <p class="text-4xl">Q.5</p>
-        <p class="py-8 text-2xl">最近悪い出来事が多い。</p>
+        <p class="text-3xl md:text-4xl">Q.5</p>
+        <p class="py-8 md:text-2xl">最近悪い出来事が多い。</p>
         <ul class="flex justify-center tracking-widest">
           <button
             class="
-              text-2xl
-              my-6
-              mx-10
-              py-6
-              px-6
               border-2 border-red-600
               rounded-full
-              h-28
-              w-28
               flex
               items-center
               justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
             "
             :class="answers.q5 ? 'bg-red-200' : ''"
             @click="answer('q5', true)"
@@ -296,18 +306,17 @@
           </button>
           <button
             class="
-              text-2xl
-              my-6
-              mx-10
-              py-6
-              px-6
               border-2 border-blue-600
               rounded-full
-              h-28
-              w-28
               flex
               items-center
               justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
             "
             :class="answers.q5 === false ? 'bg-blue-200' : ''"
             @click="answer('q5', false)"
@@ -316,22 +325,139 @@
           </button>
         </ul>
       </div>
+
+      <div
+        class="
+          max-w-screen-md
+          m-auto
+          md:mb-28
+          py-8
+          px-4
+          md:py-16
+          mt-8
+          border-4 border-green-300
+          rounded-lg
+          bg-white
+        "
+        v-if="answers.q5 != null"
+      >
+        <p class="text-3xl md:text-4xl">Q.6</p>
+        <p class="py-8 md:text-2xl">効率的に目標を達成させたい。</p>
+        <ul class="flex justify-center tracking-widest">
+          <button
+            class="
+              border-2 border-red-600
+              rounded-full
+              flex
+              items-center
+              justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+            "
+            :class="answers.q6 ? 'bg-red-200' : ''"
+            @click="answer('q6', true)"
+          >
+            YES
+          </button>
+          <button
+            class="
+              border-2 border-blue-600
+              rounded-full
+              flex
+              items-center
+              justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+            "
+            :class="answers.q6 === false ? 'bg-blue-200' : ''"
+            @click="answer('q6', false)"
+          >
+            NO
+          </button>
+        </ul>
+      </div>
+
+      <div
+        class="
+          max-w-screen-md
+          m-auto
+          md:mb-28
+          py-8
+          px-4
+          md:py-16
+          mt-8
+          border-4 border-green-300
+          rounded-lg
+          bg-white
+        "
+        v-if="answers.q6 != null"
+      >
+        <p class="text-3xl md:text-4xl">Q.7</p>
+        <p class="py-8 md:text-2xl">仕事で成果を出したい。</p>
+        <ul class="flex justify-center tracking-widest">
+          <button
+            class="
+              border-2 border-red-600
+              rounded-full
+              flex
+              items-center
+              justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+            "
+            :class="answers.q7 ? 'bg-red-200' : ''"
+            @click="answer('q7', true)"
+          >
+            YES
+          </button>
+          <button
+            class="
+              border-2 border-blue-600
+              rounded-full
+              flex
+              items-center
+              justify-center
+              text-lg
+              mx-6
+              p-8
+              h-20
+              w-20
+              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+            "
+            :class="answers.q7 === false ? 'bg-blue-200' : ''"
+            @click="answer('q7', false)"
+          >
+            NO
+          </button>
+        </ul>
+      </div>
     </div>
 
-    <div class="bg-white py-20" v-if="showQuestion">
+    <div class="bg-white py-20" v-if="answers.q7 != null">
       <button
         @click="diagnose"
         class="
-          text-2xl
-          border-4 border-green-200
-          rounded-full
-          py-4
           px-20
+          border-4 border-green-200
+          text-center
+          rounded-full
           hover:bg-green-100
           duration-1000
         "
       >
-        診断結果へ
+        <p class="py-4 w-32 text-lg md:w-64 md:text-2xl">診断結果をみる</p>
       </button>
     </div>
   </div>
@@ -351,6 +477,8 @@ export default {
         q3: null,
         q4: null,
         q5: null,
+        q6: null,
+        q7: null,
       },
     };
   },
@@ -396,6 +524,19 @@ export default {
         }
         filters += "question5[equals]true";
       }
+      if (this.answers.q6 === true) {
+        if (filters != "") {
+          filters += "[or]";
+        }
+        filters += "question6[equals]true";
+      }
+      if (this.answers.q7 === true) {
+        if (filters != "") {
+          filters += "[or]";
+        }
+        filters += "question7[equals]true";
+      }
+
       const book = await this.$microcms.get({
         endpoint: "books",
         queries: {

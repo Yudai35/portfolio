@@ -2,50 +2,64 @@
   <!-- メモ記録ページ -->
   <!-- 未レスポンシブ -->
 
-  <div class="font-serif">
-    <div class="mt-32 mb-24 flex justify-center items-center">
-      <p class="text-2xl">書籍名：</p>
+  <div class="font-serif px-4">
+    <div class="text-center my-12 md:mt-32 md:mb-24">
       <input
         type="”text”"
         name="”タイトル”"
-        class="border-b-2 h-12 w-1/2 text-2xl"
+        placeholder="書籍名"
+        class="border-b-2 h-12 w-11/12 md:w-1/2 text-sm md:text-2xl"
       />
     </div>
     <div class="text-center m-auto">
       <textarea
         name="”メモ欄”"
-        placeholder="メモ欄"
+        placeholder="印象に残ったところをアウトプットしよう！"
         id="div"
         cols="30"
         rows="10"
-        class="border-2 w-3/5 h-screen text-lg p-4"
+        class="border-2 p-4 text-sm md:text-lg w-11/12 md:w-3/5 md:h-screen"
       ></textarea>
     </div>
-    <div class="mt-16 mb-20 text-center m-auto">
+    <div class="my-12 md:mt-12 md:mb-20 text-center m-auto">
       <textarea
         name="”TODOリスト”"
-        placeholder="TODOリスト(1〜3つ)"
+        placeholder="TODOリスト"
         id="todo"
         cols="30"
         rows="10"
-        class="border-2 w-3/5 h-28 text-lg p-4"
+        class="border-2 p-4 h-28 text-sm md:text-lg w-11/12 md:w-3/5"
       ></textarea>
     </div>
-    <div class="mb-12 flex justify-center">
-      <input
-        type="submit"
-        value="保存"
-        class="mx-14 h-14 w-40 text-lg bg-green-300"
-      />
-      <input
-        type="submit"
-        value="メモ一覧ページ"
-        class="mx-14 h-14 w-40 text-lg bg-green-300"
-      />
+    <div class="mb-12 text-center md:flex justify-center">
+      <button
+        class="
+          text-center
+          mx-14
+          mb-12
+          border-4 border-green-200
+          rounded-full
+          hover:bg-green-100
+          duration-1000
+        "
+      >
+        <p class="py-3 text-lg w-52 md:text-2xl">保存</p>
+      </button>
+      <button
+        class="
+          mx-14
+          border-4 border-green-200
+          rounded-full
+          hover:bg-green-100
+          duration-1000
+        "
+      >
+        <p class="py-3 text-lg w-52 md:text-2xl">メモ一覧</p>
+      </button>
     </div>
-    <div class="mt-12 mb-32 text-center">
+    <!-- <div class="mt-12 mb-32 text-center">
       <p class="text-xl text-blue-500">保存しました。</p>
-    </div>
+    </div> -->
   </div>
 </template>
 

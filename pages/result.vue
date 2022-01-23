@@ -8,7 +8,7 @@
     </h2>
     <div class="text-center md:flex justify-center md:text-left">
       <div class="mx-auto w-2/5 my-10 md:w-1/3 md:mx-0">
-        <img :src="book.image.url" class="w-80" />
+        <img :src="book.image.url" class="w-80 shadow-lg" />
       </div>
       <div class="align-middle md:w-2/5 mt-10">
         <h2 class="my-5 text-2xl md:text-4xl">タイトル:{{ book.title }}</h2>
