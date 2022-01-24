@@ -1,6 +1,5 @@
 <template>
   <!-- メモ記録ページ -->
-  <!-- 未レスポンシブ -->
 
   <div class="font-serif px-4">
     <div class="text-center my-12 md:mt-32 md:mb-24">

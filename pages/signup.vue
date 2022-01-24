@@ -1,5 +1,6 @@
 <template>
   <!-- 新規登録 -->
+
   <div class="py-6 bg-gray-100">
     <div
       class="

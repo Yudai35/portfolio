@@ -68,7 +68,7 @@
               <p class="text-lg py-2 md:text-xl">Twitter共有</p>
             </div>
             <p class="my-4">
-              「診断して終わり」、「本を買ったけれど読まない」とよくありがちです。Twiiterに「感想をツイートします！」と宣言しましょう！NewSelfなやらざるをえない「環境づくり」をサポートします。
+              「診断して終わり」、「本を買ったけれど読まない」とよくありがちです。Twiiterに「読んだ感想をツイートします！」と宣言しましょう！NewSelfなやらざるをえない「環境づくり」をサポートします。
             </p>
           </div>
           <div class="mt-8 md:flex-1 text-center md:w-1/3 md:mx-6 md:mt-0">

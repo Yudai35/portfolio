@@ -1,6 +1,5 @@
 <template>
   <!-- 診断ページ -->
-  <!-- 未レスポンシブ -->
 
   <div class="font-serif text-center">
     <!-- <img src="~/assets/AdobeStock_229144311.jpeg" /> -->

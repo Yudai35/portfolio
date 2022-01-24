@@ -1,6 +1,5 @@
 <template>
   <!-- 診断結果表示ページ -->
-  <!-- レスポンシブ実装中 -->
 
   <div class="font-serif py-28 px-4">
     <h2 class="text-center text-2xl md:text-5xl md:pb-20">
