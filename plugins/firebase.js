@@ -1,7 +1,7 @@
 // import { resolve } from 'core-js/fn/promise';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth'; //ログイン
-// import 'firebase/compat/firestore';メモ情報の保管
+import 'firebase/compat/firestore';//メモ情報の保管
 import 'firebase/compat/functions';//お問い合わせフォーム
 
 const firebaseConfig = {
@@ -32,6 +32,6 @@ export default function (app, inject) {
       })
     })
   })
-  // inject('auth', firebase.firestore())
+  inject('firestore', firebase.firestore())
   inject('functions', firebase.functions())
 }

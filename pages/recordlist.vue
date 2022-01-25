@@ -226,5 +226,20 @@
 <script>
 export default {
   layout: "oftenuse",
+  async mounted() {
+    const memosRef = await this.$firestore
+      .collection("memos")
+      .where("userId", "==", this.$store.state.user.userId)
+      .get();
+    this.memos = memosRef.docs.map((doc) => {
+      return doc.data();
+    });
+    console.log(this.memos);
+  },
+  data() {
+    return {
+      memos: [],
+    };
+  },
 };
 </script>

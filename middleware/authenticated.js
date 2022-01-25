@@ -10,9 +10,10 @@ export default async function ({ store, route, redirect, app }) {
 
     if (user) {
         //store/index.jsの"getDate"に情報を入れ直す
-        store.commit("getDate",
+        store.commit("getData",
             {
                 email: user.email,
+                userId: user.uid
                 //password:user.password || ""
             }
         )

@@ -5,6 +5,7 @@
 export const state = () => ({
     user: {
         email: "",
+        userId: "",
         // password: "",
         login: false
     }
@@ -22,6 +23,7 @@ export const actions = {
             if (user) {
                 commit("getData", {
                     email: user.email,
+                    userId: user.uid
                     // password: user.password 
                 });
                 commit("yesLogin");
@@ -36,6 +38,7 @@ export const actions = {
 export const mutations = {
     getData(state, payload) {
         state.user.email = payload.email;
+        state.user.userId = payload.userId;
         // state.user.password = payload.password;
     },
     yesLogin(state) {
