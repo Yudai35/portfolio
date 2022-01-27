@@ -107,7 +107,7 @@ export default {
       const today = new Date(); //今日この瞬間の情報を取得
       const date_today = today.getDate(); //日
       const after2Week = today.setDate(date_today + 14); //今日の日＋14日
-      const formatDate = moment(after2Week).format("MM月DD日"); //2週間後の日にちを"MM月DD日"で表示
+      const formatDate = moment(after2Week).format("YYYY年MM月DD日"); //2週間後の日にちを"MM月DD日"で表示
       console.log(formatDate);
       //シェアする画面を設定
       var shareURL =

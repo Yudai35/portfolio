@@ -14,7 +14,17 @@
           <div class="text-center mx-2 md:flex-1 md:w-1/3">
             <nuxt-link to="/diagnose">
               <div class="text-center border-4 border-green-200 rounded-full">
-                <p class="text-lg py-2 md:text-xl">診断</p>
+                <p
+                  class="
+                    text-lg
+                    py-2
+                    hover:bg-green-100
+                    duration-1000
+                    md:text-xl
+                  "
+                >
+                  診断
+                </p>
               </div>
             </nuxt-link>
             <p class="my-4">さぁ、あなたの人生を変える本と出会いましょう。</p>
@@ -28,7 +38,17 @@
                   hover:cursor-pointer
                 "
               >
-                <p class="text-lg py-2 md:text-xl">メモ</p>
+                <p
+                  class="
+                    text-lg
+                    py-2
+                    hover:bg-green-100
+                    duration-1000
+                    md:text-xl
+                  "
+                >
+                  メモ
+                </p>
               </div>
             </nuxt-link>
             <p class="my-4">
@@ -44,7 +64,17 @@
                   hover:cursor-pointer
                 "
               >
-                <p class="text-lg py-2 md:text-xl">メモ一覧</p>
+                <p
+                  class="
+                    text-lg
+                    py-2
+                    hover:bg-green-100
+                    duration-1000
+                    md:text-xl
+                  "
+                >
+                  メモ一覧
+                </p>
               </div>
             </nuxt-link>
             <p class="my-4">
