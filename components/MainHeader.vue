@@ -146,29 +146,33 @@
       </div>
     </div>
 
-    <ul class="hidden md:flex justify-between items-center opacity-100 text-xl">
+    <ul
+      class="hidden md:flex justify-between items-center opacity-100 lg:text-xl"
+    >
       <li>
         <nuxt-link to="/record">
-          <a class="pr-8 hover:opacity-50 duration-1000">メモ</a>
+          <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">メモ</a>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/recordlist">
-          <a class="pr-8 hover:opacity-50 duration-1000">メモ一覧</a>
+          <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">メモ一覧</a>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/diagnose">
-          <a class="pr-8 hover:opacity-50 duration-1000">診断</a>
+          <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">診断</a>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/inquiry">
-          <a class="pr-8 hover:opacity-50 duration-1000">お問い合わせ</a>
+          <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000"
+            >お問い合わせ</a
+          >
         </nuxt-link>
       </li>
       <li>
-        <button @click="signOut" class="pr-5 hover:opacity-50 duration-1000">
+        <button @click="signOut" class="lg:pr-4 hover:opacity-50 duration-1000">
           ログアウト
         </button>
       </li>

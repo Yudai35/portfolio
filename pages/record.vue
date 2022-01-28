@@ -81,9 +81,6 @@
         <nuxt-link to="/recordlist">メモ一覧</nuxt-link>
       </button>
     </div>
-    <!-- <div class="mt-12 mb-32 text-center">
-      <p class="text-xl text-blue-500">保存しました。</p>
-    </div> -->
   </div>
 </template>
 
