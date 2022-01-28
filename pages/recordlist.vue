@@ -1,9 +1,12 @@
 <template>
   <!-- メモ一覧ページ -->
 
-  <div class="font-serif mx-40 my-20">
-    <div class="flex flex-wrap">
-      <div v-for="memo in memos" class="border-4 rounded-md w-1/4 mx-10 my-8">
+  <div class="font-serif m-4 md:m-12 lg:m-16 xl:m-20 px-4">
+    <div class="md:flex md:flex-wrap xl:justify-start justify-between">
+      <div
+        v-for="memo in memos"
+        class="border-4 rounded-md md:w-1/3 xl:w-1/4 m-8 md:mx-12 md:my-8"
+      >
         <p class="border-b-2 text-xl mx-4 my-6">{{ memo.title }}</p>
         <p class="border-b-2 text-xl mx-4 my-6">
           {{ memo.createdAt }}
@@ -26,31 +29,35 @@
       </div>
     </div>
 
-    <div class="flex justify-center mt-20">
+    <div class="mt-12 md:mt-20 mb-12 text-center justify-center">
       <button
         class="
-          mx-10
-          py-3
-          w-48
-          text-2xl
-          border-2 border-green-200
+          text-center
+          mx-14
+          mb-12
+          border-4 border-green-200
           rounded-full
           hover:bg-green-100
           duration-1000
+          py-3
+          text-lg
+          w-52
+          md:text-2xl
         "
       >
         <nuxt-link to="/record"> メモする </nuxt-link>
       </button>
       <button
         class="
-          mx-10
-          py-3
-          w-48
-          text-2xl
-          border-2 border-green-200
+          mx-14
+          border-4 border-green-200
           rounded-full
           hover:bg-green-100
           duration-1000
+          py-3
+          text-lg
+          w-52
+          md:text-2xl
         "
       >
         <nuxt-link to="/top"> TOPへ </nuxt-link>

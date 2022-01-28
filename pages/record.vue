@@ -45,7 +45,8 @@
         {{ todoErrorMassage }}
       </p>
     </div>
-    <div class="mb-12 text-center justify-center">
+
+    <div class="mt-12 md:mt-20 mb-12 text-center justify-center">
       <button
         class="
           text-center
@@ -55,10 +56,14 @@
           rounded-full
           hover:bg-green-100
           duration-1000
+          py-3
+          text-lg
+          w-52
+          md:text-2xl
         "
         @click="save"
       >
-        <p class="py-3 text-lg w-52 md:text-2xl">保存</p>
+        保存
       </button>
       <button
         class="
@@ -67,9 +72,13 @@
           rounded-full
           hover:bg-green-100
           duration-1000
+          py-3
+          text-lg
+          w-52
+          md:text-2xl
         "
       >
-        <p class="py-3 text-lg w-52 md:text-2xl">メモ一覧</p>
+        <nuxt-link to="/recordlist">メモ一覧</nuxt-link>
       </button>
     </div>
     <!-- <div class="mt-12 mb-32 text-center">
