@@ -87,8 +87,29 @@
 <script>
 export default {
   layout: "oftenuse",
+  async asyncData({ query, $microcms }) {
+    const id = query.id;
+    console.log(id); //コンソールにidを出力
+    return {
+      id,
+    };
+  },
+  async mounted() {
+    //URLにFirestoreのIDがあった場合は、そのメモの中身を表示する
+    if (this.id) {
+      const memoRef = await this.$firestore
+        .collection("memos")
+        .doc(this.id)
+        .get();
+      this.memo = memoRef.data();
+      this.title = this.memo.title;
+      this.text = this.memo.text;
+      this.todo = this.memo.todo;
+    }
+  },
   data() {
     return {
+      id: "",
       title: "",
       text: "",
       todo: "",
@@ -102,32 +123,51 @@ export default {
       if (this.title === "") {
         this.titleErrorMassage = "書籍名を入力してください";
       }
-      if (this.text === "") {
+      /* if (this.text === "") {
         this.textErrorMassage = "メモを入力してください";
       }
       if (this.todo === "") {
         this.todoErrorMassage = "TODOリストを入力してください";
-      }
+      } */
       if (
-        this.titleErrorMassage !== "" ||
+        this.titleErrorMassage !== "" /* ||
         this.textErrorMassage !== "" ||
-        this.todoErrorMassage !== ""
+        this.todoErrorMassage !== "" */
       ) {
         return;
       }
+
       //保存ボタンを押したときの処理
-      await this.$firestore
-        .collection("memos")
-        .add({
-          createdAt: new Date().getTime(),
-          title: this.title,
-          text: this.text,
-          todo: this.todo,
-          userId: this.$store.state.user.userId,
-        })
-        .then(() => {
-          alert("保存に成功しました！");
-        });
+      if (this.id) {
+        //URLにIdがあるときは、既存のメモを更新する
+        await this.$firestore
+          .collection("memos")
+          .doc(this.id)
+          .update({
+            createdAt: new Date().getTime(),
+            title: this.title,
+            text: this.text,
+            todo: this.todo,
+            // userId: this.$store.state.user.userId,
+          })
+          .then(() => {
+            alert("保存に成功しました！");
+          });
+      } else {
+        //URLにIdがないときは、新規メモを作成する
+        await this.$firestore
+          .collection("memos")
+          .add({
+            createdAt: new Date().getTime(),
+            title: this.title,
+            text: this.text,
+            todo: this.todo,
+            userId: this.$store.state.user.userId,
+          })
+          .then(() => {
+            alert("保存に成功しました！");
+          });
+      }
     },
     isInput() {
       this.titleErrorMassage = "";
