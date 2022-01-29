@@ -16,7 +16,7 @@
   >
     <h1>
       <nuxt-link
-        to=""
+        to="/top"
         class="
           text-3xl
           hover:opacity-50
