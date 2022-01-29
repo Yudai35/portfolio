@@ -6,10 +6,14 @@
       <div
         v-for="memo in memos"
         class="border-4 rounded-md md:w-1/3 xl:w-1/4 m-8 md:mx-12 md:my-8"
+        :key="memo.id"
       >
-        <p class="border-b-2 text-xl mx-4 my-6">{{ memo.title }}</p>
-        <p class="border-b-2 text-xl mx-4 my-6">
-          {{ memo.createdAt }}
+        <div class="text-right pt-2 pr-2 text-2xl">
+          <button @click="deleteMemo(memo.id)">×</button>
+        </div>
+        <p class="border-b-2 text-xl mx-4 my-4">{{ memo.title }}</p>
+        <p class="border-b-2 text-xl mx-4 my-4">
+          {{ memo.createdAt | dateFormat }}
         </p>
         <div class="text-center my-6">
           <button
@@ -23,7 +27,7 @@
               duration-1000
             "
           >
-            メモを見る
+            <nuxt-link :to="`/record?id=${memo.id}`">メモを見る</nuxt-link>
           </button>
         </div>
       </div>
@@ -67,15 +71,27 @@
 </template>
 
 <script>
+import moment from "moment";
 export default {
   layout: "oftenuse",
+  filters: {
+    dateFormat: function (date) {
+      return moment(date).format("YYYY/MM/DD");
+    },
+  },
   async mounted() {
     const memosRef = await this.$firestore
       .collection("memos")
       .where("userId", "==", this.$store.state.user.userId)
+      .orderBy("createdAt", "desc")
       .get();
     this.memos = memosRef.docs.map((doc) => {
-      return doc.data();
+      const id = doc.id;
+      const data = doc.data();
+      return {
+        id: id,
+        ...data,
+      };
     });
     console.log(this.memos);
   },
@@ -83,6 +99,17 @@ export default {
     return {
       memos: [],
     };
+  },
+  methods: {
+    async deleteMemo(id) {
+      if (confirm("このメモを削除しますか？")) {
+        const memoRef = await this.$firestore.collection("memos").doc(id).get();
+        await memoRef.ref.delete().then(() => {
+          alert("メモを削除しました。");
+          location.reload();
+        });
+      }
+    },
   },
 };
 </script>

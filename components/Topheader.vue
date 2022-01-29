@@ -15,7 +15,18 @@
     "
   >
     <h1>
-      <a class="text-3xl hover:opacity-50 duration-1000 md:text-4xl">NewSelf</a>
+      <nuxt-link
+        to=""
+        class="
+          text-3xl
+          hover:opacity-50
+          duration-1000
+          md:text-4xl
+          cursor-pointer
+        "
+      >
+        NewSelf
+      </nuxt-link>
     </h1>
     <div class="visible md:invisible flex justify-end items-center">
       <button @click="isOpen = !isOpen" class="relative md:hidden h-5 w-6">
