@@ -150,6 +150,7 @@ export default {
           })
           .then(() => {
             alert("メモを更新しました！");
+            this.$router.push("/recordlist");
           });
       } else {
         //URLにIdがないときは、新規メモを作成する
@@ -164,6 +165,7 @@ export default {
           })
           .then(() => {
             alert("保存に成功しました！");
+            this.$router.push("/recordlist");
           });
       }
     },
