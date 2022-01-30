@@ -9,20 +9,22 @@
           簡単な質問に答えて、<br />あなたにピッタリな書籍と出会おう！
         </p>
       </h1>
-      <button
-        class="
-          md:mb-16
-          px-20
-          border-4 border-green-200
-          text-center
-          rounded-full
-          hover:bg-green-100
-          duration-1000
-        "
-        @click="openQuestion"
-      >
-        <p class="py-4 w-32 text-lg md:w-64 md:text-2xl">診断を始める！</p>
-      </button>
+      <nuxt-link v-scroll-to="'#question1'" to>
+        <button
+          class="
+            md:mb-16
+            px-20
+            border-4 border-green-200
+            text-center
+            rounded-full
+            hover:bg-green-100
+            duration-1000
+          "
+          @click="openQuestion"
+        >
+          <p class="py-4 w-32 text-lg md:w-64 md:text-2xl">診断を始める！</p>
+        </button>
+      </nuxt-link>
     </div>
 
     <div
@@ -30,6 +32,7 @@
       class="bg-green-100 bg-opacity-85 px-4 py-12 md:py-28"
     >
       <div
+        id="question1"
         class="
           max-w-screen-md
           m-auto
@@ -46,48 +49,57 @@
         <p class="text-3xl md:text-4xl">Q.1</p>
         <p class="py-8 md:text-2xl">コミュニケーションで悩んだことがある</p>
         <ul class="flex justify-center tracking-widest">
-          <button
-            class="
-              border-2 border-red-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q1 ? 'bg-red-200' : ''"
-            @click="answer('q1', true)"
-          >
-            YES
-          </button>
-          <button
-            class="
-              border-2 border-blue-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q1 === false ? 'bg-blue-200' : ''"
-            @click="answer('q1', false)"
-          >
-            NO
-          </button>
+          <nuxt-link v-scroll-to="'#question2'" to>
+            <button
+              class="
+                border-2 border-red-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              href="#"
+              v-scroll-to="question2"
+              :class="answers.q1 ? 'bg-red-200' : ''"
+              @click="answer('q1', true)"
+            >
+              YES
+            </button>
+          </nuxt-link>
+          <nuxt-link v-scroll-to="'#question2'" to>
+            <button
+              class="
+                border-2 border-blue-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              href="#"
+              v-scroll-to="question2"
+              :class="answers.q1 === false ? 'bg-blue-200' : ''"
+              @click="answer('q1', false)"
+            >
+              NO
+            </button>
+          </nuxt-link>
         </ul>
       </div>
 
       <div
+        id="question2"
         class="
           max-w-screen-md
           m-auto
@@ -95,7 +107,7 @@
           py-8
           px-4
           md:py-16
-          my-8
+          my-10
           border-4 border-green-300
           rounded-lg
           bg-white
@@ -105,48 +117,53 @@
         <p class="text-3xl md:text-4xl">Q.2</p>
         <p class="py-8 md:text-2xl">対人関係で悩みがある</p>
         <ul class="flex justify-center tracking-widest">
-          <button
-            class="
-              border-2 border-red-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q2 ? 'bg-red-200' : ''"
-            @click="answer('q2', true)"
-          >
-            YES
-          </button>
-          <button
-            class="
-              border-2 border-blue-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q2 === false ? 'bg-blue-200' : ''"
-            @click="answer('q2', false)"
-          >
-            NO
-          </button>
+          <nuxt-link v-scroll-to="'#question3'" to>
+            <button
+              class="
+                border-2 border-red-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q2 ? 'bg-red-200' : ''"
+              @click="answer('q2', true)"
+            >
+              YES
+            </button>
+          </nuxt-link>
+          <nuxt-link v-scroll-to="'#question3'" to>
+            <button
+              class="
+                border-2 border-blue-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q2 === false ? 'bg-blue-200' : ''"
+              @click="answer('q2', false)"
+            >
+              NO
+            </button>
+          </nuxt-link>
         </ul>
       </div>
 
       <div
+        id="question3"
         class="
           max-w-screen-md
           m-auto
@@ -154,7 +171,7 @@
           py-8
           px-4
           md:py-16
-          my-8
+          my-10
           border-4 border-green-300
           rounded-lg
           bg-white
@@ -164,48 +181,53 @@
         <p class="text-3xl md:text-4xl">Q.3</p>
         <p class="py-8 md:text-2xl">現在夢中になれること、目標がない</p>
         <ul class="flex justify-center tracking-widest">
-          <button
-            class="
-              border-2 border-red-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q3 ? 'bg-red-200' : ''"
-            @click="answer('q3', true)"
-          >
-            YES
-          </button>
-          <button
-            class="
-              border-2 border-blue-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q3 === false ? 'bg-blue-200' : ''"
-            @click="answer('q3', false)"
-          >
-            NO
-          </button>
+          <nuxt-link v-scroll-to="'#question4'" to>
+            <button
+              class="
+                border-2 border-red-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q3 ? 'bg-red-200' : ''"
+              @click="answer('q3', true)"
+            >
+              YES
+            </button>
+          </nuxt-link>
+          <nuxt-link v-scroll-to="'#question4'" to>
+            <button
+              class="
+                border-2 border-blue-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q3 === false ? 'bg-blue-200' : ''"
+              @click="answer('q3', false)"
+            >
+              NO
+            </button>
+          </nuxt-link>
         </ul>
       </div>
 
       <div
+        id="question4"
         class="
           max-w-screen-md
           m-auto
@@ -213,7 +235,7 @@
           py-8
           px-4
           md:py-16
-          my-8
+          my-10
           border-4 border-green-300
           rounded-lg
           bg-white
@@ -225,48 +247,53 @@
           自分の長所がわからない。自分に自信が持てない。
         </p>
         <ul class="flex justify-center tracking-widest">
-          <button
-            class="
-              border-2 border-red-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q4 ? 'bg-red-200' : ''"
-            @click="answer('q4', true)"
-          >
-            YES
-          </button>
-          <button
-            class="
-              border-2 border-blue-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q4 === false ? 'bg-blue-200' : ''"
-            @click="answer('q4', false)"
-          >
-            NO
-          </button>
+          <nuxt-link v-scroll-to="'#question5'" to>
+            <button
+              class="
+                border-2 border-red-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q4 ? 'bg-red-200' : ''"
+              @click="answer('q4', true)"
+            >
+              YES
+            </button>
+          </nuxt-link>
+          <nuxt-link v-scroll-to="'#question5'" to>
+            <button
+              class="
+                border-2 border-blue-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q4 === false ? 'bg-blue-200' : ''"
+              @click="answer('q4', false)"
+            >
+              NO
+            </button>
+          </nuxt-link>
         </ul>
       </div>
 
       <div
+        id="question5"
         class="
           max-w-screen-md
           m-auto
@@ -274,7 +301,7 @@
           py-8
           px-4
           md:py-16
-          mt-8
+          my-10
           border-4 border-green-300
           rounded-lg
           bg-white
@@ -284,48 +311,53 @@
         <p class="text-3xl md:text-4xl">Q.5</p>
         <p class="py-8 md:text-2xl">最近悪い出来事が多い。</p>
         <ul class="flex justify-center tracking-widest">
-          <button
-            class="
-              border-2 border-red-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q5 ? 'bg-red-200' : ''"
-            @click="answer('q5', true)"
-          >
-            YES
-          </button>
-          <button
-            class="
-              border-2 border-blue-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q5 === false ? 'bg-blue-200' : ''"
-            @click="answer('q5', false)"
-          >
-            NO
-          </button>
+          <nuxt-link v-scroll-to="'#question6'" to>
+            <button
+              class="
+                border-2 border-red-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q5 ? 'bg-red-200' : ''"
+              @click="answer('q5', true)"
+            >
+              YES
+            </button>
+          </nuxt-link>
+          <nuxt-link v-scroll-to="'#question6'" to>
+            <button
+              class="
+                border-2 border-blue-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q5 === false ? 'bg-blue-200' : ''"
+              @click="answer('q5', false)"
+            >
+              NO
+            </button>
+          </nuxt-link>
         </ul>
       </div>
 
       <div
+        id="question6"
         class="
           max-w-screen-md
           m-auto
@@ -333,7 +365,7 @@
           py-8
           px-4
           md:py-16
-          mt-8
+          my-10
           border-4 border-green-300
           rounded-lg
           bg-white
@@ -343,48 +375,53 @@
         <p class="text-3xl md:text-4xl">Q.6</p>
         <p class="py-8 md:text-2xl">効率的に目標を達成させたい。</p>
         <ul class="flex justify-center tracking-widest">
-          <button
-            class="
-              border-2 border-red-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q6 ? 'bg-red-200' : ''"
-            @click="answer('q6', true)"
-          >
-            YES
-          </button>
-          <button
-            class="
-              border-2 border-blue-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q6 === false ? 'bg-blue-200' : ''"
-            @click="answer('q6', false)"
-          >
-            NO
-          </button>
+          <nuxt-link v-scroll-to="'#question7'" to>
+            <button
+              class="
+                border-2 border-red-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q6 ? 'bg-red-200' : ''"
+              @click="answer('q6', true)"
+            >
+              YES
+            </button>
+          </nuxt-link>
+          <nuxt-link v-scroll-to="'#question7'" to>
+            <button
+              class="
+                border-2 border-blue-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q6 === false ? 'bg-blue-200' : ''"
+              @click="answer('q6', false)"
+            >
+              NO
+            </button>
+          </nuxt-link>
         </ul>
       </div>
 
       <div
+        id="question7"
         class="
           max-w-screen-md
           m-auto
@@ -392,7 +429,7 @@
           py-8
           px-4
           md:py-16
-          mt-8
+          my-10
           border-4 border-green-300
           rounded-lg
           bg-white
@@ -402,50 +439,55 @@
         <p class="text-3xl md:text-4xl">Q.7</p>
         <p class="py-8 md:text-2xl">仕事で成果を出したい。</p>
         <ul class="flex justify-center tracking-widest">
-          <button
-            class="
-              border-2 border-red-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q7 ? 'bg-red-200' : ''"
-            @click="answer('q7', true)"
-          >
-            YES
-          </button>
-          <button
-            class="
-              border-2 border-blue-600
-              rounded-full
-              flex
-              items-center
-              justify-center
-              text-lg
-              mx-6
-              p-8
-              h-20
-              w-20
-              md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-            "
-            :class="answers.q7 === false ? 'bg-blue-200' : ''"
-            @click="answer('q7', false)"
-          >
-            NO
-          </button>
+          <nuxt-link v-scroll-to="'#result'" to>
+            <button
+              class="
+                border-2 border-red-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q7 ? 'bg-red-200' : ''"
+              @click="answer('q7', true)"
+            >
+              YES
+            </button>
+          </nuxt-link>
+          <nuxt-link v-scroll-to="'#result'" to>
+            <button
+              class="
+                border-2 border-blue-600
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-lg
+                mx-6
+                p-8
+                h-20
+                w-20
+                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
+              "
+              :class="answers.q7 === false ? 'bg-blue-200' : ''"
+              @click="answer('q7', false)"
+            >
+              NO
+            </button>
+          </nuxt-link>
         </ul>
       </div>
     </div>
 
     <div class="bg-white py-20" v-if="answers.q7 != null">
       <button
+        id="result"
         @click="diagnose"
         class="
           px-20
@@ -479,6 +521,14 @@ export default {
         q6: null,
         q7: null,
       },
+      question1: "#question1",
+      question2: "#question2",
+      question3: "#question3",
+      question4: "#question4",
+      question5: "#question5",
+      question6: "#question6",
+      question7: "#question7",
+      result: "#result",
     };
   },
   methods: {

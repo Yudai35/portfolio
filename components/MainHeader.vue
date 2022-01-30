@@ -83,7 +83,7 @@
                 duration-300
                 md:px-4 md:py-4
               "
-              >メモ</nuxt-link
+              >診断</nuxt-link
             >
           </li>
           <li>
@@ -99,7 +99,7 @@
                 duration-300
                 md:px-4 md:py-4
               "
-              >メモ一覧</nuxt-link
+              >メモ</nuxt-link
             >
           </li>
           <li>
@@ -115,7 +115,7 @@
                 duration-300
                 md:px-4 md:py-4
               "
-              >診断</nuxt-link
+              >メモ一覧</nuxt-link
             >
           </li>
           <li>
@@ -162,17 +162,17 @@
     >
       <li>
         <nuxt-link to="/record">
-          <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">メモ</a>
+          <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">診断</a>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/recordlist">
-          <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">メモ一覧</a>
+          <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">メモ</a>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/diagnose">
-          <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">診断</a>
+          <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">メモ一覧</a>
         </nuxt-link>
       </li>
       <li>

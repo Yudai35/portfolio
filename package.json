@@ -15,7 +15,8 @@
     "firebase-tools": "^9.23.3",
     "moment": "^2.29.1",
     "nuxt": "^2.15.7",
-    "nuxt-microcms-module": "^2.0.0"
+    "nuxt-microcms-module": "^2.0.0",
+    "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.2.0",
