@@ -71,7 +71,7 @@
         <ul class="md:hidden">
           <li>
             <nuxt-link
-              to="/record"
+              to="/diagnose"
               class="
                 block
                 mt-6
@@ -88,7 +88,7 @@
           </li>
           <li>
             <nuxt-link
-              to="/recordlist"
+              to="/record"
               class="
                 block
                 px-14
@@ -104,7 +104,7 @@
           </li>
           <li>
             <nuxt-link
-              to="/diagnose"
+              to="/recordlist"
               class="
                 block
                 px-14
@@ -161,17 +161,17 @@
       class="hidden md:flex justify-between items-center opacity-100 lg:text-xl"
     >
       <li>
-        <nuxt-link to="/record">
+        <nuxt-link to="/diagnose">
           <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">診断</a>
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/recordlist">
+        <nuxt-link to="/record">
           <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">メモ</a>
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/diagnose">
+        <nuxt-link to="/recordlist">
           <a class="pr-4 lg:pr-8 hover:opacity-50 duration-1000">メモ一覧</a>
         </nuxt-link>
       </li>
