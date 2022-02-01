@@ -1,6 +1,5 @@
 <template>
   <!-- ログイン前TOPページ -->
-  <!-- 未画像挿入 -->
   <section>
     <div class="font-serif">
       <img src="~/assets/AdobeStock_229144311.jpeg" />
