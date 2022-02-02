@@ -1,6 +1,5 @@
 <template>
   <!-- ログイン後TOPページ -->
-  <!-- 画像未挿入？ -->
 
   <section>
     <div class="font-serif">
