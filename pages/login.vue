@@ -1,6 +1,5 @@
 <template>
   <!-- ログインページ -->
-  <!-- 正規表現エラーメッセージ未実装 -->
   <div class="py-6 bg-gray-100 md:py-8">
     <div
       class="
