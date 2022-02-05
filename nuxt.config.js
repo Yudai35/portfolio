@@ -47,7 +47,7 @@ export default {
       /* serviceDomain: process.env.SERVICE_DOMAIN,
       apiKey: process.env.API_KEY, */
       serviceDomain: "newself",
-      apiKey: "82f1f33d7df146fcaf5b4d88dab1209b527c",
+      apiKey: process.env.X_MICROCMS_API_KEY,
     },
     //↓SSR処理をするならこっちにする必要がある
     //mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
@@ -57,6 +57,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

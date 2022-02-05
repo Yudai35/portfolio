@@ -5,13 +5,13 @@ import 'firebase/compat/firestore'; //メモ情報の保管
 import 'firebase/compat/functions';//お問い合わせフォーム
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBkxzvG-_MwCrkx4OzJ6h3pYKozhvK7Rfo",
-  authDomain: "newself-80137.firebaseapp.com",
-  projectId: "newself-80137",
-  storageBucket: "newself-80137.appspot.com",
-  messagingSenderId: "838221730471",
-  appId: "1:838221730471:web:60991c613f934f7959c182",
-  measurementId: "G-RY7Y78EGJQ"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_Id,
+  measurementId: process.env.MEASUREMENT_ID
 };
 
 firebase.initializeApp(firebaseConfig);
