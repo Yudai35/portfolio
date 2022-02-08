@@ -3,7 +3,7 @@
 
   <section>
     <div class="font-serif">
-      <img src="~/assets/AdobeStock_229144311.jpeg" />
+      <img src="~/assets/Frame 4 (1).png" />
 
       <div class="py-20 px-4">
         <h1 class="text-center">
