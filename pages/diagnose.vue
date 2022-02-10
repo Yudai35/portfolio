@@ -9,7 +9,7 @@
           簡単な質問に答えて、<br />あなたにピッタリな書籍と出会おう！
         </p>
       </h1>
-      <nuxt-link v-scroll-to="'#question1'" to>
+      <nuxt-link v-scroll-to="'#q1'" to>
         <button
           class="
             md:mb-16
@@ -31,458 +31,54 @@
       v-if="showQuestion"
       class="bg-green-100 bg-opacity-85 px-4 py-12 md:py-28"
     >
-      <div
-        id="question1"
-        class="
-          max-w-screen-md
-          m-auto
-          md:mb-28
-          py-8
-          px-4
-          mb-8
-          md:py-16
-          border-4 border-green-300
-          rounded-lg
-          bg-white
-        "
-      >
-        <p class="text-3xl md:text-4xl">Q.1</p>
-        <p class="py-8 md:text-2xl">コミュニケーションで悩んだことがある</p>
-        <ul class="flex justify-center tracking-widest">
-          <nuxt-link v-scroll-to="'#question2'" to>
-            <button
-              class="
-                border-2 border-red-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              href="#"
-              v-scroll-to="question2"
-              :class="answers.q1 ? 'bg-red-200' : ''"
-              @click="answer('q1', true)"
-            >
-              YES
-            </button>
-          </nuxt-link>
-          <nuxt-link v-scroll-to="'#question2'" to>
-            <button
-              class="
-                border-2 border-blue-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              href="#"
-              v-scroll-to="question2"
-              :class="answers.q1 === false ? 'bg-blue-200' : ''"
-              @click="answer('q1', false)"
-            >
-              NO
-            </button>
-          </nuxt-link>
-        </ul>
-      </div>
-
-      <div
-        id="question2"
-        class="
-          max-w-screen-md
-          m-auto
-          md:mb-28
-          py-8
-          px-4
-          md:py-16
-          my-10
-          border-4 border-green-300
-          rounded-lg
-          bg-white
-        "
+      <QuestionBox
+        questionTitle="Q.1"
+        questionText="コミュニケーションで悩んだことがある"
+        questionNumber="q1"
+        @answer="answer"
+      />
+      <QuestionBox
         v-if="answers.q1 != null"
-      >
-        <p class="text-3xl md:text-4xl">Q.2</p>
-        <p class="py-8 md:text-2xl">対人関係で悩みがある</p>
-        <ul class="flex justify-center tracking-widest">
-          <nuxt-link v-scroll-to="'#question3'" to>
-            <button
-              class="
-                border-2 border-red-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q2 ? 'bg-red-200' : ''"
-              @click="answer('q2', true)"
-            >
-              YES
-            </button>
-          </nuxt-link>
-          <nuxt-link v-scroll-to="'#question3'" to>
-            <button
-              class="
-                border-2 border-blue-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q2 === false ? 'bg-blue-200' : ''"
-              @click="answer('q2', false)"
-            >
-              NO
-            </button>
-          </nuxt-link>
-        </ul>
-      </div>
-
-      <div
-        id="question3"
-        class="
-          max-w-screen-md
-          m-auto
-          md:mb-28
-          py-8
-          px-4
-          md:py-16
-          my-10
-          border-4 border-green-300
-          rounded-lg
-          bg-white
-        "
+        questionTitle="Q.2"
+        questionText="対人関係で悩みがある"
+        questionNumber="q2"
+        @answer="answer"
+      />
+      <QuestionBox
         v-if="answers.q2 != null"
-      >
-        <p class="text-3xl md:text-4xl">Q.3</p>
-        <p class="py-8 md:text-2xl">現在夢中になれること、目標がない</p>
-        <ul class="flex justify-center tracking-widest">
-          <nuxt-link v-scroll-to="'#question4'" to>
-            <button
-              class="
-                border-2 border-red-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q3 ? 'bg-red-200' : ''"
-              @click="answer('q3', true)"
-            >
-              YES
-            </button>
-          </nuxt-link>
-          <nuxt-link v-scroll-to="'#question4'" to>
-            <button
-              class="
-                border-2 border-blue-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q3 === false ? 'bg-blue-200' : ''"
-              @click="answer('q3', false)"
-            >
-              NO
-            </button>
-          </nuxt-link>
-        </ul>
-      </div>
-
-      <div
-        id="question4"
-        class="
-          max-w-screen-md
-          m-auto
-          md:mb-28
-          py-8
-          px-4
-          md:py-16
-          my-10
-          border-4 border-green-300
-          rounded-lg
-          bg-white
-        "
+        questionTitle="Q.3"
+        questionText="対人関係で悩みがある"
+        questionNumber="q3"
+        @answer="answer"
+      />
+      <QuestionBox
         v-if="answers.q3 != null"
-      >
-        <p class="text-3xl md:text-4xl">Q.4</p>
-        <p class="py-8 md:text-2xl">
-          自分の長所がわからない。自分に自信が持てない。
-        </p>
-        <ul class="flex justify-center tracking-widest">
-          <nuxt-link v-scroll-to="'#question5'" to>
-            <button
-              class="
-                border-2 border-red-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q4 ? 'bg-red-200' : ''"
-              @click="answer('q4', true)"
-            >
-              YES
-            </button>
-          </nuxt-link>
-          <nuxt-link v-scroll-to="'#question5'" to>
-            <button
-              class="
-                border-2 border-blue-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q4 === false ? 'bg-blue-200' : ''"
-              @click="answer('q4', false)"
-            >
-              NO
-            </button>
-          </nuxt-link>
-        </ul>
-      </div>
-
-      <div
-        id="question5"
-        class="
-          max-w-screen-md
-          m-auto
-          md:mb-28
-          py-8
-          px-4
-          md:py-16
-          my-10
-          border-4 border-green-300
-          rounded-lg
-          bg-white
-        "
+        questionTitle="Q.4"
+        questionText="対人関係で悩みがある"
+        questionNumber="q4"
+        @answer="answer"
+      />
+      <QuestionBox
         v-if="answers.q4 != null"
-      >
-        <p class="text-3xl md:text-4xl">Q.5</p>
-        <p class="py-8 md:text-2xl">最近悪い出来事が多い。</p>
-        <ul class="flex justify-center tracking-widest">
-          <nuxt-link v-scroll-to="'#question6'" to>
-            <button
-              class="
-                border-2 border-red-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q5 ? 'bg-red-200' : ''"
-              @click="answer('q5', true)"
-            >
-              YES
-            </button>
-          </nuxt-link>
-          <nuxt-link v-scroll-to="'#question6'" to>
-            <button
-              class="
-                border-2 border-blue-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q5 === false ? 'bg-blue-200' : ''"
-              @click="answer('q5', false)"
-            >
-              NO
-            </button>
-          </nuxt-link>
-        </ul>
-      </div>
-
-      <div
-        id="question6"
-        class="
-          max-w-screen-md
-          m-auto
-          md:mb-28
-          py-8
-          px-4
-          md:py-16
-          my-10
-          border-4 border-green-300
-          rounded-lg
-          bg-white
-        "
+        questionTitle="Q.5"
+        questionText="対人関係で悩みがある"
+        questionNumber="q5"
+        @answer="answer"
+      />
+      <QuestionBox
         v-if="answers.q5 != null"
-      >
-        <p class="text-3xl md:text-4xl">Q.6</p>
-        <p class="py-8 md:text-2xl">効率的に目標を達成させたい。</p>
-        <ul class="flex justify-center tracking-widest">
-          <nuxt-link v-scroll-to="'#question7'" to>
-            <button
-              class="
-                border-2 border-red-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q6 ? 'bg-red-200' : ''"
-              @click="answer('q6', true)"
-            >
-              YES
-            </button>
-          </nuxt-link>
-          <nuxt-link v-scroll-to="'#question7'" to>
-            <button
-              class="
-                border-2 border-blue-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q6 === false ? 'bg-blue-200' : ''"
-              @click="answer('q6', false)"
-            >
-              NO
-            </button>
-          </nuxt-link>
-        </ul>
-      </div>
-
-      <div
-        id="question7"
-        class="
-          max-w-screen-md
-          m-auto
-          md:mb-28
-          py-8
-          px-4
-          md:py-16
-          my-10
-          border-4 border-green-300
-          rounded-lg
-          bg-white
-        "
+        questionTitle="Q.6"
+        questionText="対人関係で悩みがある"
+        questionNumber="q6"
+        @answer="answer"
+      />
+      <QuestionBox
         v-if="answers.q6 != null"
-      >
-        <p class="text-3xl md:text-4xl">Q.7</p>
-        <p class="py-8 md:text-2xl">仕事で成果を出したい。</p>
-        <ul class="flex justify-center tracking-widest">
-          <nuxt-link v-scroll-to="'#result'" to>
-            <button
-              class="
-                border-2 border-red-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q7 ? 'bg-red-200' : ''"
-              @click="answer('q7', true)"
-            >
-              YES
-            </button>
-          </nuxt-link>
-          <nuxt-link v-scroll-to="'#result'" to>
-            <button
-              class="
-                border-2 border-blue-600
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-lg
-                mx-6
-                p-8
-                h-20
-                w-20
-                md:text-2xl md:my-6 md:mx-10 md:py-6 md:p-6 md:h-28 md:w-28
-              "
-              :class="answers.q7 === false ? 'bg-blue-200' : ''"
-              @click="answer('q7', false)"
-            >
-              NO
-            </button>
-          </nuxt-link>
-        </ul>
-      </div>
+        questionTitle="Q.7"
+        questionText="対人関係で悩みがある"
+        questionNumber="q7"
+        @answer="answer"
+      />
     </div>
 
     <div class="bg-white py-20" v-if="answers.q7 != null">
@@ -535,7 +131,9 @@ export default {
     openQuestion() {
       this.showQuestion = true;
     },
-    answer(questionNumber, bool) {
+    answer(result) {
+      const questionNumber = result.questionNumber;
+      const bool = result.bool;
       this.answers[questionNumber] = bool;
     },
 
