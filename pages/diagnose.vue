@@ -1,8 +1,5 @@
 <template>
-  <!-- 診断ページ -->
-
   <div class="font-serif text-center">
-    <!-- <img src="~/assets/AdobeStock_229144311.jpeg" /> -->
     <div class="py-28 md:py-48 px-4">
       <h1 class="py-8 md:py-12">
         <p class="text-xl md:text-4xl">
@@ -129,16 +126,11 @@ export default {
       this.answers[questionNumber] = bool;
     },
     async diagnose() {
-      //ユーザーの選択に応じて診断結果をmicroCMSから取得する
       let filters = "";
-      //もしQ1がtrueだった時変数filtersに"question1[equals]true"を代入する
-      //"question1[equals]true"はjavascriptの書き方で固定されている。
       if (this.answers.q1 === true) {
         filters += "question1[equals]true";
       }
       if (this.answers.q2 === true) {
-        //もしfiltersの中身が空じゃない時（前の質問で一つでもYES[true]だった時）👉前の質問が全てNO[false]だった時は発動しない
-        //[or]が追加される。つまりfiltersの中は、"question1[equals]true[or]question2[equals]true"という状態。
         if (filters != "") {
           filters += "[or]";
         }
@@ -181,19 +173,11 @@ export default {
         },
       });
       console.log({ book });
-      //👆前回までの内容
-      //👇アウトプット
-      //このあと、受け取った本のデータからランダムで１冊選ぶ
-      const contents = book.contents; //本の情報の配列
+      const contents = book.contents;
       const ids = contents.map((e) => {
         return e.id;
       });
-      // ids: ["xxxxxxx", "yyyyyyy", "zzzzzzz"] ほんのIDが並んでいる状態
-      //本の配列から、ランダムに１冊を選ぶ
-      //ランダムに選んだ１冊から、その本のIDを取り出す
       const randomId = ids[Math.floor(Math.random() * ids.length)];
-      //👆Math.random(),0から1未満の乱数を返す //floor,整数にする //ids.length,idsに入っている要素の配列の数または取得をしている。
-      //その本のidを/result.vueのidにパラメータとして付けて、resultページに飛ぶ
       this.$router.push(`/result?id=${randomId}`);
     },
   },

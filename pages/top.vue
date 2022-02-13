@@ -1,6 +1,4 @@
 <template>
-  <!-- ログイン後TOPページ -->
-
   <section>
     <div class="font-serif">
       <img src="~/assets/Frame 4 (1).png" class="w-screen" />

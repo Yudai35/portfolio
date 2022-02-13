@@ -1,5 +1,4 @@
 <template>
-  <!-- ログインページ -->
   <div class="py-6 bg-gray-100 md:py-8">
     <div
       class="
@@ -87,11 +86,6 @@
 
 <script>
 export default {
-  // computed: {
-  //     user(){
-  //         return this.$store.getterts["user"];
-  //     }
-  // },
   data() {
     return {
       user: {

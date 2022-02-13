@@ -1,6 +1,4 @@
 <template>
-  <!-- メモ記録ページ -->
-
   <div class="font-serif px-4">
     <div class="text-center my-12 md:mt-32 md:mb-24">
       <input
@@ -122,22 +120,10 @@ export default {
       if (this.title === "") {
         this.titleErrorMassage = "書籍名を入力してください";
       }
-      // if (this.text === "") {
-      //   this.textErrorMassage = "メモを入力してください";
-      // }
-      // if (this.todo === "") {
-      //   this.todoErrorMassage = "TODOリストを入力してください";
-      // }
-      if (
-        this.titleErrorMassage !== ""
-        // this.textErrorMassage !== "" ||
-        // this.todoErrorMassage !== ""
-      ) {
+      if (this.titleErrorMassage !== "") {
         return;
       }
-      //保存ボタンを押したときの処理
       if (this.id) {
-        //URLにIdがあるときは、既存のメモを更新する
         await this.$firestore
           .collection("memos")
           .doc(this.id)
@@ -146,14 +132,12 @@ export default {
             title: this.title,
             text: this.text,
             todo: this.todo,
-            // userId: this.$store.state.user.userId,
           })
           .then(() => {
             alert("メモを更新しました！");
             this.$router.push("/recordlist");
           });
       } else {
-        //URLにIdがないときは、新規メモを作成する
         await this.$firestore
           .collection("memos")
           .add({
