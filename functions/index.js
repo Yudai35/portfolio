@@ -40,7 +40,6 @@ exports.sendMail = functions
 exports.test = functions
     .region("asia-northeast1")
     .https.onCall(async (data, context) => {
-        //ここに処理を書く
         console.log(data)
         return {
             status: 200
