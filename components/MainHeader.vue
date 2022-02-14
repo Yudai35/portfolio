@@ -69,7 +69,7 @@
     >
       <div v-show="isOpen">
         <ul class="md:hidden">
-          <li>
+          <li @click="close">
             <nuxt-link
               to="/diagnose"
               class="
@@ -86,7 +86,7 @@
               >診断</nuxt-link
             >
           </li>
-          <li>
+          <li @click="close">
             <nuxt-link
               to="/record"
               class="
@@ -102,7 +102,7 @@
               >メモ</nuxt-link
             >
           </li>
-          <li>
+          <li @click="close">
             <nuxt-link
               to="/recordlist"
               class="
@@ -118,7 +118,7 @@
               >メモ一覧</nuxt-link
             >
           </li>
-          <li>
+          <li @click="close">
             <nuxt-link
               to="/inquiry"
               class="
@@ -212,6 +212,9 @@ export default {
           console.log(error);
           alert("ログアウトに失敗しました");
         });
+    },
+    close() {
+      this.isOpen = false;
     },
   },
 };

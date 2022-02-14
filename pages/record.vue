@@ -31,7 +31,7 @@
       </p>
     </div>
     <div class="my-12 md:mt-12 md:mb-20 text-center m-auto">
-      <textarea
+      <!-- <textarea
         v-model="todo"
         @input="isInput"
         name="TODOリスト"
@@ -40,7 +40,21 @@
         cols="30"
         rows="10"
         class="border-2 p-4 h-28 text-sm md:text-lg w-11/12 md:w-3/5"
-      ></textarea>
+      ></textarea> -->
+      <div>
+        <input
+          type="text"
+          name="TODOリスト"
+          placeholder="TODO"
+          v-model="todoText"
+        />
+        <button @click="addTodoList">TODOを作成</button>
+      </div>
+      <div v-for="(todo, n) in todos" :key="n">
+        <input type="checkbox" :id="n" :name="n" v-model="todo.checked" />
+        <label :for="n">{{ todo.text }}</label>
+        <button @click="deleteTodoList(n)">×</button>
+      </div>
       <p class="text-red-400 text-sm md:text-base">
         {{ todoErrorMassage }}
       </p>
@@ -103,7 +117,7 @@ export default {
       this.memo = memoRef.data();
       this.title = this.memo.title;
       this.text = this.memo.text;
-      this.todo = this.memo.todo;
+      this.todos = this.memo.todos;
     }
   },
   data() {
@@ -111,13 +125,36 @@ export default {
       id: "",
       title: "",
       text: "",
-      todo: "",
+      // todo: "",
+      todoText: "",
+      todos: [],
       titleErrorMassage: "",
       textErrorMassage: "",
       todoErrorMassage: "",
     };
   },
   methods: {
+    addTodoList() {
+      // TODOリストを作成する
+      if (this.todoText === "") {
+        alert("TODOの内容を入力してください。");
+        return;
+      }
+
+      this.todos.push({
+        text: this.todoText,
+        checked: false,
+      });
+
+      this.todoText = "";
+
+      // console.log(this.todos);
+    },
+    deleteTodoList(n) {
+      if (confirm("このTODOを削除しますか？")) {
+        this.todos.splice(n, 1);
+      }
+    },
     async save() {
       if (this.title === "") {
         this.titleErrorMassage = "書籍名を入力してください";
@@ -145,7 +182,7 @@ export default {
             createdAt: new Date().getTime(),
             title: this.title,
             text: this.text,
-            todo: this.todo,
+            todos: this.todos,
             // userId: this.$store.state.user.userId,
           })
           .then(() => {
@@ -160,7 +197,7 @@ export default {
             createdAt: new Date().getTime(),
             title: this.title,
             text: this.text,
-            todo: this.todo,
+            todos: this.todos,
             userId: this.$store.state.user.userId,
           })
           .then(() => {
@@ -173,6 +210,11 @@ export default {
       this.titleErrorMassage = "";
       this.textErrorMassage = "";
       this.todoErrorMassage = "";
+    },
+  },
+  watch: {
+    todos() {
+      console.log(this.todos);
     },
   },
 };
