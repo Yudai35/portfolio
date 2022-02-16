@@ -68,7 +68,7 @@
     >
       <div v-show="isOpen">
         <ul class="md:hidden">
-          <li>
+          <li @click="close">
             <nuxt-link
               to="/login"
               class="
@@ -85,7 +85,7 @@
               >ログイン</nuxt-link
             >
           </li>
-          <li>
+          <li @click="close">
             <nuxt-link
               to="/signup"
               class="
@@ -106,7 +106,7 @@
     </div>
 
     <ul class="hidden md:flex justify-end items-center opacity-100 text-xl">
-      <li>
+      <li @click="close">
         <nuxt-link to="login">
           <a class="invisible md:visible pr-6 hover:opacity-50 duration-1000"
             >ログイン</a
@@ -131,6 +131,10 @@ export default {
       isOpen: false,
     };
   },
-  methods: {},
+  methods: {
+    close() {
+      this.isOpen = false;
+    },
+  },
 };
 </script>

@@ -28,7 +28,7 @@
         {{ textErrorMassage }}
       </p>
     </div>
-    <div class="my-12 md:mt-12 md:mb-20 text-center m-auto">
+    <!-- <div class="my-12 md:mt-12 md:mb-20 text-center m-auto">
       <textarea
         v-model="todo"
         @input="isInput"
@@ -42,7 +42,7 @@
       <p class="text-red-400 text-sm md:text-base">
         {{ todoErrorMassage }}
       </p>
-    </div>
+    </div> -->
 
     <div class="mt-12 md:mt-20 mb-12 text-center justify-center">
       <button
