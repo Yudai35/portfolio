@@ -24,7 +24,6 @@ export const actions = {
     }
 };
 
-
 export const mutations = {
     getData(state, payload) {
         state.user.email = payload.email;
@@ -39,6 +38,5 @@ export const mutations = {
     signOut(state) {
         state.user.email = "";
         state.user.login = false;
-
     }
 };

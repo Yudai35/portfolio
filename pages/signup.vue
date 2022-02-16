@@ -59,6 +59,8 @@
             h-14
             w-10/12
             bg-green-300
+            hover:bg-green-200
+            duration-1000
             text-center
           "
         >
@@ -66,7 +68,16 @@
         </button>
         <button
           @click="googleLogin"
-          class="text-base my-3 md:text-xl h-14 w-10/12 bg-green-300"
+          class="
+            text-base
+            my-3
+            md:text-xl
+            h-14
+            w-10/12
+            bg-green-300
+            hover:bg-green-200
+            duration-1000
+          "
         >
           Googleで登録
         </button>
