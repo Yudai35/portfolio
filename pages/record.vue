@@ -43,6 +43,65 @@
         {{ todoErrorMassage }}
       </p>
     </div> -->
+    <div class="mt-12 mb-6 md:mt-20 md:mb-12 text-center">
+      <input
+        class="
+          border-4
+          duration-1000
+          py-3
+          text-lg
+          mb-6
+          sm:mb-0
+          w-3/4
+          sm:w-2/3
+          md:w-2/5 md:text-2xl
+        "
+        type="text"
+        name="TODOリスト"
+        placeholder="TODO"
+        v-model="todoText"
+      />
+      <button
+        @click="addTodoList"
+        class="
+          border-4 border-green-200
+          rounded-full
+          hover:bg-green-100
+          duration-1000
+          py-3
+          text-lg
+          w-52
+          md:text-2xl md:ml-14
+        "
+      >
+        TODOを作成
+      </button>
+    </div>
+    <div
+      v-for="(todo, n) in todos"
+      :key="n"
+      class="text-center text-lg md:text-3xl"
+    >
+      <div class="mb-2 md:mb-4">
+        <input
+          type="checkbox"
+          :id="n"
+          name="n"
+          v-model="todo.checked"
+          class="text-lg md:text-3xl"
+        />
+        <label for="n" class="text-lg md:text-3xl">{{ todo.text }}</label>
+        <button
+          @click="deleteTodoList(n)"
+          class="ml-4 px-2 hover:bg-green-200 duration-1000 rounded"
+        >
+          ×
+        </button>
+      </div>
+    </div>
+    <p class="text-red-400 text-sm md:text-base">
+      {{ todoErrorMassage }}
+    </p>
 
     <div class="mt-12 md:mt-20 mb-12 text-center justify-center">
       <button
@@ -101,7 +160,7 @@ export default {
       this.memo = memoRef.data();
       this.title = this.memo.title;
       this.text = this.memo.text;
-      this.todo = this.memo.todo;
+      this.todos = this.memo.todos;
     }
   },
   data() {
@@ -109,13 +168,32 @@ export default {
       id: "",
       title: "",
       text: "",
-      todo: "",
+      todos: [],
+      todoText: "",
       titleErrorMassage: "",
       textErrorMassage: "",
       todoErrorMassage: "",
     };
   },
   methods: {
+    addTodoList() {
+      //TODOリストを作成する
+      if (this.todoText === "") {
+        alert("TODOの内容を入力してください。");
+        return;
+      }
+      this.todos.push({
+        text: this.todoText,
+        checked: false,
+      });
+      this.todoText = "";
+    },
+    deleteTodoList(n) {
+      if (confirm("このTODOを削除しますか？")) {
+        this.todos.splice(n, 1);
+      }
+    },
+
     async save() {
       if (this.title === "") {
         this.titleErrorMassage = "書籍名を入力してください";
@@ -131,7 +209,7 @@ export default {
             createdAt: new Date().getTime(),
             title: this.title,
             text: this.text,
-            todo: this.todo,
+            todos: this.todos,
           })
           .then(() => {
             alert("メモを更新しました！");
@@ -144,7 +222,7 @@ export default {
             createdAt: new Date().getTime(),
             title: this.title,
             text: this.text,
-            todo: this.todo,
+            todos: this.todos,
             userId: this.$store.state.user.userId,
           })
           .then(() => {
@@ -157,6 +235,11 @@ export default {
       this.titleErrorMassage = "";
       this.textErrorMassage = "";
       this.todoErrorMassage = "";
+    },
+  },
+  watch: {
+    todos() {
+      console.log(this.todos);
     },
   },
 };
