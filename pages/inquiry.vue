@@ -1,6 +1,4 @@
 <template>
-  <!-- お問い合わせページ -->
-  <!-- 未レスポンシブ -->
   <div class="py-6 bg-gray-100 md:py-8">
     <div
       class="
@@ -114,28 +112,21 @@ export default {
     };
   },
   methods: {
-    //sendMail 任意？強制？
     async sendMail() {
       const sendContents = await this.$firebase
         .app()
-        //GCP東京リージョンを使用
         .functions("asia-northeast1")
-        //
         .httpsCallable("sendMail");
       sendContents({
         name: this.form.name,
         email: this.form.email,
         content: this.form.content,
       })
-        //正常
-        //res??  status??
         .then((res) => {
           if (res.data.status === 200) {
             alert("メールの送信が完了しました。");
             console.log(res.data);
             this.send.completion = "お問い合わせありがとうございました。";
-            // this.$router.push("/");
-            //上記通りいかなかった場合
           } else {
             alert(
               "メールの送信に失敗しました。恐れ入りますが再度お試しください。"
@@ -147,18 +138,15 @@ export default {
           console.log(error.name);
         });
     },
-    //入力中はエラーメッセージ非表示
     isInput() {
       this.error.nameMassage = "";
       this.error.emailMassage = "";
       this.error.contentMassage = "";
     },
     isValidName() {
-      //form.nameにnameRegexpの形通り入力されていない場合
       if (!this.nameRegexp.test(this.form.name)) {
         this.error.nameMassage = "3-20文字の範囲内で入力してください。";
       }
-      //from.nameが空の場合
       if (this.form.name === "") {
         this.error.nameMassage = "お名前を入力してください。";
       } else {
@@ -166,24 +154,20 @@ export default {
       }
     },
     isValidEmail() {
-      //form.emailがemailRegexpの形通り入力されていない場合
       if (!this.emailRegexp.test(this.form.email)) {
         this.error.emailMassage =
           "このメールアドレスは無効です。正しく入力してください。";
       }
-      //from.emailが空の場合
       if (this.form.email === "") {
         this.error.emailMassage = "メールアドレスを入力してください。";
       } else {
         return;
       }
     },
-    //form.contentがcontentRegexpの形通り入力されていない場合
     isValidContent() {
       if (!this.contentRegexp.test(this.form.content)) {
         this.error.contentMassage = "10-1000文字の範囲内で入力してください。";
       }
-      //form.contentが空の場合
       if (this.form.content === "") {
         this.error.contentMassage = "お問い合わせ内容を入力してください。";
       } else {
