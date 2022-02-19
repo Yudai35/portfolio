@@ -1,7 +1,8 @@
 <template>
+  <!-- ログイン前TOPページ -->
   <section>
     <div class="font-serif">
-      <img src="~/assets/Frame 4 (1).png" class="w-screen" />
+      <img src="~/assets/Frame 4 (1).png" />
       <h1 class="mt-20 mb-12 text-center">
         <p class="text-4xl md:text-4xl">NewSelfとは</p>
       </h1>
