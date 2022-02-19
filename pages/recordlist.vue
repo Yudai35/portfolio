@@ -1,4 +1,6 @@
 <template>
+  <!-- メモ一覧ページ -->
+
   <div class="font-serif m-4 md:m-12 lg:m-16 xl:m-20 px-4">
     <div class="md:flex md:flex-wrap xl:justify-start justify-between">
       <div
