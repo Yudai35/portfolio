@@ -1,5 +1,8 @@
 <template>
+  <!-- 診断ページ -->
+
   <div class="font-serif text-center">
+    <!-- <img src="~/assets/AdobeStock_229144311.jpeg" /> -->
     <div class="py-28 md:py-48 px-4">
       <h1 class="py-8 md:py-12">
         <p class="text-xl md:text-4xl">
@@ -30,49 +33,49 @@
     >
       <QuestionBox
         questionTitle="Q.1"
-        questionText="コミュニケーションで悩んだことがある。"
+        questionText="コミュニケーションで悩んだことがある"
         questionNumber="q1"
         @answer="answer"
       />
       <QuestionBox
         v-if="answers.q1 != null"
         questionTitle="Q.2"
-        questionText="対人関係で悩みがある。"
+        questionText="対人関係で悩みがある"
         questionNumber="q2"
         @answer="answer"
       />
       <QuestionBox
         v-if="answers.q2 != null"
         questionTitle="Q.3"
-        questionText="現在夢中になれること、目標がない。"
+        questionText="対人関係で悩みがある"
         questionNumber="q3"
         @answer="answer"
       />
       <QuestionBox
         v-if="answers.q3 != null"
         questionTitle="Q.4"
-        questionText="自分の長所がわからない。自分に自信が持てない。"
+        questionText="対人関係で悩みがある"
         questionNumber="q4"
         @answer="answer"
       />
       <QuestionBox
         v-if="answers.q4 != null"
         questionTitle="Q.5"
-        questionText="最近悪い出来事が多い。"
+        questionText="対人関係で悩みがある"
         questionNumber="q5"
         @answer="answer"
       />
       <QuestionBox
         v-if="answers.q5 != null"
         questionTitle="Q.6"
-        questionText="効率的に目標を達成させたい。"
+        questionText="対人関係で悩みがある"
         questionNumber="q6"
         @answer="answer"
       />
       <QuestionBox
         v-if="answers.q6 != null"
         questionTitle="Q.7"
-        questionText="仕事で成果を出したい。"
+        questionText="対人関係で悩みがある"
         questionNumber="q7"
         @answer="answer"
       />
@@ -114,6 +117,14 @@ export default {
         q6: null,
         q7: null,
       },
+      question1: "#question1",
+      question2: "#question2",
+      question3: "#question3",
+      question4: "#question4",
+      question5: "#question5",
+      question6: "#question6",
+      question7: "#question7",
+      result: "#result",
     };
   },
   methods: {
@@ -126,11 +137,16 @@ export default {
       this.answers[questionNumber] = bool;
     },
     async diagnose() {
+      //ユーザーの選択に応じて診断結果をmicroCMSから取得する
       let filters = "";
+      //もしQ1がtrueだった時変数filtersに"question1[equals]true"を代入する
+      //"question1[equals]true"はjavascriptの書き方で固定されている。
       if (this.answers.q1 === true) {
         filters += "question1[equals]true";
       }
       if (this.answers.q2 === true) {
+        //もしfiltersの中身が空じゃない時（前の質問で一つでもYES[true]だった時）👉前の質問が全てNO[false]だった時は発動しない
+        //[or]が追加される。つまりfiltersの中は、"question1[equals]true[or]question2[equals]true"という状態。
         if (filters != "") {
           filters += "[or]";
         }
@@ -173,11 +189,19 @@ export default {
         },
       });
       console.log({ book });
-      const contents = book.contents;
+      //👆前回までの内容
+      //👇アウトプット
+      //このあと、受け取った本のデータからランダムで１冊選ぶ
+      const contents = book.contents; //本の情報の配列
       const ids = contents.map((e) => {
         return e.id;
       });
+      // ids: ["xxxxxxx", "yyyyyyy", "zzzzzzz"] ほんのIDが並んでいる状態
+      //本の配列から、ランダムに１冊を選ぶ
+      //ランダムに選んだ１冊から、その本のIDを取り出す
       const randomId = ids[Math.floor(Math.random() * ids.length)];
+      //👆Math.random(),0から1未満の乱数を返す //floor,整数にする //ids.length,idsに入っている要素の配列の数または取得をしている。
+      //その本のidを/result.vueのidにパラメータとして付けて、resultページに飛ぶ
       this.$router.push(`/result?id=${randomId}`);
     },
   },
