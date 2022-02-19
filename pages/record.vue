@@ -28,21 +28,6 @@
         {{ textErrorMassage }}
       </p>
     </div>
-    <!-- <div class="my-12 md:mt-12 md:mb-20 text-center m-auto">
-      <textarea
-        v-model="todo"
-        @input="isInput"
-        name="TODOリスト"
-        placeholder="TODOリスト"
-        id="todo"
-        cols="30"
-        rows="10"
-        class="border-2 p-4 h-28 text-sm md:text-lg w-11/12 md:w-3/5"
-      ></textarea>
-      <p class="text-red-400 text-sm md:text-base">
-        {{ todoErrorMassage }}
-      </p>
-    </div> -->
     <div class="mt-12 mb-6 md:mt-20 md:mb-12 text-center">
       <input
         class="
@@ -201,7 +186,9 @@ export default {
       if (this.titleErrorMassage !== "") {
         return;
       }
+      //保存ボタンを押したときの処理
       if (this.id) {
+        //URLにIdがあるときは、既存のメモを更新する
         await this.$firestore
           .collection("memos")
           .doc(this.id)
@@ -216,6 +203,7 @@ export default {
             this.$router.push("/recordlist");
           });
       } else {
+        //URLにIdがないときは、新規メモを作成する
         await this.$firestore
           .collection("memos")
           .add({
