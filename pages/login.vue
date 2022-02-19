@@ -31,6 +31,21 @@
       >
         Login
       </h2>
+      <button
+        @click="guestsLogin"
+        class="
+          text-base
+          my-8
+          md:text-xl
+          h-16
+          w-10/12
+          bg-green-400
+          hover:bg-green-500
+          duration-1000
+        "
+      >
+        ゲストログイン
+      </button>
       <form @submit.prevent class="justify-center" novalidate>
         <input
           type="”email”"
@@ -63,6 +78,8 @@
             h-14
             w-10/12
             bg-green-300
+            hover:bg-green-200
+            duration-1000
             text-center
           "
         >
@@ -70,7 +87,16 @@
         </button>
         <button
           @click="googleLogin"
-          class="text-base my-3 md:text-xl h-14 w-10/12 bg-green-300"
+          class="
+            text-base
+            my-3
+            md:text-xl
+            h-14
+            w-10/12
+            bg-green-300
+            hover:bg-green-200
+            duration-1000
+          "
         >
           Googleでログイン
         </button>
@@ -99,6 +125,19 @@ export default {
     };
   },
   methods: {
+    guestsLogin() {
+      this.$auth
+        .signInAnonymously()
+        .then(() => {
+          alert("ログイン成功しました！");
+          this.$store.dispatch("confirmLogin");
+          this.$router.push("/top");
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("ログインに失敗しました");
+        });
+    },
     googleLogin() {
       this.$auth
         .signInWithPopup(new this.$firebase.auth.GoogleAuthProvider())
