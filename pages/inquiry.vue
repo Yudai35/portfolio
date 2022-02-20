@@ -114,7 +114,6 @@ export default {
     };
   },
   methods: {
-    //sendMail 任意？強制？
     async sendMail() {
       const sendContents = await this.$firebase
         .app()
@@ -128,13 +127,11 @@ export default {
         content: this.form.content,
       })
         //正常
-        //res??  status??
         .then((res) => {
           if (res.data.status === 200) {
             alert("メールの送信が完了しました。");
             console.log(res.data);
             this.send.completion = "お問い合わせありがとうございました。";
-            // this.$router.push("/");
             //上記通りいかなかった場合
           } else {
             alert(
