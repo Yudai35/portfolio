@@ -6,12 +6,14 @@ sgMail.setApiKey(apiKey);
 exports.sendMail = functions
     .region("asia-northeast1")
     .https.onCall(async (data, context) => {
+        //管理者宛てお問い合わせ受信メール
         const adminMassage = {
             to: "yuusongben14@gmail.com",
             from: "yuusongben14@gmail.com",
             subject: "【Newself】ホームページお問い合わせ",
             text: `以下内容でお問い合わせフォームより受け付けました。\n\nお名前：\n${data.name}\n\nメールアドレス：\n${data.email}\n\nお問い合わせ内容：\n${data.content}`,
         };
+        //送信者宛てお問い合わせ確認メール
         const thanksMassage = {
             to: data.email,
             from: "yuusongben14@gmail.com",
