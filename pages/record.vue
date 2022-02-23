@@ -39,7 +39,7 @@
           sm:mb-0
           w-3/4
           sm:w-2/3
-          md:w-2/5 md:text-2xl
+          md:w-2/5 md:text-xl
         "
         type="text"
         name="TODOリスト"
