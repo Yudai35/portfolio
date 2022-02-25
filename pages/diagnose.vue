@@ -2,7 +2,6 @@
   <!-- 診断ページ -->
 
   <div class="font-serif text-center">
-    <!-- <img src="~/assets/AdobeStock_229144311.jpeg" /> -->
     <div class="py-28 md:py-48 px-4">
       <h1 class="py-8 md:py-12">
         <p class="text-xl md:text-4xl">
