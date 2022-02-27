@@ -188,7 +188,6 @@ export default {
         },
       });
       console.log({ book });
-      //👆前回までの内容
       //👇アウトプット
       //このあと、受け取った本のデータからランダムで１冊選ぶ
       const contents = book.contents; //本の情報の配列
