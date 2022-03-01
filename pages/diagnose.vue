@@ -197,7 +197,7 @@ export default {
       //本の配列から、ランダムに１冊を選ぶ
       //ランダムに選んだ１冊から、その本のIDを取り出す
       const randomId = ids[Math.floor(Math.random() * ids.length)];
-      //👆Math.random(),0から1未満の乱数を返す //floor,整数にする //ids.length,idsに入っている要素の配列の数または取得をしている。
+      //👆Math.random(),0から1未満の乱数を返す //floor,整数にする //ids.length,idsに入っている要素の配列の数または取得をしている
       //その本のidを/result.vueのidにパラメータとして付けて、resultページに飛ぶ
       this.$router.push(`/result?id=${randomId}`);
     },
