@@ -145,7 +145,7 @@ export default {
       }
       if (this.answers.q2 === true) {
         //もしfiltersの中身が空じゃない時（前の質問で一つでもYES[true]だった時）👉前の質問が全てNO[false]だった時は発動しない
-        //[or]が追加される。つまりfiltersの中は、"question1[equals]true[or]question2[equals]true"という状態。
+        //[or]が追加される。つまりfiltersの中は、"question1[equals]true[or]question2[equals]true"という状態
         if (filters != "") {
           filters += "[or]";
         }
