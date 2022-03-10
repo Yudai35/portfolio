@@ -186,7 +186,7 @@ export default {
       if (this.titleErrorMassage !== "") {
         return;
       }
-      //保存ボタンを押したときの処理
+      //保存ボタンを押したときの処理。
       if (this.id) {
         //URLにIdがあるときは、既存のメモを更新する
         await this.$firestore
