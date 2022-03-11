@@ -35,6 +35,9 @@ export const mutations = {
     noLogin(state) {
         state.user.login = false;
     },
+    // guestLogin(state) {
+    //     state.user.login = true;
+    // },
     signOut(state) {
         state.user.email = "";
         state.user.login = false;
