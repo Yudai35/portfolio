@@ -80,19 +80,39 @@ export default {
     },
   },
   async mounted() {
-    const memosRef = await this.$firestore
-      .collection("memos")
-      .where("userId", "==", this.$store.state.user.userId)
-      .orderBy("createdAt", "desc")
-      .get();
-    this.memos = memosRef.docs.map((doc) => {
-      const id = doc.id;
-      const data = doc.data();
-      return {
-        id: id,
-        ...data,
-      };
-    });
+    console.log(this.$store.state);
+    const isGestUser = this.$store.state.user.guest; //ゲストユーザーだったらtrue
+    if (isGestUser) {
+      // サンプルのメモを取得する
+      const memosRef = await this.$firestore
+        .collection("memos")
+        .where("userId", "==", "guest")
+        .orderBy("createdAt", "desc")
+        .get();
+      this.memos = memosRef.docs.map((doc) => {
+        const id = doc.id;
+        const data = doc.data();
+        return {
+          id: id,
+          ...data,
+        };
+      });
+    } else {
+      //ゲストじゃないので、自分のIDに一致するメモを取る
+      const memosRef = await this.$firestore
+        .collection("memos")
+        .where("userId", "==", this.$store.state.user.userId)
+        .orderBy("createdAt", "desc")
+        .get();
+      this.memos = memosRef.docs.map((doc) => {
+        const id = doc.id;
+        const data = doc.data();
+        return {
+          id: id,
+          ...data,
+        };
+      });
+    }
     console.log(this.memos);
   },
   data() {

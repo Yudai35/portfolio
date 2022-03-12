@@ -180,6 +180,12 @@ export default {
     },
 
     async save() {
+      // ゲストユーザーはメモの保存ができないようする
+      const isGestUser = this.$store.state.user.guest;
+      if (isGestUser) {
+        alert("ゲストアカウントでは、メモの保存はできません。");
+        return;
+      }
       if (this.title === "") {
         this.titleErrorMassage = "書籍名を入力してください";
       }

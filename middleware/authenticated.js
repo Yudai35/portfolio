@@ -10,7 +10,8 @@ export default async function ({ store, route, redirect, app }) {
         store.commit("getData",
             {
                 email: user.email,
-                userId: user.uid
+                userId: user.uid,
+                guest: user.isAnonymous
             }
         )
         //上記の処理が成功したら"yesLogin"発動
