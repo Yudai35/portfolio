@@ -116,14 +116,6 @@ export default {
         q6: null,
         q7: null,
       },
-      question1: "#question1",
-      question2: "#question2",
-      question3: "#question3",
-      question4: "#question4",
-      question5: "#question5",
-      question6: "#question6",
-      question7: "#question7",
-      result: "#result",
     };
   },
   methods: {
