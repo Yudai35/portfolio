@@ -1,4 +1,4 @@
-おはようございます。
+「書籍紹介診断アプリ　NewSelf」
 
 # portfolio
 
