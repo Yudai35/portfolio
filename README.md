@@ -1,24 +1,28 @@
-「書籍紹介診断アプリ　NewSelf」
+### 【Nuxt.js・Firebase】書籍紹介診断アプリをつくりました！
 
 ![スクリーンショット 2022-03-12 15.13.16.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2114750/35d78461-37e3-8725-1936-2b8adc61b119.png)
 
 # はじめに
 こんにちは。
-こちらの記事では、Nuxt.jsとFirebaseを用いて開発したポートフォリオについて記しています。
+こちらの記事では、Nuxt.jsとFirebaseを用いて開発したポートフォリオについて記しています。  
 機能の追加・修正は随時対応中（2022年3月12日現在）
+
 
 # アプリの概要
 読書を通して新しい自分と出逢うきっかけを作る「書籍紹介診断アプリ」です。
 
+
 ## 想定ユーザー
-・自分を変えたいけど何すればいいかわからない方
-・やりたいことはあるがなかなか１歩踏み出せない方
+・自分を変えたいけど何すればいいかわからない方  
+・やりたいことはあるがなかなか１歩踏み出せない方  
 ・読書したいけど、どんな本を読んでいいかなかなか決められない方
+
 
 ## ポートフォリオの制作背景
 何かに挑戦するにあたって、正しい「マインドセット」や「習慣」を身につけることは必要不可欠と感じます。これらを学ぶのに適したツールは「読書」だと考えて。過去の私のように正しい「マインドセット」や「習慣」を身につけず消耗してしまう人を減らしたいという思いからこのようなサービスを制作しました。
 
 また、診断だけやって本を読まずに終わり、というケースを防ぐため、「Twitterに宣言ツイート」できる機能も搭載しました。同時に学んだ書籍の内容もアウトプットできるようメモ機能も搭載しました。後から振り返ることもできます。本サービスは行動きっかけから質良く継続する環境作りまでサポートいたします。
+
 
 ## 機能一覧
 |  |機能  |
@@ -35,13 +39,13 @@
 | 10| Twitter共有機能 |
 | 11| お問い合わせ機能 |
 
-## 使用技術
 
-・nuxt 2.15.7
-・JavaScript
-・tailwindcss 4.2.0
-・Firebase(Functions、Authentication、Firestore、Hosting)
-・microCMS API
+## 使用技術
+・nuxt 2.15.7  
+・JavaScript  
+・tailwindcss 4.2.0  
+・Firebase(Functions、Authentication、Firestore、Hosting)  
+・microCMS API  
 ・SendGrid
 
 
@@ -50,29 +54,27 @@
 ### 1.トップページ
 ![スクリーンショット 2022-03-12 15.13.16.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2114750/35d78461-37e3-8725-1936-2b8adc61b119.png)
 
-・トップページにアクセスするとこの画面が描画されます。
+・トップページにアクセスするとこの画面が描画されます。  
 ・ヘッダーにログイン、新規登録を配置して、nuxt-link でフォームを描画しています。
 
-### 2.ユーザー登録
 
+### 2.ユーザー登録
 <a href="https://gyazo.com/846fd5a03ea7d388aa282de6d0e7eed2"><img src="https://i.gyazo.com/846fd5a03ea7d388aa282de6d0e7eed2.gif" alt="Image from Gyazo" width="1000"/></a>
 
-
-・メールアドレス、パスワードを入力して登録します。
-・アカウント登録と同時にアカウント情報を Firebase Authentication に保存しています。
+・メールアドレス、パスワードを入力して登録します。  
+・アカウント登録と同時にアカウント情報を Firebase Authentication に保存しています。  
 ・アラートが表示されてページ遷移します。（ページ遷移は pages ディレクトリ内で処理を実行しています）
 
-### 3.アカウント認証
 
+### 3.アカウント認証
 <a href="https://gyazo.com/6b154674a7efc0d7194311edd262316d"><img src="https://i.gyazo.com/6b154674a7efc0d7194311edd262316d.gif" alt="Image from Gyazo" width="1000"/></a>
 
-
-・アカウント登録済みの場合はフォームにメールアドレス、パスワードを入力してログイン。
-・アラートが表示されてページ遷移します。
-・store ディレクトリで認証状態を管理。
+・アカウント登録済みの場合はフォームにメールアドレス、パスワードを入力してログイン。  
+・アラートが表示されてページ遷移します。  
+・store ディレクトリで認証状態を管理。  
 ・v-if で認証状態を判別し、ヘッダーに表示させるリンクを変更しています。
 
-```vuejs
+```vue.js
 <script>
 export default {
   data() {
@@ -103,11 +105,11 @@ export default {
 
 ```
 
-### 4.診断機能
 
+### 4.診断機能
 <a href="https://gyazo.com/f03e77509ac34d6bd67aa87129ab642a"><img src="https://i.gyazo.com/f03e77509ac34d6bd67aa87129ab642a.gif" alt="Image from Gyazo" width="1000"/></a>
 
-・質問にYes,Noで回答する（随時質問追加予定）
+・質問にYes,Noで回答する（随時質問追加予定）  
 ・回答結果からmicroCMS の API を叩いて ID を取得し、診断結果を遷移します。
 
 ```vue.js
@@ -239,12 +241,11 @@ export default {
 
 ```
 
-### 5.Twitter共有機能
 
+### 5.Twitter共有機能
 <a href="https://gyazo.com/3ff194d11e4ae6259370650c86481306"><img src="https://i.gyazo.com/3ff194d11e4ae6259370650c86481306.gif" alt="Image from Gyazo" width="1000"/></a>
 
-
-・診断結果から「Twitterで宣言する！」をクリック
+・診断結果から「Twitterで宣言する！」をクリック  
 ・本のタイトル、読み終える期限が自動入力され、ツイートされる。
 
 ```vue.js
@@ -283,15 +284,14 @@ export default {
 
 ```
 
-### 6.メモ保存機能、一覧表示
 
+### 6.メモ保存機能、一覧表示
 <a href="https://gyazo.com/845ae90f4648ac429f080b20554e8890"><img src="https://i.gyazo.com/845ae90f4648ac429f080b20554e8890.gif" alt="Image from Gyazo" width="1000"/></a>
 
 ・firebase client SDKを使用して、各ユーザーごとにFirestoreにメモのデータを保存しています。
 
 
 ### 7.お問合せ機能
-
 <a href="https://gyazo.com/04d67214238f45112a858b81b59639a4"><img src="https://i.gyazo.com/04d67214238f45112a858b81b59639a4.gif" alt="Image from Gyazo" width="1000"/></a>
 
 ##【ユーザー側】  
@@ -336,16 +336,15 @@ export default {
 ```
 
 ### 8.バリデーション
-
 <a href="https://gyazo.com/3ff47673e3e5aed659e4e21ce95064ea"><img src="https://i.gyazo.com/3ff47673e3e5aed659e4e21ce95064ea.png" alt="Image from Gyazo" width="715"/></a>
 
 <a href="https://gyazo.com/b867b9b15c9bf1389e86ebdcdcf093a1"><img src="https://i.gyazo.com/b867b9b15c9bf1389e86ebdcdcf093a1.png" alt="Image from Gyazo" width="744"/></a>
 
 <a href="https://gyazo.com/11b64172030f561ac0d0e85fe18895f5"><img src="https://i.gyazo.com/11b64172030f561ac0d0e85fe18895f5.png" alt="Image from Gyazo" width="748"/></a>
 
-・フォームの入力欄は必須項目に。
-・正規表現で、メールアドレスは @ を含める、パスワードは半角英数字を含んだ 8-20 文字の範囲で入力。
-・未入力時もエラーメッセージを表示。
+・フォームの入力欄は必須項目に。  
+・正規表現で、メールアドレスは @ を含める、パスワードは半角英数字を含んだ 8-20 文字の範囲で入力。  
+・未入力時もエラーメッセージを表示。  
 ・既に登録されているメーリアドレス時もエラーメッセージを表示。
 
 ```vue.js
@@ -434,21 +433,24 @@ export default {
 
 ```
 
-### 9.ユーザーへのヒアリング
 
+### 9.ユーザーへのヒアリング
 <a href="https://gyazo.com/161c1fee55a8532808d8598b5bfd880a"><img src="https://i.gyazo.com/161c1fee55a8532808d8598b5bfd880a.png" alt="Image from Gyazo" width="505"/></a>
+
 <a href="https://gyazo.com/b8d6602cef0bbbfb4bdd43f00e3e5edc"><img src="https://i.gyazo.com/b8d6602cef0bbbfb4bdd43f00e3e5edc.png" alt="Image from Gyazo" width="309"/></a>
+
 <a href="https://gyazo.com/895e1ec5bc215e64ac9bc374cbaab7e0"><img src="https://i.gyazo.com/895e1ec5bc215e64ac9bc374cbaab7e0.png" alt="Image from Gyazo" width="299"/></a>
 
 
-アプリを使用したユーザーへヒアリングを行い、フィードバックをいただきました。
-　・~~ハンガーバーメニューでのボタン押下後のサイドバーを閉じる処理~~（対応済）
-　・~~診断時に次の質問までの自動スクロール~~（対応済）
+アプリを使用したユーザーへヒアリングを行い、フィードバックをいただきました。  
+　・~~ハンガーバーメニューでのボタン押下後のサイドバーを閉じる処理~~（対応済）  
+　・~~診断時に次の質問までの自動スクロール~~（対応済）  
 　・~~Firebaseの情報の".env"化~~（対応済）
 
-機能の追加実装
-　・~~ゲストログインの実装~~（対応済み）
-　・~~ゲストログイン時でのメモ保存を不可能にした~~（対応済み）
+機能の追加実装  
+　・~~ゲストログインの実装~~（対応済み）  
+・~~ゲストログイン時でのメモ保存を不可能にした~~（対応済み）
+
 
 ### 10.工夫したところ（実装面）
 
@@ -470,6 +472,7 @@ export default function (app, inject) {
   inject('functions', firebase.functions())// this.$functions
 }
 ```
+
 
 #### ログイン状態を取得して判別し、リダイレクト処理を実行
 
@@ -503,9 +506,10 @@ export default async function ({ store, route, redirect, app }) {
 
 ```
 
+
 #### 質問をコンポーネント化し、pagesで見やすく表示
 
-```vuejs:components/QuestionBox.vue
+```vue.js:components/QuestionBox.vue
 <template>
   <div
     :id="questionNumber"
@@ -629,7 +633,7 @@ export default {
 </script>
 ```
 
-```vuejs:pages/diagnose.vue
+```vue.js:pages/diagnose.vue
     <div
       v-if="showQuestion"
       class="bg-green-100 bg-opacity-85 px-4 py-12 md:py-28"
