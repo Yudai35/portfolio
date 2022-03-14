@@ -474,7 +474,7 @@ export default function (app, inject) {
 
 #### ログイン状態を取得して判別し、リダイレクト処理を実行
 
-```javascript
+```javascript:middleware/authenticated.js
 export default async function ({ store, route, redirect, app }) {
 
     const user = await app.$authState()
