@@ -509,6 +509,7 @@ export default async function ({ store, route, redirect, app }) {
 
 #### 質問をコンポーネント化し、pagesで見やすく表示
 
+components/QuestionBox.vue
 ```vue.js:components/QuestionBox.vue
 <template>
   <div
@@ -633,6 +634,7 @@ export default {
 </script>
 ```
 
+pages/diagnose.vue
 ```vue.js:pages/diagnose.vue
     <div
       v-if="showQuestion"
@@ -689,19 +691,23 @@ export default {
     </div>
 ```
 
-### 11.工夫したところ（学習面）
 
+### 11.工夫したところ（学習面）
 <a href="https://gyazo.com/ab1fe74b37ed6cbbec7572fe28ae4d87"><img src="https://i.gyazo.com/ab1fe74b37ed6cbbec7572fe28ae4d87.png" alt="Image from Gyazo" width="1433"/></a>
 
-・QiitaやTwitterで学習内容のアウトプットを継続。
+
+・QiitaやTwitterで学習内容のアウトプットを継続。  
 ・自分で調べても解決できない時は質問内容を言語化してまとめてからメンターさんに質問。コミュニケーションコストの削減、質問の意図がしっかりと伝わるようにすることを意識していました。
 
+
 ### 12.苦労したとこと
+
 
 #### Firebase Authentication を使用したログインまわりの実装
 
 アカウント登録やログイン、ログアウトの実装にFirebaseを使用しました。
-storeディレクトリでの認証状態の管理、midllewareディレクトリでのリダイレクト処理など、新しく実装する機能も多かったのでしっかり理解できるよう、コードの意味合いをコメントアウトで記述、言語化してQiitaでアウトプットを行なっていきました。
+storeディレクトリでの認証状態の管理、middlewareディレクトリでのリダイレクト処理など、新しく実装する機能も多かったのでしっかり理解できるよう、コードの意味合いをコメントアウトで記述、言語化してQiitaでアウトプットを行なっていきました。
+
 
 #### Firebase Functions と SendGrid を連携しお問い合わせ機能の実装
 
