@@ -110,7 +110,7 @@ export default {
 ・質問にYes,Noで回答する（随時質問追加予定）
 ・回答結果からmicroCMS の API を叩いて ID を取得し、診断結果を遷移します。
 
-```vuejs
+```vue.js
 <template>
   <div
     :id="questionNumber"
@@ -247,7 +247,7 @@ export default {
 ・診断結果から「Twitterで宣言する！」をクリック
 ・本のタイトル、読み終える期限が自動入力され、ツイートされる。
 
-```vuejs
+```vue.js
 <template>
   <button
     @click="twitterShare"
@@ -305,7 +305,7 @@ export default {
 ・Firebase Functions で SendGrid のメール送信 API を実行する。
 ・入力したユーザーのメールアドレス宛に確認メール、管理者宛に受付メールが送信されます。
 
-```vuejs
+```vue.js
 
 <script>
 export default {
@@ -349,7 +349,7 @@ export default {
 ・未入力時もエラーメッセージを表示。
 ・既に登録されているメーリアドレス時もエラーメッセージを表示。
 
-```vuejs
+```vue.js
 
 <script>
 export default {
