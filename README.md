@@ -303,9 +303,7 @@ export default {
 <a href="https://gyazo.com/63f927ecebdae4fa92fdfe016063d595"><img src="https://i.gyazo.com/63f927ecebdae4fa92fdfe016063d595.png" alt="Image from Gyazo" width="392"/></a>
 
 ・お問い合わせフォームから送信が可能。
-
 ・Firebase Functions で SendGrid のメール送信 API を実行する。
-
 ・入力したユーザーのメールアドレス宛に確認メール、管理者宛に受付メールが送信されます。
 
 ```vue.js
