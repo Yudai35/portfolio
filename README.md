@@ -239,9 +239,7 @@ export default {
 };
 </script>
 
-```
-
-
+``
 ### 5.Twitter共有機能
 <a href="https://gyazo.com/3ff194d11e4ae6259370650c86481306"><img src="https://i.gyazo.com/3ff194d11e4ae6259370650c86481306.gif" alt="Image from Gyazo" width="1000"/></a>
 
