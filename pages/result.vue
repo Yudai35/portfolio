@@ -109,7 +109,7 @@ export default {
         "%20%23NewSelf" +
         "%20%23書籍診断アプリ" +
         "&url=" +
-        "https://newself-80137.web.app/"; //アプリURL
+        "https://new-self.org/"; //アプリURL
       //シェアようの画面へ移行
       location.href = shareURL;
     },
