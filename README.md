@@ -292,10 +292,10 @@ export default {
 ### 7.お問合せ機能
 <a href="https://gyazo.com/04d67214238f45112a858b81b59639a4"><img src="https://i.gyazo.com/04d67214238f45112a858b81b59639a4.gif" alt="Image from Gyazo" width="1000"/></a>
 
-##【ユーザー側】  
+**【ユーザー側】**  
 <a href="https://gyazo.com/b94d30f6ea8c27607bc2b369a1d34963"><img src="https://i.gyazo.com/b94d30f6ea8c27607bc2b369a1d34963.png" alt="Image from Gyazo" width="273"/></a>
 
-##【管理者側】  
+**【管理者側】**  
 <a href="https://gyazo.com/63f927ecebdae4fa92fdfe016063d595"><img src="https://i.gyazo.com/63f927ecebdae4fa92fdfe016063d595.png" alt="Image from Gyazo" width="392"/></a>
 
 ・お問い合わせフォームから送信が可能。  
