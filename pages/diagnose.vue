@@ -181,7 +181,7 @@ export default {
       });
       console.log({ book });
       //このあと、受け取った本のデータからランダムで１冊選ぶ
-      const contents = book.contents; //本の情報の配列
+      const contents = book.contents;
       const ids = contents.map((e) => {
         return e.id;
       });
