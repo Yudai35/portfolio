@@ -46,35 +46,35 @@
       <QuestionBox
         v-if="answers.q2 != null"
         questionTitle="Q.3"
-        questionText="対人関係で悩みがある"
+        questionText="何をしたらいいか分からない"
         questionNumber="q3"
         @answer="answer"
       />
       <QuestionBox
         v-if="answers.q3 != null"
         questionTitle="Q.4"
-        questionText="対人関係で悩みがある"
+        questionText="前向きになれないことが多い"
         questionNumber="q4"
         @answer="answer"
       />
       <QuestionBox
         v-if="answers.q4 != null"
         questionTitle="Q.5"
-        questionText="対人関係で悩みがある"
+        questionText="私は運が悪い方だ"
         questionNumber="q5"
         @answer="answer"
       />
       <QuestionBox
         v-if="answers.q5 != null"
         questionTitle="Q.6"
-        questionText="対人関係で悩みがある"
+        questionText="確実に成果を出したい"
         questionNumber="q6"
         @answer="answer"
       />
       <QuestionBox
         v-if="answers.q6 != null"
         questionTitle="Q.7"
-        questionText="対人関係で悩みがある"
+        questionText="ビジネス力を上げたい"
         questionNumber="q7"
         @answer="answer"
       />
